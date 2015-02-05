@@ -8,13 +8,13 @@
 
 #import "ViewController.h"
 #import "MyScene.h"
+@import WebKit;
 
 @implementation ViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;

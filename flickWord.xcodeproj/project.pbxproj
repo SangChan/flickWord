@@ -24,6 +24,8 @@
 		6363121F19B036DD00E15DC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311FA19B036DD00E15DC3 /* UIKit.framework */; };
 		6363122719B036DD00E15DC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6363122519B036DD00E15DC3 /* InfoPlist.strings */; };
 		6363122919B036DD00E15DC3 /* flickWordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363122819B036DD00E15DC3 /* flickWordTests.m */; };
+		63EC062119D00014002AEA05 /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EC061F19D00014002AEA05 /* bubble.png */; };
+		63EC062219D00014002AEA05 /* bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EC062019D00014002AEA05 /* bubble@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		6363122419B036DD00E15DC3 /* flickWordTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "flickWordTests-Info.plist"; sourceTree = "<group>"; };
 		6363122619B036DD00E15DC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6363122819B036DD00E15DC3 /* flickWordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = flickWordTests.m; sourceTree = "<group>"; };
+		63EC061F19D00014002AEA05 /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
+		63EC062019D00014002AEA05 /* bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		636311EA19B036DD00E15DC3 = {
 			isa = PBXGroup;
 			children = (
+				63EC061E19D00001002AEA05 /* resources */,
 				636311FE19B036DD00E15DC3 /* flickWord */,
 				6363122219B036DD00E15DC3 /* flickWordTests */,
 				636311F519B036DD00E15DC3 /* Frameworks */,
@@ -162,6 +167,15 @@
 				6363122519B036DD00E15DC3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63EC061E19D00001002AEA05 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				63EC061F19D00014002AEA05 /* bubble.png */,
+				63EC062019D00014002AEA05 /* bubble@2x.png */,
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +256,8 @@
 			files = (
 				6363120319B036DD00E15DC3 /* InfoPlist.strings in Resources */,
 				6363121619B036DD00E15DC3 /* Images.xcassets in Resources */,
+				63EC062119D00014002AEA05 /* bubble.png in Resources */,
+				63EC062219D00014002AEA05 /* bubble@2x.png in Resources */,
 				6363121419B036DD00E15DC3 /* Spaceship.png in Resources */,
 				6363120C19B036DD00E15DC3 /* Main.storyboard in Resources */,
 			);
@@ -393,8 +409,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "flickWord/flickWord-Prefix.pch";
 				INFOPLIST_FILE = "flickWord/flickWord-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -407,8 +425,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "flickWord/flickWord-Prefix.pch";
 				INFOPLIST_FILE = "flickWord/flickWord-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -472,6 +492,7 @@
 				6363122E19B036DD00E15DC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6363122F19B036DD00E15DC3 /* Build configuration list for PBXNativeTarget "flickWordTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +501,7 @@
 				6363123119B036DD00E15DC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
