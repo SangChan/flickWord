@@ -24,6 +24,7 @@
 		6363121F19B036DD00E15DC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311FA19B036DD00E15DC3 /* UIKit.framework */; };
 		6363122719B036DD00E15DC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6363122519B036DD00E15DC3 /* InfoPlist.strings */; };
 		6363122919B036DD00E15DC3 /* flickWordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363122819B036DD00E15DC3 /* flickWordTests.m */; };
+		6377E1321A846337007E3C4A /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E1311A846337007E3C4A /* Bubble.m */; };
 		63EC062119D00014002AEA05 /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EC061F19D00014002AEA05 /* bubble.png */; };
 		63EC062219D00014002AEA05 /* bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EC062019D00014002AEA05 /* bubble@2x.png */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,8 @@
 		6363122419B036DD00E15DC3 /* flickWordTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "flickWordTests-Info.plist"; sourceTree = "<group>"; };
 		6363122619B036DD00E15DC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6363122819B036DD00E15DC3 /* flickWordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = flickWordTests.m; sourceTree = "<group>"; };
+		6377E1301A846337007E3C4A /* Bubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bubble.h; sourceTree = "<group>"; };
+		6377E1311A846337007E3C4A /* Bubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bubble.m; sourceTree = "<group>"; };
 		63EC061F19D00014002AEA05 /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
 		63EC062019D00014002AEA05 /* bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +139,8 @@
 				6363121319B036DD00E15DC3 /* Spaceship.png */,
 				6363121519B036DD00E15DC3 /* Images.xcassets */,
 				636311FF19B036DD00E15DC3 /* Supporting Files */,
+				6377E1301A846337007E3C4A /* Bubble.h */,
+				6377E1311A846337007E3C4A /* Bubble.m */,
 			);
 			path = flickWord;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 			files = (
 				6363121219B036DD00E15DC3 /* MyScene.m in Sources */,
 				6363120F19B036DD00E15DC3 /* ViewController.m in Sources */,
+				6377E1321A846337007E3C4A /* Bubble.m in Sources */,
 				6363120919B036DD00E15DC3 /* AppDelegate.m in Sources */,
 				6363120519B036DD00E15DC3 /* main.m in Sources */,
 			);
