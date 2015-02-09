@@ -56,6 +56,7 @@
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self.parent];
     touchPos =location;
+    self.position = touchPos;
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     touchOn=NO;
