@@ -8,6 +8,15 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface Bubble : SKSpriteNode
+@interface Bubble : SKNode {
+    BOOL _grabbed;
+    NSTimeInterval _previousTime;
+    CGPoint _previousVelocity;
+    CGPoint _previosPos;
+}
+
+
++(instancetype)bubbleWithLetter:(NSString *)letter;
+-(instancetype)initWithLetter:(NSString *)letter;
 
 @end
