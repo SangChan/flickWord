@@ -64,7 +64,7 @@
 -(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     touchOn=NO;
 }
--(void)update:(NSTimeInterval)dt {
+-(void)update:(CFTimeInterval)dt{
     if (touchOn) {
         CGVector vector = CGVectorMake((touchPos.x-self.position.x)/dt, (touchPos.y-self.position.y)/dt);
         self.physicsBody.velocity=vector;

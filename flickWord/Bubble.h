@@ -17,5 +17,5 @@
 
 +(instancetype)bubbleWithLetter:(NSString *)letter;
 -(instancetype)initWithLetter:(NSString *)letter;
-
+-(void)update:(CFTimeInterval)dt;
 @end

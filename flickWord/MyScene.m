@@ -46,36 +46,12 @@
 //    /* Called when a touch begins */
 //}
 //
-//-(void)update:(CFTimeInterval)currentTime {
-//    /* Called before each frame is rendered */
-//}
-
-
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//    touchOn=YES;
-//    UITouch *touch = [touches anyObject];
-//    CGPoint location = [touch locationInNode:self.parent];
-//    touchPos =location;
-//    [self.physicsBody setVelocity:CGVectorMake(0, 0)];
-//    
-//}
-//-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-//    touchOn=YES;
-//    UITouch *touch = [touches anyObject];
-//    CGPoint location = [touch locationInNode:self.parent];
-//    touchPos =location;
-//}
-//-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-//    touchOn=NO;
-//}
-//-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-//    touchOn=NO;
-//}
-//-(void)update:(NSTimeInterval)dt {
-//    if (touchOn) {
-//        CGVector vector = CGVectorMake((touchPos.x-self.position.x)/dt, (touchPos.y-self.position.y)/dt);
-//        self.physicsBody.velocity=vector;
-//    }
-//}
+-(void)update:(CFTimeInterval)currentTime {
+    /* Called before each frame is rendered */
+    for (SKNode *node in [self children]) {
+        if ([node isKindOfClass:[Bubble class]]) {
+        }
+    }
+}
 
 @end
