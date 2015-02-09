@@ -9,10 +9,9 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface Bubble : SKNode {
-    BOOL _grabbed;
-    NSTimeInterval _previousTime;
-    CGPoint _previousVelocity;
-    CGPoint _previosPos;
+    BOOL touchOn;
+    CGPoint touchPos;
+
 }
 
 

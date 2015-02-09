@@ -26,17 +26,47 @@
     letterLabel.fontName = @"Chalkduster";
     letterLabel.fontSize = 48;
     letterLabel.fontColor = [UIColor whiteColor];
+    letterLabel.position = CGPointMake(self.position.x, self.position.y-15);
     [self addChild:letterLabel];
     
     SKPhysicsBody *body = [SKPhysicsBody bodyWithCircleOfRadius:circle.size.width * 0.5 center:CGPointZero];
     body.dynamic = YES;
-    body.density = 1.0f;
-    body.friction = 0.5f;
+    //body.density = 1.0f;
+    body.friction = 0.4f;
+    body.restitution = 0.6f;
     body.collisionBitMask = 2;
     
     self.physicsBody = body;
     
+    self.userInteractionEnabled = YES;
+    
     return self;
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    touchOn=YES;
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self.parent];
+    touchPos =location;
+    [self.physicsBody setVelocity:CGVectorMake(0, 0)];
+    
+}
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    touchOn=YES;
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self.parent];
+    touchPos =location;
+}
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    touchOn=NO;
+}
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    touchOn=NO;
+}
+-(void)update:(NSTimeInterval)dt {
+    if (touchOn) {
+        CGVector vector = CGVectorMake((touchPos.x-self.position.x)/dt, (touchPos.y-self.position.y)/dt);
+        self.physicsBody.velocity=vector;
+    }
+}
 @end

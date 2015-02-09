@@ -23,23 +23,59 @@
         
         self.physicsWorld.contactDelegate = self;
         self.physicsWorld.gravity = CGVectorMake(0.0, -9.8);
+        [self settingBubbles];
     }
     return self;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
+-(void)settingBubbles {
+    Bubble *bubble_a = [Bubble bubbleWithLetter:@"A"];
+    bubble_a.position = CGPointMake(self.size.width * 0.5 - 150, self.size.height * 0.5);
+    [self addChild:bubble_a];
     
-    for (UITouch *touch in touches) {
-        Bubble *bubble_a = [Bubble bubbleWithLetter:@"A"];
-        bubble_a.position = [touch locationInNode:self];
-        [self addChild:bubble_a];
-        
-    }
+    Bubble *bubble_b = [Bubble bubbleWithLetter:@"B"];
+    bubble_b.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+    [self addChild:bubble_b];
+    
+    Bubble *bubble_c = [Bubble bubbleWithLetter:@"C"];
+    bubble_c.position = CGPointMake(self.size.width * 0.5 + 150, self.size.height * 0.5);
+    [self addChild:bubble_c];
 }
+//
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    /* Called when a touch begins */
+//}
+//
+//-(void)update:(CFTimeInterval)currentTime {
+//    /* Called before each frame is rendered */
+//}
 
--(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
-}
+
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    touchOn=YES;
+//    UITouch *touch = [touches anyObject];
+//    CGPoint location = [touch locationInNode:self.parent];
+//    touchPos =location;
+//    [self.physicsBody setVelocity:CGVectorMake(0, 0)];
+//    
+//}
+//-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+//    touchOn=YES;
+//    UITouch *touch = [touches anyObject];
+//    CGPoint location = [touch locationInNode:self.parent];
+//    touchPos =location;
+//}
+//-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//    touchOn=NO;
+//}
+//-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+//    touchOn=NO;
+//}
+//-(void)update:(NSTimeInterval)dt {
+//    if (touchOn) {
+//        CGVector vector = CGVectorMake((touchPos.x-self.position.x)/dt, (touchPos.y-self.position.y)/dt);
+//        self.physicsBody.velocity=vector;
+//    }
+//}
 
 @end
