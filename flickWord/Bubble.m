@@ -55,6 +55,7 @@
     if (touchNode != nil && [touchNode.parent isEqual:self]) {
         _grabbed = YES;
         _previousPos =location;
+        [self.physicsBody setAffectedByGravity:NO];
         NSLog(@"%@ touchBegan YES: %@ , pos : %@",self.name, touchNode, NSStringFromCGPoint(location));
     }
     else {
@@ -69,19 +70,17 @@
         _previousVelocity = ccpMult(ccpSub(location, _previousPos),5);
         _previousPos =location;
         self.position = location;
+        [self.physicsBody setAffectedByGravity:NO];
         NSLog(@"%@ touchMoved pos : %@",self.name, NSStringFromCGPoint(location));
     }
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if (_grabbed) {
         _grabbed=NO;
+        [self.physicsBody setAffectedByGravity:YES];
         [self.physicsBody applyImpulse:CGVectorMake(_previousVelocity.x, _previousVelocity.y)];
         NSLog(@"%@ touchEnded pos",self.name);
     }
-}
--(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    _grabbed=NO;
-    NSLog(@"%@ touchCanceled pos",self.name);
 }
 
 static inline CGPoint ccp( CGFloat x, CGFloat y )
