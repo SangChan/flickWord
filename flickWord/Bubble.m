@@ -19,6 +19,7 @@
 {
     self = [super init];
     if (!self) return nil;
+    self.name = letter;
     SKSpriteNode *circle = [SKSpriteNode spriteNodeWithImageNamed:@"bubble"];
     [self addChild:circle];
     
@@ -31,43 +32,70 @@
     
     SKPhysicsBody *body = [SKPhysicsBody bodyWithCircleOfRadius:circle.size.width * 0.5 center:CGPointZero];
     body.dynamic = YES;
-    //body.density = 1.0f;
-    body.friction = 0.4f;
-    body.restitution = 0.6f;
-    body.collisionBitMask = 2;
+    body.mass = 100;
+    body.density = 2;
+    //body.friction = 0.3f;
+    body.restitution = 0.3f;
+    //body.collisionBitMask = 2;
     
     self.physicsBody = body;
     
     self.userInteractionEnabled = YES;
+    _grabbed=NO;
     
     return self;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    touchOn=YES;
+    //_grabbed=YES;
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self.parent];
-    touchPos =location;
-    [self.physicsBody setVelocity:CGVectorMake(0, 0)];
     
-}
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    touchOn=YES;
-    UITouch *touch = [touches anyObject];
-    CGPoint location = [touch locationInNode:self.parent];
-    touchPos =location;
-    self.position = touchPos;
-}
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    touchOn=NO;
-}
--(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    touchOn=NO;
-}
--(void)update:(CFTimeInterval)dt{
-    if (touchOn) {
-        CGVector vector = CGVectorMake((touchPos.x-self.position.x)/dt, (touchPos.y-self.position.y)/dt);
-        self.physicsBody.velocity=vector;
+    SKNode *touchNode = [self.parent nodeAtPoint:location];
+    if (touchNode != nil && [touchNode.parent isEqual:self]) {
+        _grabbed = YES;
+        _previousPos =location;
+        NSLog(@"%@ touchBegan YES: %@ , pos : %@",self.name, touchNode, NSStringFromCGPoint(location));
+    }
+    else {
+        NSLog(@"%@ touchBegan NO : %@ , pos : %@",self.name, touchNode, NSStringFromCGPoint(location));
     }
 }
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (_grabbed) {
+        UITouch *touch = [touches anyObject];
+        CGPoint location = [touch locationInNode:self.parent];
+    
+        _previousVelocity = ccpMult(ccpSub(location, _previousPos),5);
+        _previousPos =location;
+        self.position = location;
+        NSLog(@"%@ touchMoved pos : %@",self.name, NSStringFromCGPoint(location));
+    }
+}
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (_grabbed) {
+        _grabbed=NO;
+        [self.physicsBody applyImpulse:CGVectorMake(_previousVelocity.x, _previousVelocity.y)];
+        NSLog(@"%@ touchEnded pos",self.name);
+    }
+}
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    _grabbed=NO;
+    NSLog(@"%@ touchCanceled pos",self.name);
+}
+
+static inline CGPoint ccp( CGFloat x, CGFloat y )
+{
+    return CGPointMake(x, y);
+}
+static inline CGPoint ccpSub(const CGPoint v1, const CGPoint v2)
+{
+    return ccp(v1.x - v2.x, v1.y - v2.y);
+}
+static inline CGPoint ccpMult(const CGPoint v, const CGFloat s)
+{
+    return ccp(v.x*s, v.y*s);
+}
+
+
 @end

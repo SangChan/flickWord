@@ -9,6 +9,12 @@
 #import "MyScene.h"
 #import "Bubble.h"
 
+@interface MyScene () {
+    
+}
+
+@end
+
 @implementation MyScene
 
 -(id)initWithSize:(CGSize)size {    
@@ -17,7 +23,7 @@
         
         self.backgroundColor = [SKColor blackColor];
         
-        SKPhysicsBody *borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        SKPhysicsBody *borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(self.frame.origin.x, self.frame.origin.y+20, self.frame.size.width, self.frame.size.height-20)];
         self.physicsBody = borderBody;
         self.physicsBody.friction = 1.0f;
         
@@ -30,7 +36,7 @@
 
 -(void)settingBubbles {
     Bubble *bubble_a = [Bubble bubbleWithLetter:@"A"];
-    bubble_a.position = CGPointMake(self.size.width * 0.5 - 150, self.size.height * 0.5);
+    bubble_a.position = CGPointMake(self.size.width * 0.5 - 100, self.size.height * 0.5);
     [self addChild:bubble_a];
     
     Bubble *bubble_b = [Bubble bubbleWithLetter:@"B"];
@@ -38,7 +44,7 @@
     [self addChild:bubble_b];
     
     Bubble *bubble_c = [Bubble bubbleWithLetter:@"C"];
-    bubble_c.position = CGPointMake(self.size.width * 0.5 + 150, self.size.height * 0.5);
+    bubble_c.position = CGPointMake(self.size.width * 0.5 + 100, self.size.height * 0.5);
     [self addChild:bubble_c];
 }
 //
@@ -48,10 +54,7 @@
 //
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    for (SKNode *node in [self children]) {
-        if ([node isKindOfClass:[Bubble class]]) {
-        }
-    }
+    
 }
 
 @end

@@ -9,8 +9,6 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface MyScene : SKScene <SKPhysicsContactDelegate> {
-    BOOL touchOn;
-    CGPoint touchPos;
 }
 
 @end

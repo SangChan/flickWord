@@ -9,13 +9,13 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface Bubble : SKNode {
-    BOOL touchOn;
-    CGPoint touchPos;
+    BOOL _grabbed;
+    CGPoint _previousPos;
+    CGPoint _previousVelocity;
 
 }
 
 
 +(instancetype)bubbleWithLetter:(NSString *)letter;
 -(instancetype)initWithLetter:(NSString *)letter;
--(void)update:(CFTimeInterval)dt;
 @end
