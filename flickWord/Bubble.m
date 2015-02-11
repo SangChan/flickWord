@@ -92,6 +92,8 @@
         self.position = _previousPos;
         self.physicsBody.velocity = CGVectorMake(0.0,0.0);
     }
+    
+    
 }
 
 @end

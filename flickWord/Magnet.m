@@ -64,6 +64,8 @@
                     magnetBody.physicsBody.velocity = CGVectorMake(0.0, 0.0);
                     magnetBody.physicsBody.angularVelocity = 0.0;
                     [magnetBody.physicsBody setResting:YES];
+                    SKAction *rotateAction = [SKAction rotateToAngle:0.0 duration:1.0];
+                    [magnetBody runAction:rotateAction];
                 }
             }
         }
