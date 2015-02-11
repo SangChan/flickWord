@@ -73,8 +73,8 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     for (SKNode *childNode in [self children]) {
-        if ([childNode respondsToSelector:@selector(update:)] && [childNode isKindOfClass:[Magnet class]]) {
-            [(Magnet *)childNode update:currentTime];
+        if ([childNode respondsToSelector:@selector(update)]) {
+            [childNode performSelector:@selector(update)];
         }
     }
 }

@@ -10,6 +10,7 @@
 #import "ConstFunc.h"
 
 @implementation Bubble
+@synthesize grabbed = _grabbed;
 
 +(instancetype)bubbleWithLetter:(NSString *)letter
 {
@@ -70,8 +71,8 @@
     
         _previousVelocity = ccpMult(ccpSub(location, _previousPos),5);
         _previousPos =location;
-        self.position = location;
-        [self.physicsBody setAffectedByGravity:NO];
+        //self.position = location;
+        //[self.physicsBody setAffectedByGravity:NO];
         NSLog(@"%@ touchMoved pos : %@",self.name, NSStringFromCGPoint(location));
     }
 }
@@ -81,6 +82,15 @@
         [self.physicsBody setAffectedByGravity:YES];
         [self.physicsBody applyImpulse:CGVectorMake(_previousVelocity.x, _previousVelocity.y)];
         NSLog(@"%@ touchEnded pos",self.name);
+    }
+}
+
+- (void)update
+{
+    if (_grabbed)
+    {
+        self.position = _previousPos;
+        self.physicsBody.velocity = CGVectorMake(0.0,0.0);
     }
 }
 
