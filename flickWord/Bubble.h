@@ -17,7 +17,7 @@
 
 @property (nonatomic) BOOL grabbed;
 
-+(instancetype)bubbleWithLetter:(NSString *)letter;
--(instancetype)initWithLetter:(NSString *)letter;
-- (void)update:(CFTimeInterval)currentTime;
++ (instancetype)bubbleWithLetter:(NSString *)letter;
+- (instancetype)initWithLetter:(NSString *)letter;
+- (void)update;
 @end

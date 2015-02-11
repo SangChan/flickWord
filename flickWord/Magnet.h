@@ -20,6 +20,6 @@
 + (instancetype)magnetWithLetter:(NSString *)letter;
 + (instancetype)magnetWithForce:(float)force Radius:(float)raidus Letter:(NSString *)letter;
 - (instancetype)initWithForce:(float)force Radius:(float)raidus Letter:(NSString *)letter;
-- (void)update:(CFTimeInterval)currentTime;
+- (void)update;
 
 @end

@@ -12,12 +12,12 @@
 @implementation Bubble
 @synthesize grabbed = _grabbed;
 
-+(instancetype)bubbleWithLetter:(NSString *)letter
++ (instancetype)bubbleWithLetter:(NSString *)letter
 {
     return [[Bubble alloc]initWithLetter:letter];
 }
 
--(instancetype)initWithLetter:(NSString *)letter
+- (instancetype)initWithLetter:(NSString *)letter
 {
     self = [super init];
     if (!self) return nil;
@@ -48,7 +48,7 @@
     return self;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     //_grabbed=YES;
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self.parent];
@@ -64,7 +64,7 @@
         NSLog(@"%@ touchBegan NO : %@ , pos : %@",self.name, touchNode, NSStringFromCGPoint(location));
     }
 }
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     if (_grabbed) {
         UITouch *touch = [touches anyObject];
         CGPoint location = [touch locationInNode:self.parent];
@@ -76,7 +76,7 @@
         NSLog(@"%@ touchMoved pos : %@",self.name, NSStringFromCGPoint(location));
     }
 }
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if (_grabbed) {
         _grabbed=NO;
         [self.physicsBody setAffectedByGravity:YES];
