@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		634E53F01A8AD80C00299CCC /* Magnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 634E53EF1A8AD80C00299CCC /* Magnet.m */; };
 		636311F719B036DD00E15DC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311F619B036DD00E15DC3 /* Foundation.framework */; };
 		636311F919B036DD00E15DC3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311F819B036DD00E15DC3 /* CoreGraphics.framework */; };
 		636311FB19B036DD00E15DC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311FA19B036DD00E15DC3 /* UIKit.framework */; };
@@ -40,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		634E53EE1A8AD80C00299CCC /* Magnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magnet.h; sourceTree = "<group>"; };
+		634E53EF1A8AD80C00299CCC /* Magnet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Magnet.m; sourceTree = "<group>"; };
+		634E53F11A8ADC8100299CCC /* ConstFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstFunc.h; sourceTree = "<group>"; };
 		636311F319B036DD00E15DC3 /* flickWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flickWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636311F619B036DD00E15DC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		636311F819B036DD00E15DC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -141,6 +145,9 @@
 				636311FF19B036DD00E15DC3 /* Supporting Files */,
 				6377E1301A846337007E3C4A /* Bubble.h */,
 				6377E1311A846337007E3C4A /* Bubble.m */,
+				634E53EE1A8AD80C00299CCC /* Magnet.h */,
+				634E53EF1A8AD80C00299CCC /* Magnet.m */,
+				634E53F11A8ADC8100299CCC /* ConstFunc.h */,
 			);
 			path = flickWord;
 			sourceTree = "<group>";
@@ -288,6 +295,7 @@
 				6377E1321A846337007E3C4A /* Bubble.m in Sources */,
 				6363120919B036DD00E15DC3 /* AppDelegate.m in Sources */,
 				6363120519B036DD00E15DC3 /* main.m in Sources */,
+				634E53F01A8AD80C00299CCC /* Magnet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "Bubble.h"
+#import "ConstFunc.h"
 
 @implementation Bubble
 
@@ -33,7 +34,7 @@
     SKPhysicsBody *body = [SKPhysicsBody bodyWithCircleOfRadius:circle.size.width * 0.5 center:CGPointZero];
     body.dynamic = YES;
     body.mass = 100;
-    body.density = 2;
+    body.density = 3;
     //body.friction = 0.3f;
     body.restitution = 0.3f;
     //body.collisionBitMask = 2;
@@ -82,19 +83,5 @@
         NSLog(@"%@ touchEnded pos",self.name);
     }
 }
-
-static inline CGPoint ccp( CGFloat x, CGFloat y )
-{
-    return CGPointMake(x, y);
-}
-static inline CGPoint ccpSub(const CGPoint v1, const CGPoint v2)
-{
-    return ccp(v1.x - v2.x, v1.y - v2.y);
-}
-static inline CGPoint ccpMult(const CGPoint v, const CGFloat s)
-{
-    return ccp(v.x*s, v.y*s);
-}
-
 
 @end
