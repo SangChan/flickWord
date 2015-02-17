@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Dictionary" syncable="YES">
+        <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word_description" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Dictionary" positionX="-36" positionY="9" width="128" height="75"/>
+    </elements>
+</model>

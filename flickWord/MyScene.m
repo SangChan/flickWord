@@ -44,21 +44,20 @@
     _word = word;
     _wordDescription = wordDescription;
     
-    int sizePerBall = self.size.width / BALL_SIZE;
+    int widthPerBall = self.size.width / BALL_SIZE;
+    int heightPerBall = self.size.height / BALL_SIZE;
     int wordLength = (int)[_word length];
-    int letter_limit = (sizePerBall > wordLength) ? wordLength : sizePerBall;
+    int letter_limit = (widthPerBall > wordLength) ? wordLength : widthPerBall;
     
     for (int i = 0; i < wordLength; i++) {
-        //[array addObject:];
-        //NSLog(@"%@",[NSString stringWithFormat:@"%C", [_word characterAtIndex:i]]);
         NSDictionary *dicData = [NSDictionary dictionaryWithObjectsAndKeys:
                                  [NSString stringWithFormat:@"%C", [_word characterAtIndex:i]], @"character",
                                  [NSNumber numberWithFloat:centerPos.x - (BALL_SIZE/2 * (letter_limit/2)) + (BALL_SIZE/2 *(i%letter_limit))],@"bubble_x",
-                                 [NSNumber numberWithFloat:centerPos.y],@"bubble_y",
+                                 [NSNumber numberWithFloat:centerPos.y - BALL_SIZE],@"bubble_y",
                                  [NSNumber numberWithFloat:centerPos.x - (BALL_SIZE * (letter_limit/2)) + (BALL_SIZE *(i%letter_limit))],@"magnet_x",
-                                 [NSNumber numberWithFloat:centerPos.y + 220 - (BALL_SIZE * (i/letter_limit))],@"magnet_y",
+                                 [NSNumber numberWithFloat:centerPos.y + (BALL_SIZE * (heightPerBall/3)) - (BALL_SIZE * (i/letter_limit))],@"magnet_y",
                                  nil];
-        [self performSelector:@selector(setBubbleAndMagnet:) withObject:dicData afterDelay:(4.0f/wordLength)*(i+1)];
+        [self performSelector:@selector(setBubbleAndMagnet:) withObject:dicData afterDelay:0.25f*(i+1)];
     }
 }
 

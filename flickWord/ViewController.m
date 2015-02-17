@@ -11,11 +11,13 @@
 @import WebKit;
 
 @implementation ViewController
+@synthesize word;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Configure the view.
+    [self setTitle:[word word]];
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
@@ -23,7 +25,7 @@
     // Create and configure the scene.
     MyScene * scene = [MyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    [scene setWord:@"appointment" Description:@"약속, 지정, 임명"];
+    [scene setWord:[word word] Description:[word description]];
     // Present the scene.
     [skView presentScene:scene];
     

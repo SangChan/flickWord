@@ -25,9 +25,13 @@
 		6363121F19B036DD00E15DC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311FA19B036DD00E15DC3 /* UIKit.framework */; };
 		6363122719B036DD00E15DC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6363122519B036DD00E15DC3 /* InfoPlist.strings */; };
 		6363122919B036DD00E15DC3 /* flickWordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363122819B036DD00E15DC3 /* flickWordTests.m */; };
+		637023E21A92FF0C00496A2A /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 637023E01A92FF0C00496A2A /* bubble.png */; };
+		637023E31A92FF0C00496A2A /* bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 637023E11A92FF0C00496A2A /* bubble@2x.png */; };
+		637023E61A92FF4900496A2A /* WordDictionary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 637023E41A92FF4900496A2A /* WordDictionary.xcdatamodeld */; };
+		637023E91A92FFBD00496A2A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637023E81A92FFBD00496A2A /* TableViewController.m */; };
+		637023EB1A93002900496A2A /* able.txt in Resources */ = {isa = PBXBuildFile; fileRef = 637023EA1A93002900496A2A /* able.txt */; };
+		637023EE1A9301E000496A2A /* WordDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 637023ED1A9301E000496A2A /* WordDictionary.m */; };
 		6377E1321A846337007E3C4A /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E1311A846337007E3C4A /* Bubble.m */; };
-		63EC062119D00014002AEA05 /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EC061F19D00014002AEA05 /* bubble.png */; };
-		63EC062219D00014002AEA05 /* bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EC062019D00014002AEA05 /* bubble@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,10 +71,16 @@
 		6363122419B036DD00E15DC3 /* flickWordTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "flickWordTests-Info.plist"; sourceTree = "<group>"; };
 		6363122619B036DD00E15DC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6363122819B036DD00E15DC3 /* flickWordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = flickWordTests.m; sourceTree = "<group>"; };
+		637023E01A92FF0C00496A2A /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubble.png; path = flickWord/Resources/bubble.png; sourceTree = "<group>"; };
+		637023E11A92FF0C00496A2A /* bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bubble@2x.png"; path = "flickWord/Resources/bubble@2x.png"; sourceTree = "<group>"; };
+		637023E51A92FF4900496A2A /* WordDictionary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordDictionary.xcdatamodel; sourceTree = "<group>"; };
+		637023E71A92FFBD00496A2A /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		637023E81A92FFBD00496A2A /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		637023EA1A93002900496A2A /* able.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = able.txt; sourceTree = "<group>"; };
+		637023EC1A9301E000496A2A /* WordDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordDictionary.h; sourceTree = "<group>"; };
+		637023ED1A9301E000496A2A /* WordDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordDictionary.m; sourceTree = "<group>"; };
 		6377E1301A846337007E3C4A /* Bubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bubble.h; sourceTree = "<group>"; };
 		6377E1311A846337007E3C4A /* Bubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bubble.m; sourceTree = "<group>"; };
-		63EC061F19D00014002AEA05 /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
-		63EC062019D00014002AEA05 /* bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +111,7 @@
 		636311EA19B036DD00E15DC3 = {
 			isa = PBXGroup;
 			children = (
-				63EC061E19D00001002AEA05 /* resources */,
+				63EC061E19D00001002AEA05 /* Resources */,
 				636311FE19B036DD00E15DC3 /* flickWord */,
 				6363122219B036DD00E15DC3 /* flickWordTests */,
 				636311F519B036DD00E15DC3 /* Frameworks */,
@@ -142,12 +152,17 @@
 				6363121119B036DD00E15DC3 /* MyScene.m */,
 				6363121319B036DD00E15DC3 /* Spaceship.png */,
 				6363121519B036DD00E15DC3 /* Images.xcassets */,
-				636311FF19B036DD00E15DC3 /* Supporting Files */,
 				6377E1301A846337007E3C4A /* Bubble.h */,
 				6377E1311A846337007E3C4A /* Bubble.m */,
 				634E53EE1A8AD80C00299CCC /* Magnet.h */,
 				634E53EF1A8AD80C00299CCC /* Magnet.m */,
 				634E53F11A8ADC8100299CCC /* ConstFunc.h */,
+				637023E41A92FF4900496A2A /* WordDictionary.xcdatamodeld */,
+				637023EC1A9301E000496A2A /* WordDictionary.h */,
+				637023ED1A9301E000496A2A /* WordDictionary.m */,
+				637023E71A92FFBD00496A2A /* TableViewController.h */,
+				637023E81A92FFBD00496A2A /* TableViewController.m */,
+				636311FF19B036DD00E15DC3 /* Supporting Files */,
 			);
 			path = flickWord;
 			sourceTree = "<group>";
@@ -155,6 +170,7 @@
 		636311FF19B036DD00E15DC3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				637023EA1A93002900496A2A /* able.txt */,
 				6363120019B036DD00E15DC3 /* flickWord-Info.plist */,
 				6363120119B036DD00E15DC3 /* InfoPlist.strings */,
 				6363120419B036DD00E15DC3 /* main.m */,
@@ -181,13 +197,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		63EC061E19D00001002AEA05 /* resources */ = {
+		63EC061E19D00001002AEA05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				63EC061F19D00014002AEA05 /* bubble.png */,
-				63EC062019D00014002AEA05 /* bubble@2x.png */,
+				637023E01A92FF0C00496A2A /* bubble.png */,
+				637023E11A92FF0C00496A2A /* bubble@2x.png */,
 			);
-			name = resources;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,10 +282,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637023E31A92FF0C00496A2A /* bubble@2x.png in Resources */,
+				637023EB1A93002900496A2A /* able.txt in Resources */,
 				6363120319B036DD00E15DC3 /* InfoPlist.strings in Resources */,
 				6363121619B036DD00E15DC3 /* Images.xcassets in Resources */,
-				63EC062119D00014002AEA05 /* bubble.png in Resources */,
-				63EC062219D00014002AEA05 /* bubble@2x.png in Resources */,
+				637023E21A92FF0C00496A2A /* bubble.png in Resources */,
 				6363121419B036DD00E15DC3 /* Spaceship.png in Resources */,
 				6363120C19B036DD00E15DC3 /* Main.storyboard in Resources */,
 			);
@@ -291,11 +308,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6363121219B036DD00E15DC3 /* MyScene.m in Sources */,
+				637023EE1A9301E000496A2A /* WordDictionary.m in Sources */,
 				6363120F19B036DD00E15DC3 /* ViewController.m in Sources */,
 				6377E1321A846337007E3C4A /* Bubble.m in Sources */,
 				6363120919B036DD00E15DC3 /* AppDelegate.m in Sources */,
 				6363120519B036DD00E15DC3 /* main.m in Sources */,
+				637023E61A92FF4900496A2A /* WordDictionary.xcdatamodeld in Sources */,
 				634E53F01A8AD80C00299CCC /* Magnet.m in Sources */,
+				637023E91A92FFBD00496A2A /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +538,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		637023E41A92FF4900496A2A /* WordDictionary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				637023E51A92FF4900496A2A /* WordDictionary.xcdatamodel */,
+			);
+			currentVersion = 637023E51A92FF4900496A2A /* WordDictionary.xcdatamodel */;
+			path = WordDictionary.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 636311EB19B036DD00E15DC3 /* Project object */;
 }
