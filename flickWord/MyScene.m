@@ -41,10 +41,14 @@
 -(void)setWord:(NSString *)word Description:(NSString *)wordDescription
 {
     CGPoint centerPos = CGPointMake(self.size.width * 0.5, self.size.height * 0.5 );
-    int letter_limit = self.size.width / BALL_SIZE;
     _word = word;
     _wordDescription = wordDescription;
-    for (int i = 0; i < [_word length]; i++) {
+    
+    int sizePerBall = self.size.width / BALL_SIZE;
+    int wordLength = (int)[_word length];
+    int letter_limit = (sizePerBall > wordLength) ? wordLength : sizePerBall;
+    
+    for (int i = 0; i < wordLength; i++) {
         //[array addObject:];
         //NSLog(@"%@",[NSString stringWithFormat:@"%C", [_word characterAtIndex:i]]);
         NSDictionary *dicData = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -54,7 +58,7 @@
                                  [NSNumber numberWithFloat:centerPos.x - (BALL_SIZE * (letter_limit/2)) + (BALL_SIZE *(i%letter_limit))],@"magnet_x",
                                  [NSNumber numberWithFloat:centerPos.y + 220 - (BALL_SIZE * (i/letter_limit))],@"magnet_y",
                                  nil];
-        [self performSelector:@selector(setBubbleAndMagnet:) withObject:dicData afterDelay:(4.0f/[_word length])*(i+1)];
+        [self performSelector:@selector(setBubbleAndMagnet:) withObject:dicData afterDelay:(4.0f/wordLength)*(i+1)];
     }
 }
 
