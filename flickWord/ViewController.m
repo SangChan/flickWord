@@ -21,11 +21,12 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    MyScene * scene = [MyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    
+    [scene setWord:@"appointment" Description:@"약속, 지정, 임명"];
     // Present the scene.
     [skView presentScene:scene];
+    
 }
 
 - (BOOL)shouldAutorotate

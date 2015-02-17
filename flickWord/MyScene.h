@@ -9,6 +9,11 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface MyScene : SKScene <SKPhysicsContactDelegate> {
+    NSString * _word;
+    NSString * _wordDescription;
 }
+
+-(void)setWord:(NSString *)word Description:(NSString *)wordDescription;
+
 
 @end
