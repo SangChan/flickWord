@@ -32,7 +32,7 @@
         self.physicsBody.friction = 1.0f;
         
         self.physicsWorld.contactDelegate = self;
-        self.physicsWorld.gravity = CGVectorMake(0.0, -9.8);
+        self.physicsWorld.gravity = CGVectorMake(0.0, -4.9);
         //[self settingBubbles];
     }
     return self;
@@ -59,6 +59,13 @@
                                  nil];
         [self performSelector:@selector(setBubbleAndMagnet:) withObject:dicData afterDelay:0.25f*(i+1)];
     }
+    
+    SKLabelNode *descLabel = [SKLabelNode labelNodeWithText:_wordDescription];
+    descLabel.fontSize = 36;
+    descLabel.fontColor = [UIColor grayColor];
+    descLabel.position = centerPos;
+    descLabel.alpha = 0.7f;
+    [self addChild:descLabel];
 }
 
 -(void)setBubbleAndMagnet:(NSDictionary *)data

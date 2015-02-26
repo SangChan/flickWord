@@ -40,6 +40,7 @@
     addedLabel.fontSize = 48;
     addedLabel.fontColor = [UIColor whiteColor];
     addedLabel.position = CGPointMake(self.position.x, self.position.y-15);
+    addedLabel.alpha = 0.7f;
     [self addChild:addedLabel];
     
     return self;
@@ -64,6 +65,7 @@
                     magnetBody.physicsBody.velocity = CGVectorMake(0.0, 0.0);
                     magnetBody.physicsBody.angularVelocity = 0.0;
                     [magnetBody.physicsBody setResting:YES];
+                    [magnetBody.physicsBody setAffectedByGravity:NO];
                     SKAction *rotateAction = [SKAction rotateToAngle:0.0 duration:1.0];
                     [magnetBody runAction:rotateAction];
                 }
