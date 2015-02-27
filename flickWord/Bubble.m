@@ -11,6 +11,7 @@
 
 @implementation Bubble
 @synthesize grabbed = _grabbed;
+@synthesize letter = _letter;
 
 + (instancetype)bubbleWithLetter:(NSString *)letter
 {
@@ -25,23 +26,21 @@
     SKSpriteNode *circle = [SKSpriteNode spriteNodeWithImageNamed:@"bubble"];
     [self addChild:circle];
     
-    SKLabelNode *letterLabel = [SKLabelNode labelNodeWithText:letter];
+    _letter = letter;
+    
+    SKLabelNode *letterLabel = [SKLabelNode labelNodeWithText:_letter];
     letterLabel.fontName = @"Chalkduster";
     letterLabel.fontSize = 48;
     letterLabel.fontColor = [UIColor whiteColor];
     letterLabel.position = CGPointMake(self.position.x, self.position.y-15);
+    
     [self addChild:letterLabel];
     
     SKPhysicsBody *body = [SKPhysicsBody bodyWithCircleOfRadius:circle.size.width * 0.5 center:CGPointZero];
     body.dynamic = YES;
-    body.mass = 100;
-    body.density = 3;
-    //body.friction = 0.3f;
+    body.density = 2;
     body.restitution = 0.3f;
-    //body.collisionBitMask = 2;
-    
     self.physicsBody = body;
-    
     self.userInteractionEnabled = YES;
     _grabbed=NO;
     

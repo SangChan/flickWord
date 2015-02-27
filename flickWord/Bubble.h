@@ -10,12 +10,14 @@
 
 @interface Bubble : SKNode {
     BOOL _grabbed;
+    NSString* _letter;
     CGPoint _previousPos;
     CGPoint _previousVelocity;
 
 }
 
 @property (nonatomic) BOOL grabbed;
+@property (nonatomic) NSString* letter;
 
 + (instancetype)bubbleWithLetter:(NSString *)letter;
 - (instancetype)initWithLetter:(NSString *)letter;

@@ -15,7 +15,7 @@
     NSString *_letter;
 }
 
-@property (nonatomic) NSMutableArray *magnetBodyList;
+@property (nonatomic) NSString* letter;
 
 + (instancetype)magnetWithLetter:(NSString *)letter;
 + (instancetype)magnetWithForce:(float)force Radius:(float)raidus Letter:(NSString *)letter;

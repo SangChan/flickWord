@@ -12,11 +12,11 @@
 
 @implementation Magnet
 
-@synthesize magnetBodyList;
+@synthesize letter = _letter;
 
 + (instancetype)magnetWithLetter:(NSString *)letter
 {
-    return [[Magnet alloc] initWithForce:5000000 Radius:150 Letter:(NSString *)letter];
+    return [[Magnet alloc] initWithForce:5000000 Radius:250 Letter:(NSString *)letter];
 }
 
 + (instancetype)magnetWithForce:(float)force Radius:(float)raidus Letter:(NSString *)letter
@@ -28,8 +28,6 @@
 {
     self = [super init];
     if (!self) return(nil);
-    
-    magnetBodyList = [NSMutableArray array];
     _active = YES;
     _force = force;
     _radius = raidus;
@@ -53,21 +51,24 @@
     // if the sphere is grabbed, force it into position, and update its velocity.
     
     if (_active) {
-        for (Bubble *magnetBody in magnetBodyList) {
-            CGPoint distance = ccpSub(self.position, magnetBody.position);
-            CGFloat r = ccpDistance(self.position, magnetBody.position);
-            //NSLog(@"name : %@ , distance : %f",magnetBody.name, r);
-            if (r <= _radius) {
-                CGPoint magneticForce = ccpMult(ccpNormalize(distance), _force/(r*r));
-                [magnetBody.physicsBody applyForce:CGVectorMake(magneticForce.x, magneticForce.y)];
-                if (r < 20) {
-                    magnetBody.position = self.position;
-                    magnetBody.physicsBody.velocity = CGVectorMake(0.0, 0.0);
-                    magnetBody.physicsBody.angularVelocity = 0.0;
-                    [magnetBody.physicsBody setResting:YES];
-                    [magnetBody.physicsBody setAffectedByGravity:NO];
-                    SKAction *rotateAction = [SKAction rotateToAngle:0.0 duration:1.0];
-                    [magnetBody runAction:rotateAction];
+        for (SKNode *node in [self.parent children]) {
+            if ([node isKindOfClass:[Bubble class]]) {
+                Bubble *magnetBody = (Bubble *)node;
+                CGPoint distance = ccpSub(self.position, magnetBody.position);
+                CGFloat r = ccpDistance(self.position, magnetBody.position);
+                //NSLog(@"name : %@ , distance : %f",magnetBody.name, r);
+                if (r <= _radius && [[magnetBody letter] isEqualToString:_letter]) {
+                    CGPoint magneticForce = ccpMult(ccpNormalize(distance), _force/(r*r));
+                    [magnetBody.physicsBody applyForce:CGVectorMake(magneticForce.x, magneticForce.y)];
+                    if (r < 20) {
+                        magnetBody.position = self.position;
+                        magnetBody.physicsBody.velocity = CGVectorMake(0.0, 0.0);
+                        magnetBody.physicsBody.angularVelocity = 0.0;
+                        [magnetBody.physicsBody setResting:YES];
+                        [magnetBody.physicsBody setAffectedByGravity:NO];
+                        SKAction *rotateAction = [SKAction rotateToAngle:0.0 duration:1.0];
+                        [magnetBody runAction:rotateAction];
+                    }
                 }
             }
         }
