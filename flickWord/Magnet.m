@@ -16,7 +16,7 @@
 
 + (instancetype)magnetWithLetter:(NSString *)letter
 {
-    return [[Magnet alloc] initWithForce:5000000 Radius:250 Letter:(NSString *)letter];
+    return [[Magnet alloc] initWithForce:5000000 Radius:100 Letter:(NSString *)letter];
 }
 
 + (instancetype)magnetWithForce:(float)force Radius:(float)raidus Letter:(NSString *)letter

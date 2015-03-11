@@ -33,7 +33,6 @@
         
         self.physicsWorld.contactDelegate = self;
         self.physicsWorld.gravity = CGVectorMake(0.0, -4.9);
-        //[self settingBubbles];
     }
     return self;
 }
@@ -61,6 +60,7 @@
     }
     
     SKLabelNode *descLabel = [SKLabelNode labelNodeWithText:_wordDescription];
+    descLabel.fontName = @"Chalkduster";
     descLabel.fontSize = 36;
     descLabel.fontColor = [UIColor grayColor];
     descLabel.position = centerPos;
@@ -81,11 +81,7 @@
     magnet.position = magnetPos;
     [self addChild:magnet];
 }
-//
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//    /* Called when a touch begins */
-//}
-//
+
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     for (SKNode *childNode in [self children]) {
