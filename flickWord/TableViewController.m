@@ -17,6 +17,7 @@
 @implementation TableViewController
 
 @synthesize words;
+@synthesize sectionKeywords;
 @synthesize wordsWithSection;
 
 - (void)viewDidLoad {
@@ -70,14 +71,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSArray *sectionArray = [wordsWithSection objectForKey:[[wordsWithSection allKeys]objectAtIndex:section]];
+    NSArray *sectionArray = [wordsWithSection objectForKey:[sectionKeywords objectAtIndex:section]];
     return [sectionArray count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return [[wordsWithSection allKeys]count];
+    return [sectionKeywords count];
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -88,7 +89,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     //WordDictionary *word = [words objectAtIndex:indexPath.row];
-    NSArray *sectionArray = [wordsWithSection objectForKey:[[wordsWithSection allKeys]objectAtIndex:indexPath.section]];
+    NSArray *sectionArray = [wordsWithSection objectForKey:[sectionKeywords objectAtIndex:indexPath.section]];
     WordDictionary *word = [sectionArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [word word];
     cell.detailTextLabel.text = [word word_description];
@@ -98,12 +99,12 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [[wordsWithSection allKeys]objectAtIndex:section];
+    return [sectionKeywords objectAtIndex:section];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    return [wordsWithSection allKeys];
+    return sectionKeywords;
 }
 
 #pragma mark - Segues
@@ -111,13 +112,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        WordDictionary *word = [words objectAtIndex:indexPath.row];
-        //DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+        NSArray *sectionArray = [wordsWithSection objectForKey:[sectionKeywords objectAtIndex:indexPath.section]];
+        WordDictionary *word = [sectionArray objectAtIndex:indexPath.row];
         ViewController *controller = (ViewController *)[[segue destinationViewController] topViewController];
         [controller setWord:word];
-
-        //controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        //controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
 }
 

@@ -27,6 +27,7 @@
     TableViewController *mainVC = (TableViewController *)navigationController.topViewController;
     //[mainVC setManagedObjectContext:self.managedObjectContext];
     [mainVC setWords:words];
+    [mainVC setSectionKeywords:[[wordsWithSection allKeys]sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
     [mainVC setWordsWithSection:wordsWithSection];
     
     return YES;
