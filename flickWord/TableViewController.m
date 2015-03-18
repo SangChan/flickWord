@@ -16,9 +16,8 @@
 
 @implementation TableViewController
 
-@synthesize managedObjectContext;
 @synthesize words;
-@synthesize navBarItems;
+@synthesize wordsWithSection;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -71,13 +70,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [words count];
+    NSArray *sectionArray = [wordsWithSection objectForKey:[[wordsWithSection allKeys]objectAtIndex:section]];
+    return [sectionArray count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [[wordsWithSection allKeys]count];
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -87,11 +87,23 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    WordDictionary *word = [words objectAtIndex:indexPath.row];
+    //WordDictionary *word = [words objectAtIndex:indexPath.row];
+    NSArray *sectionArray = [wordsWithSection objectForKey:[[wordsWithSection allKeys]objectAtIndex:indexPath.section]];
+    WordDictionary *word = [sectionArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [word word];
     cell.detailTextLabel.text = [word word_description];
     return cell;
 
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [[wordsWithSection allKeys]objectAtIndex:section];
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return [wordsWithSection allKeys];
 }
 
 #pragma mark - Segues

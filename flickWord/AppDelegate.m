@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TableViewController.h"
+#import "WordDictionary.h"
 
 @implementation AppDelegate
 
@@ -20,11 +21,13 @@
         [self makeDictionaryDB];
         words = [self getWords];
     }
+    NSDictionary *wordsWithSection = [self getWordsWithSection:words];
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     TableViewController *mainVC = (TableViewController *)navigationController.topViewController;
-    [mainVC setManagedObjectContext:self.managedObjectContext];
+    //[mainVC setManagedObjectContext:self.managedObjectContext];
     [mainVC setWords:words];
+    [mainVC setWordsWithSection:wordsWithSection];
     
     return YES;
 }
@@ -67,6 +70,24 @@
     [fetchRequest setEntity:entity];
     NSArray *words = [context executeFetchRequest:fetchRequest error:&error];
     return words;
+}
+
+- (NSDictionary *)getWordsWithSection:(NSArray *)words
+{
+    NSMutableDictionary *_wordSectionDictionary = [NSMutableDictionary dictionary];
+    NSMutableArray *_wordSectionArray;
+    for (WordDictionary *word in words) {
+        NSString *headCharacter = [[[word word] substringToIndex:1]uppercaseString];
+        if ([_wordSectionDictionary objectForKey:headCharacter]) {
+            _wordSectionArray = (NSMutableArray *)[_wordSectionDictionary objectForKey:headCharacter];
+            [_wordSectionArray addObject:word];
+        }
+        else {
+            _wordSectionArray = [NSMutableArray arrayWithObject:word];
+        }
+        [_wordSectionDictionary setValue:_wordSectionArray forKey:headCharacter];
+    }
+    return _wordSectionDictionary;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

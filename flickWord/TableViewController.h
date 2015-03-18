@@ -11,7 +11,5 @@
 @interface TableViewController : UITableViewController <UIGestureRecognizerDelegate>
 
 @property (nonatomic,strong) NSArray *words;
-@property (strong, nonatomic) NSArray *navBarItems;
-@property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
-
+@property (nonatomic,strong) NSDictionary *wordsWithSection;
 @end

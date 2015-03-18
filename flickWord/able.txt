@@ -383,7 +383,7 @@ gather	모으다
 gay	명랑한, 화려한
 gaze	응시하다
 general	일반적인, 장군
-German	독일사람, 독일어
+german	독일사람, 독일어
 gesture	몸짓
 giant	거대한
 gift	선물, 타고난 재능
