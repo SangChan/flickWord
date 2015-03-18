@@ -8,6 +8,7 @@
 
 #import "Bubble.h"
 #import "ConstFunc.h"
+#import "MyScene.h"
 
 @implementation Bubble
 @synthesize grabbed = _grabbed;
@@ -55,7 +56,7 @@
     SKNode *touchNode = [self.parent nodeAtPoint:location];
     if (touchNode != nil && [touchNode.parent isEqual:self]) {
         _grabbed = YES;
-        _previousPos =location;
+        _previousPos =([self isOKToMove:location])? location : _previousPos;
         [self.physicsBody setAffectedByGravity:NO];
         NSLog(@"%@ touchBegan YES: %@ , pos : %@",self.name, touchNode, NSStringFromCGPoint(location));
     }
@@ -69,9 +70,7 @@
         CGPoint location = [touch locationInNode:self.parent];
     
         _previousVelocity = ccpMult(ccpSub(location, _previousPos),5);
-        _previousPos =location;
-        //self.position = location;
-        //[self.physicsBody setAffectedByGravity:NO];
+        _previousPos =([self isOKToMove:location])? location : _previousPos;
         NSLog(@"%@ touchMoved pos : %@",self.name, NSStringFromCGPoint(location));
     }
 }
@@ -91,8 +90,12 @@
         self.position = _previousPos;
         self.physicsBody.velocity = CGVectorMake(0.0,0.0);
     }
-    
-    
+}
+
+- (BOOL)isOKToMove:(CGPoint)newPoint
+{
+    CGRect borderRect = [(MyScene *)self.parent borderRect];
+    return (newPoint.x > borderRect.origin.x && newPoint.x < borderRect.size.width && newPoint.y > borderRect.origin.y && newPoint.y < borderRect.size.height);
 }
 
 @end

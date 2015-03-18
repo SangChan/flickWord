@@ -13,6 +13,8 @@
     NSString * _wordDescription;
 }
 
+@property (nonatomic, readonly) CGRect borderRect;
+
 -(void)setWord:(NSString *)word Description:(NSString *)wordDescription;
 
 

@@ -17,6 +17,7 @@
 @end
 
 @implementation MyScene
+@synthesize borderRect;
 
 #define BALL_SIZE 62
 
@@ -25,9 +26,11 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
+        borderRect = CGRectMake(self.frame.origin.x+5, self.frame.origin.y+5, size.width-5, size.height-5);
+        
         self.backgroundColor = [SKColor blackColor];
         
-        SKPhysicsBody *borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(self.frame.origin.x, self.frame.origin.y+20, self.frame.size.width, self.frame.size.height-20)];
+        SKPhysicsBody *borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:borderRect];
         self.physicsBody = borderBody;
         self.physicsBody.friction = 1.0f;
         
