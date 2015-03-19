@@ -131,11 +131,16 @@
     [utterance setRate:0.1f];
     [synthesizer speakUtterance:utterance];
 #else
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"popThisView" object:nil];
+    [self popThisView];
 #endif
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance
+{
+    [self popThisView];
+}
+
+- (void)popThisView
 {
     [[NSNotificationCenter defaultCenter]postNotificationName:@"popThisView" object:nil];
 }
