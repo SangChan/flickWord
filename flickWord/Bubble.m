@@ -49,7 +49,6 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    //_grabbed=YES;
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self.parent];
     
@@ -65,7 +64,7 @@
     }
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (_grabbed) {
+    if (self.physicsBody.dynamic && _grabbed) {
         UITouch *touch = [touches anyObject];
         CGPoint location = [touch locationInNode:self.parent];
     
@@ -75,7 +74,7 @@
     }
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (_grabbed) {
+    if (self.physicsBody.dynamic && _grabbed) {
         _grabbed=NO;
         [self.physicsBody setAffectedByGravity:YES];
         [self.physicsBody applyImpulse:CGVectorMake(_previousVelocity.x, _previousVelocity.y)];
@@ -85,7 +84,7 @@
 
 - (void)update
 {
-    if (_grabbed)
+    if (self.physicsBody.dynamic && _grabbed)
     {
         self.position = _previousPos;
         self.physicsBody.velocity = CGVectorMake(0.0,0.0);

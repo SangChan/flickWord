@@ -16,7 +16,7 @@
 
 + (instancetype)magnetWithLetter:(NSString *)letter
 {
-    return [[Magnet alloc] initWithForce:5000000 Radius:100 Letter:(NSString *)letter];
+    return [[Magnet alloc] initWithForce:5000000 Radius:250 Letter:(NSString *)letter];
 }
 
 + (instancetype)magnetWithForce:(float)force Radius:(float)raidus Letter:(NSString *)letter
@@ -53,21 +53,27 @@
     if (_active) {
         for (SKNode *node in [self.parent children]) {
             if ([node isKindOfClass:[Bubble class]]) {
-                Bubble *magnetBody = (Bubble *)node;
-                CGPoint distance = ccpSub(self.position, magnetBody.position);
-                CGFloat r = ccpDistance(self.position, magnetBody.position);
-                //NSLog(@"name : %@ , distance : %f",magnetBody.name, r);
-                if (r <= _radius && [[magnetBody letter] isEqualToString:_letter]) {
+                Bubble *bubbleBody = (Bubble *)node;
+                CGPoint distance = ccpSub(self.position, bubbleBody.position);
+                CGFloat r = ccpDistance(self.position, bubbleBody.position);
+                if (r <= _radius && [[bubbleBody letter] isEqualToString:_letter]) {
                     CGPoint magneticForce = ccpMult(ccpNormalize(distance), _force/(r*r));
-                    [magnetBody.physicsBody applyForce:CGVectorMake(magneticForce.x, magneticForce.y)];
+                    [bubbleBody.physicsBody applyForce:CGVectorMake(magneticForce.x, magneticForce.y)];
                     if (r < 20) {
-                        magnetBody.position = self.position;
-                        magnetBody.physicsBody.velocity = CGVectorMake(0.0, 0.0);
-                        magnetBody.physicsBody.angularVelocity = 0.0;
-                        [magnetBody.physicsBody setResting:YES];
-                        [magnetBody.physicsBody setAffectedByGravity:NO];
+                        [bubbleBody setGrabbed:NO];
+                        bubbleBody.position = self.position;
+                        bubbleBody.physicsBody.velocity = CGVectorMake(0.0, 0.0);
+                        bubbleBody.physicsBody.angularVelocity = 0.0;
+                        [bubbleBody.physicsBody setResting:YES];
+                        [bubbleBody.physicsBody setAffectedByGravity:NO];
                         SKAction *rotateAction = [SKAction rotateToAngle:0.0 duration:1.0];
-                        [magnetBody runAction:rotateAction];
+                        [bubbleBody runAction:rotateAction completion:^{
+                            [bubbleBody.physicsBody setDynamic:NO];
+                        }];
+                    }
+                    else {
+                        [bubbleBody.physicsBody setAffectedByGravity:YES];
+                        [bubbleBody removeAllActions];
                     }
                 }
             }
