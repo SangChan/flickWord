@@ -74,6 +74,9 @@
 -(void)setBubbleAndMagnet:(NSDictionary *)data
 {
     NSString *character = [[data objectForKey:@"character"] uppercaseString];
+    if ([character isEqualToString:@" "]) {
+        return;
+    }
     CGPoint bubblePos = CGPointMake([[data objectForKey:@"bubble_x"] floatValue], [[data objectForKey:@"bubble_y"] floatValue]);
     CGPoint magnetPos = CGPointMake([[data objectForKey:@"magnet_x"] floatValue], [[data objectForKey:@"magnet_y"] floatValue]);
     Bubble *bubble = [Bubble bubbleWithLetter:character];
