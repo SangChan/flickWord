@@ -30,7 +30,7 @@
         self.name = @"MyScene";
         borderRect = CGRectMake(self.frame.origin.x+5, self.frame.origin.y+5, size.width-5, size.height-5);
         
-        self.backgroundColor = [SKColor blackColor];
+        self.backgroundColor = [SKColor lightGrayColor];
         
         SKPhysicsBody *borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:borderRect];
         self.physicsBody = borderBody;
