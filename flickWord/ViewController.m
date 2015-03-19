@@ -29,7 +29,13 @@
     // Present the scene.
     [skView presentScene:scene];
     
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(popThisView) name:@"popThisView" object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"popThisView" object:nil];
+    [super viewWillDisappear:animated];
 }
 
 - (BOOL)shouldAutorotate
@@ -50,6 +56,11 @@
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+- (void)popThisView
+{
+    [self.parentViewController.navigationController popViewControllerAnimated:YES];
 }
 
 @end

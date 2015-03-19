@@ -27,7 +27,7 @@
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        
+        self.name = @"MyScene";
         borderRect = CGRectMake(self.frame.origin.x+5, self.frame.origin.y+5, size.width-5, size.height-5);
         
         self.backgroundColor = [SKColor blackColor];
@@ -117,7 +117,27 @@
     descLabel.alpha = 0.5f+(matchLetterCount/totalLetterCount)*0.5f;
     if (matchLetterCount == (int)totalLetterCount) {
         NSLog(@"match complete!");
+        [self speakWord:_word];
     }
+}
+
+-(void)speakWord:(NSString *)thisWord
+{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc]init];
+    [synthesizer setDelegate:self];
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:thisWord];
+    [utterance setVoice:[AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"]];
+    [utterance setRate:0.1f];
+    [synthesizer speakUtterance:utterance];
+#else
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"popThisView" object:nil];
+#endif
+}
+
+- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance
+{
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"popThisView" object:nil];
 }
 
 @end
