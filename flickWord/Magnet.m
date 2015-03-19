@@ -59,21 +59,17 @@
                 if (r <= _radius && [[bubbleBody letter] isEqualToString:_letter]) {
                     CGPoint magneticForce = ccpMult(ccpNormalize(distance), _force/(r*r));
                     [bubbleBody.physicsBody applyForce:CGVectorMake(magneticForce.x, magneticForce.y)];
-                    if (r < 20) {
-                        [bubbleBody setGrabbed:NO];
+                    if (r < 20 && bubbleBody.physicsBody.dynamic) {
                         bubbleBody.position = self.position;
                         bubbleBody.physicsBody.velocity = CGVectorMake(0.0, 0.0);
                         bubbleBody.physicsBody.angularVelocity = 0.0;
+                        [bubbleBody.physicsBody setDynamic:NO];
                         [bubbleBody.physicsBody setResting:YES];
                         [bubbleBody.physicsBody setAffectedByGravity:NO];
-                        SKAction *rotateAction = [SKAction rotateToAngle:0.0 duration:1.0];
+                        SKAction *rotateAction = [SKAction rotateToAngle:0.0 duration:0.7f];
                         [bubbleBody runAction:rotateAction completion:^{
-                            [bubbleBody.physicsBody setDynamic:NO];
+                            [[NSNotificationCenter defaultCenter]postNotificationName:@"matchLetter" object:nil];
                         }];
-                    }
-                    else {
-                        [bubbleBody.physicsBody setAffectedByGravity:YES];
-                        [bubbleBody removeAllActions];
                     }
                 }
             }

@@ -11,7 +11,9 @@
 #import "Magnet.h"
 
 @interface MyScene () {
-    
+    SKLabelNode *descLabel;
+    int matchLetterCount;
+    float totalLetterCount;
 }
 
 @end
@@ -36,8 +38,14 @@
         
         self.physicsWorld.contactDelegate = self;
         self.physicsWorld.gravity = CGVectorMake(0.0, -4.9);
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(matchLetter) name:@"matchLetter" object:nil];
     }
     return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"matchLetter" object:nil];
 }
 
 -(void)setWord:(NSString *)word Description:(NSString *)wordDescription
@@ -45,6 +53,10 @@
     CGPoint centerPos = CGPointMake(self.size.width * 0.5, self.size.height * 0.5 );
     _word = word;
     _wordDescription = wordDescription;
+    
+    matchLetterCount = 0;
+    totalLetterCount = [_word length];
+    
     
     int widthPerBall = self.size.width / BALL_SIZE;
     int heightPerBall = self.size.height / BALL_SIZE;
@@ -62,12 +74,12 @@
         [self performSelector:@selector(setBubbleAndMagnet:) withObject:dicData afterDelay:0.25f*(i+1)];
     }
     
-    SKLabelNode *descLabel = [SKLabelNode labelNodeWithText:_wordDescription];
+    descLabel = [SKLabelNode labelNodeWithText:_wordDescription];
     descLabel.fontName = @"Chalkduster";
     descLabel.fontSize = 36;
-    descLabel.fontColor = [UIColor grayColor];
+    descLabel.fontColor = [UIColor whiteColor];
     descLabel.position = centerPos;
-    descLabel.alpha = 0.7f;
+    descLabel.alpha = 0.5f;
     [self addChild:descLabel];
 }
 
@@ -75,6 +87,7 @@
 {
     NSString *character = [[data objectForKey:@"character"] uppercaseString];
     if ([character isEqualToString:@" "]) {
+        totalLetterCount -= 1.0;
         return;
     }
     CGPoint bubblePos = CGPointMake([[data objectForKey:@"bubble_x"] floatValue], [[data objectForKey:@"bubble_y"] floatValue]);
@@ -88,12 +101,22 @@
     [self addChild:magnet];
 }
 
--(void)update:(CFTimeInterval)currentTime {
+-(void)update:(CFTimeInterval)currentTime
+{
     /* Called before each frame is rendered */
     for (SKNode *childNode in [self children]) {
         if ([childNode respondsToSelector:@selector(update)]) {
             [childNode performSelector:@selector(update)];
         }
+    }
+}
+
+-(void)matchLetter
+{
+    matchLetterCount++;
+    descLabel.alpha = 0.5f+(matchLetterCount/totalLetterCount)*0.5f;
+    if (matchLetterCount == (int)totalLetterCount) {
+        NSLog(@"match complete!");
     }
 }
 
