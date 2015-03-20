@@ -19,8 +19,8 @@
     // Configure the view.
     [self setTitle:[word word]];
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    skView.showsFPS = NO;
+    skView.showsNodeCount = NO;
     
     // Create and configure the scene.
     MyScene * scene = [MyScene sceneWithSize:skView.bounds.size];

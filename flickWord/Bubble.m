@@ -45,6 +45,9 @@
     self.userInteractionEnabled = YES;
     _grabbed=NO;
     
+    self.xScale = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 1.0f : 0.7f;
+    self.yScale = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 1.0f : 0.7f;
+    
     return self;
 }
 

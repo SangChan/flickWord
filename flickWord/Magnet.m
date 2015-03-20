@@ -16,7 +16,7 @@
 
 + (instancetype)magnetWithLetter:(NSString *)letter
 {
-    return [[Magnet alloc] initWithForce:5000000 Radius:250 Letter:(NSString *)letter];
+    return [[Magnet alloc] initWithForce:5000000 Radius:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 250 : 100 Letter:(NSString *)letter];
 }
 
 + (instancetype)magnetWithForce:(float)force Radius:(float)raidus Letter:(NSString *)letter
@@ -40,6 +40,8 @@
     addedLabel.position = CGPointMake(self.position.x, self.position.y-15);
     addedLabel.alpha = 0.7f;
     [self addChild:addedLabel];
+    self.xScale = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 1.0f : 0.7f;
+    self.yScale = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 1.0f : 0.7f;
     
     return self;
 }
