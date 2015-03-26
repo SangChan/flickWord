@@ -70,6 +70,7 @@
                         [bubbleBody.physicsBody setAffectedByGravity:NO];
                         SKAction *rotateAction = [SKAction rotateToAngle:0.0 duration:0.7f];
                         [bubbleBody runAction:rotateAction completion:^{
+                            _active = NO;
                             [[NSNotificationCenter defaultCenter]postNotificationName:@"matchLetter" object:nil];
                         }];
                     }
