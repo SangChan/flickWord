@@ -7,11 +7,14 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface MyScene : SKScene <SKPhysicsContactDelegate> {
+@interface MyScene : SKScene <SKPhysicsContactDelegate, AVSpeechSynthesizerDelegate> {
     NSString * _word;
     NSString * _wordDescription;
 }
+
+@property (nonatomic, readonly) CGRect borderRect;
 
 -(void)setWord:(NSString *)word Description:(NSString *)wordDescription;
 

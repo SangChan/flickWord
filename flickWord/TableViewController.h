@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableViewController : UITableViewController
+@interface TableViewController : UITableViewController <UIGestureRecognizerDelegate>
 
 @property (nonatomic,strong) NSArray *words;
-@property (strong, nonatomic) NSArray *navBarItems;
-@property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
-
+@property (nonatomic,strong) NSArray *sectionKeywords;
+@property (nonatomic,strong) NSDictionary *wordsWithSection;
 @end

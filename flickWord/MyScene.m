@@ -11,31 +11,43 @@
 #import "Magnet.h"
 
 @interface MyScene () {
-    
+    SKLabelNode *descLabel;
+    int matchLetterCount;
+    float totalLetterCount;
 }
 
 @end
 
 @implementation MyScene
+@synthesize borderRect;
 
-#define BALL_SIZE 62
-
+-(int)getBallSize
+{
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 62 : 43;
+}
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
+        self.name = @"MyScene";
+        borderRect = CGRectMake(self.frame.origin.x+5, self.frame.origin.y+5, size.width-5, size.height-5);
         
-        self.backgroundColor = [SKColor blackColor];
+        self.backgroundColor = [SKColor grayColor];
         
-        SKPhysicsBody *borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(self.frame.origin.x, self.frame.origin.y+20, self.frame.size.width, self.frame.size.height-20)];
+        SKPhysicsBody *borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:borderRect];
         self.physicsBody = borderBody;
         self.physicsBody.friction = 1.0f;
         
         self.physicsWorld.contactDelegate = self;
-        self.physicsWorld.gravity = CGVectorMake(0.0, -9.8);
-        //[self settingBubbles];
+        self.physicsWorld.gravity = CGVectorMake(0.0, -4.9);
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(matchLetter) name:@"matchLetter" object:nil];
     }
     return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"matchLetter" object:nil];
 }
 
 -(void)setWord:(NSString *)word Description:(NSString *)wordDescription
@@ -44,26 +56,42 @@
     _word = word;
     _wordDescription = wordDescription;
     
-    int widthPerBall = self.size.width / BALL_SIZE;
-    int heightPerBall = self.size.height / BALL_SIZE;
+    matchLetterCount = 0;
+    totalLetterCount = [_word length];
+    int ballSize = [self getBallSize];
+    
+    int widthPerBall = self.size.width / ballSize;
+    int heightPerBall = self.size.height / ballSize;
     int wordLength = (int)[_word length];
     int letter_limit = (widthPerBall > wordLength) ? wordLength : widthPerBall;
     
     for (int i = 0; i < wordLength; i++) {
         NSDictionary *dicData = [NSDictionary dictionaryWithObjectsAndKeys:
                                  [NSString stringWithFormat:@"%C", [_word characterAtIndex:i]], @"character",
-                                 [NSNumber numberWithFloat:centerPos.x - (BALL_SIZE/2 * (letter_limit/2)) + (BALL_SIZE/2 *(i%letter_limit))],@"bubble_x",
-                                 [NSNumber numberWithFloat:centerPos.y - BALL_SIZE],@"bubble_y",
-                                 [NSNumber numberWithFloat:centerPos.x - (BALL_SIZE * (letter_limit/2)) + (BALL_SIZE *(i%letter_limit))],@"magnet_x",
-                                 [NSNumber numberWithFloat:centerPos.y + (BALL_SIZE * (heightPerBall/3)) - (BALL_SIZE * (i/letter_limit))],@"magnet_y",
+                                 [NSNumber numberWithFloat:centerPos.x - (ballSize/2 * (letter_limit/2)) + (ballSize/2 *(i%letter_limit))],@"bubble_x",
+                                 [NSNumber numberWithFloat:centerPos.y - ballSize],@"bubble_y",
+                                 [NSNumber numberWithFloat:centerPos.x - (ballSize * (letter_limit/2)) + (ballSize *(i%letter_limit))],@"magnet_x",
+                                 [NSNumber numberWithFloat:centerPos.y + (ballSize * (heightPerBall/3)) - (ballSize * (i/letter_limit))],@"magnet_y",
                                  nil];
         [self performSelector:@selector(setBubbleAndMagnet:) withObject:dicData afterDelay:0.25f*(i+1)];
     }
+    
+    descLabel = [SKLabelNode labelNodeWithText:_wordDescription];
+    descLabel.fontName = @"Chalkduster";
+    descLabel.fontSize = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 36 : 24;
+    descLabel.fontColor = [UIColor whiteColor];
+    descLabel.position = centerPos;
+    descLabel.alpha = 0.2f;
+    [self addChild:descLabel];
 }
 
 -(void)setBubbleAndMagnet:(NSDictionary *)data
 {
     NSString *character = [[data objectForKey:@"character"] uppercaseString];
+    if ([character isEqualToString:@" "]) {
+        totalLetterCount -= 1.0;
+        return;
+    }
     CGPoint bubblePos = CGPointMake([[data objectForKey:@"bubble_x"] floatValue], [[data objectForKey:@"bubble_y"] floatValue]);
     CGPoint magnetPos = CGPointMake([[data objectForKey:@"magnet_x"] floatValue], [[data objectForKey:@"magnet_y"] floatValue]);
     Bubble *bubble = [Bubble bubbleWithLetter:character];
@@ -72,52 +100,50 @@
     
     Magnet *magnet = [Magnet magnetWithLetter:character];
     magnet.position = magnetPos;
-    [magnet.magnetBodyList addObject:bubble];
     [self addChild:magnet];
 }
 
--(void)settingBubbles {
-    CGPoint centerPos = CGPointMake(self.size.width * 0.5, self.size.height * 0.5 );
-    Bubble *bubble_a = [Bubble bubbleWithLetter:@"A"];
-    bubble_a.position = CGPointMake(centerPos.x - 100, centerPos.y);
-    [self addChild:bubble_a];
-    
-    Magnet *magnet_a = [Magnet magnetWithLetter:@"A"];
-    magnet_a.position = CGPointMake(centerPos.x-100, centerPos.y+180);
-    [magnet_a.magnetBodyList addObject:bubble_a];
-    [self addChild:magnet_a];
-    
-    Bubble *bubble_b = [Bubble bubbleWithLetter:@"B"];
-    bubble_b.position = CGPointMake(centerPos.x, centerPos.y);
-    [self addChild:bubble_b];
-    
-    Magnet *magnet_b = [Magnet magnetWithLetter:@"B"];
-    magnet_b.position = CGPointMake(centerPos.x, centerPos.y+180);
-    [magnet_b.magnetBodyList addObject:bubble_b];
-    [self addChild:magnet_b];
-    
-    Bubble *bubble_c = [Bubble bubbleWithLetter:@"C"];
-    bubble_c.position = CGPointMake(centerPos.x + 100, centerPos.y);
-    [self addChild:bubble_c];
-    
-    Magnet *magnet_c = [Magnet magnetWithLetter:@"C"];
-    magnet_c.position = CGPointMake(centerPos.x+100, centerPos.y+180);
-    [magnet_c.magnetBodyList addObject:bubble_c];
-    [self addChild:magnet_c];
-
-}
-//
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//    /* Called when a touch begins */
-//}
-//
--(void)update:(CFTimeInterval)currentTime {
+-(void)update:(CFTimeInterval)currentTime
+{
     /* Called before each frame is rendered */
     for (SKNode *childNode in [self children]) {
         if ([childNode respondsToSelector:@selector(update)]) {
             [childNode performSelector:@selector(update)];
         }
     }
+}
+
+-(void)matchLetter
+{
+    matchLetterCount++;
+    descLabel.alpha = 0.2f+(matchLetterCount/totalLetterCount)*0.8f;
+    if (matchLetterCount == (int)totalLetterCount) {
+        [self speakWord:_word];
+    }
+}
+
+-(void)speakWord:(NSString *)thisWord
+{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc]init];
+    [synthesizer setDelegate:self];
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:thisWord];
+    [utterance setVoice:[AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"]];
+    [utterance setRate:0.2f];
+    [synthesizer speakUtterance:utterance];
+#else
+    [self popThisView];
+#endif
+}
+
+- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance
+{
+    [self popThisView];
+}
+
+- (void)popThisView
+{
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"popThisView" object:nil];
 }
 
 @end

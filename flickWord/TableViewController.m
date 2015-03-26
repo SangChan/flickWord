@@ -16,9 +16,9 @@
 
 @implementation TableViewController
 
-@synthesize managedObjectContext;
 @synthesize words;
-@synthesize navBarItems;
+@synthesize sectionKeywords;
+@synthesize wordsWithSection;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,15 +31,54 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Disable iOS 7 back gesture
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+        self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    }
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    // Disable iOS 8 back gesture
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+        self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    // Enable iOS 7 back gesture
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    }
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    return NO;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [words count];
+    NSArray *sectionArray = [wordsWithSection objectForKey:[sectionKeywords objectAtIndex:section]];
+    return [sectionArray count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [sectionKeywords count];
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -49,11 +88,23 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    WordDictionary *word = [words objectAtIndex:indexPath.row];
+    //WordDictionary *word = [words objectAtIndex:indexPath.row];
+    NSArray *sectionArray = [wordsWithSection objectForKey:[sectionKeywords objectAtIndex:indexPath.section]];
+    WordDictionary *word = [sectionArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [word word];
     cell.detailTextLabel.text = [word word_description];
     return cell;
 
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [sectionKeywords objectAtIndex:section];
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return sectionKeywords;
 }
 
 #pragma mark - Segues
@@ -61,13 +112,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        WordDictionary *word = [words objectAtIndex:indexPath.row];
-        //DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+        NSArray *sectionArray = [wordsWithSection objectForKey:[sectionKeywords objectAtIndex:indexPath.section]];
+        WordDictionary *word = [sectionArray objectAtIndex:indexPath.row];
         ViewController *controller = (ViewController *)[[segue destinationViewController] topViewController];
         [controller setWord:word];
-
-        //controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        //controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
 }
 

@@ -8,9 +8,11 @@
 
 #import "Bubble.h"
 #import "ConstFunc.h"
+#import "MyScene.h"
 
 @implementation Bubble
 @synthesize grabbed = _grabbed;
+@synthesize letter = _letter;
 
 + (instancetype)bubbleWithLetter:(NSString *)letter
 {
@@ -25,38 +27,38 @@
     SKSpriteNode *circle = [SKSpriteNode spriteNodeWithImageNamed:@"bubble"];
     [self addChild:circle];
     
-    SKLabelNode *letterLabel = [SKLabelNode labelNodeWithText:letter];
+    _letter = letter;
+    
+    SKLabelNode *letterLabel = [SKLabelNode labelNodeWithText:_letter];
     letterLabel.fontName = @"Chalkduster";
     letterLabel.fontSize = 48;
     letterLabel.fontColor = [UIColor whiteColor];
     letterLabel.position = CGPointMake(self.position.x, self.position.y-15);
+    
     [self addChild:letterLabel];
     
     SKPhysicsBody *body = [SKPhysicsBody bodyWithCircleOfRadius:circle.size.width * 0.5 center:CGPointZero];
     body.dynamic = YES;
-    body.mass = 100;
-    body.density = 3;
-    //body.friction = 0.3f;
+    body.density = 2;
     body.restitution = 0.3f;
-    //body.collisionBitMask = 2;
-    
     self.physicsBody = body;
-    
     self.userInteractionEnabled = YES;
     _grabbed=NO;
+    
+    self.xScale = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 1.0f : 0.7f;
+    self.yScale = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 1.0f : 0.7f;
     
     return self;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    //_grabbed=YES;
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self.parent];
     
     SKNode *touchNode = [self.parent nodeAtPoint:location];
     if (touchNode != nil && [touchNode.parent isEqual:self]) {
         _grabbed = YES;
-        _previousPos =location;
+        _previousPos =([self isOKToMove:location])? location : _previousPos;
         [self.physicsBody setAffectedByGravity:NO];
         NSLog(@"%@ touchBegan YES: %@ , pos : %@",self.name, touchNode, NSStringFromCGPoint(location));
     }
@@ -65,19 +67,17 @@
     }
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (_grabbed) {
+    if (self.physicsBody.dynamic && _grabbed) {
         UITouch *touch = [touches anyObject];
         CGPoint location = [touch locationInNode:self.parent];
     
         _previousVelocity = ccpMult(ccpSub(location, _previousPos),5);
-        _previousPos =location;
-        //self.position = location;
-        //[self.physicsBody setAffectedByGravity:NO];
+        _previousPos =([self isOKToMove:location])? location : _previousPos;
         NSLog(@"%@ touchMoved pos : %@",self.name, NSStringFromCGPoint(location));
     }
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (_grabbed) {
+    if (self.physicsBody.dynamic && _grabbed) {
         _grabbed=NO;
         [self.physicsBody setAffectedByGravity:YES];
         [self.physicsBody applyImpulse:CGVectorMake(_previousVelocity.x, _previousVelocity.y)];
@@ -87,13 +87,17 @@
 
 - (void)update
 {
-    if (_grabbed)
+    if (self.physicsBody.dynamic && _grabbed)
     {
         self.position = _previousPos;
         self.physicsBody.velocity = CGVectorMake(0.0,0.0);
     }
-    
-    
+}
+
+- (BOOL)isOKToMove:(CGPoint)newPoint
+{
+    CGRect borderRect = [(MyScene *)self.parent borderRect];
+    return (newPoint.x > borderRect.origin.x && newPoint.x < borderRect.size.width && newPoint.y > borderRect.origin.y && newPoint.y < borderRect.size.height);
 }
 
 @end
