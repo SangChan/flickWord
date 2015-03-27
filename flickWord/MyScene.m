@@ -60,14 +60,14 @@
     CIColor *middleColor = [CIColor colorWithRed:0.49 green:0.73 blue:0.74 alpha:1];
     CIColor *bottomColor = [CIColor colorWithRed:0.93 green:0.51 blue:0.23 alpha:1];
     
-    SKTexture *texture1 = [SKTexture textureWithVerticalGradientofSize:CGSizeMake(self.size.width*2, self.size.height) topColor:topColor bottomColor:middleColor];
+    SKTexture *texture1 = [SKTexture textureWithVerticalGradientofSize:CGSizeMake(self.size.width*2, self.size.height/2) topColor:topColor bottomColor:middleColor];
     SKSpriteNode *bgNode1 = [SKSpriteNode spriteNodeWithTexture:texture1];
-    [bgNode1 setPosition:CGPointMake(0, 0)];
+    [bgNode1 setPosition:CGPointMake(0, (self.size.height + bgNode1.size.height) * 0.5)];
     [self addChild:bgNode1];
     
-    SKTexture *texture2 = [SKTexture textureWithVerticalGradientofSize:CGSizeMake(self.size.width*2, self.size.height) topColor:middleColor bottomColor:bottomColor];
+    SKTexture *texture2 = [SKTexture textureWithVerticalGradientofSize:CGSizeMake(self.size.width*2, self.size.height/2) topColor:middleColor bottomColor:bottomColor];
     SKSpriteNode *bgNode2 = [SKSpriteNode spriteNodeWithTexture:texture2];
-    [bgNode2 setPosition:CGPointMake(0, self.size.height * 0.5)];
+    [bgNode2 setPosition:CGPointMake(0, (self.size.height - bgNode2.size.height) * 0.5)];
     [self addChild:bgNode2];
 }
 
