@@ -23,7 +23,7 @@
 
 -(int)getBallSize
 {
-    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 62 : 43;
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 62 : 44;
 }
 
 -(id)initWithSize:(CGSize)size {    
