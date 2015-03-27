@@ -20,9 +20,6 @@
     
     self.title = [word word];
     
-    NSLog(@"status bar height = %f",[UIApplication sharedApplication].statusBarFrame.size.height);
-    NSLog(@"nav bar height = %f",self.navigationController.navigationBar.frame.size.height);
-    
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = NO;
     skView.showsNodeCount = NO;
