@@ -12,7 +12,7 @@
 
 +(SKTexture*)textureWithVerticalGradientofSize:(CGSize)size topColor:(CIColor*)topColor bottomColor:(CIColor*)bottomColor
 {
-    CIContext *coreImageContext = [CIContext contextWithOptions:nil];
+    CIContext *coreImageContext = [CIContext contextWithOptions:@{kCIContextUseSoftwareRenderer : @(NO)}];
     CIFilter *gradientFilter = [CIFilter filterWithName:@"CILinearGradient"];
     [gradientFilter setDefaults];
     CIVector *startVector = [CIVector vectorWithX:size.width/2 Y:0];
