@@ -22,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"단어선택";
+    self.title = @"FlickWord";
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -114,8 +115,20 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSArray *sectionArray = [wordsWithSection objectForKey:[sectionKeywords objectAtIndex:indexPath.section]];
         WordDictionary *word = [sectionArray objectAtIndex:indexPath.row];
-        ViewController *controller = (ViewController *)[[segue destinationViewController] topViewController];
-        [controller setWord:word];
+        
+        if ([[segue destinationViewController] isKindOfClass:[ViewController class]]) {
+            ViewController *vc = (ViewController *)[segue destinationViewController];
+            [vc setWord:word];
+        }
+        else {
+            NSArray *childArray = [[segue destinationViewController] childViewControllers];
+            for (id vc in childArray) {
+                if ([vc isKindOfClass:[ViewController class]]) {
+                    [(ViewController *)vc setWord:word];
+                    break;
+                }
+            }
+        }
     }
 }
 

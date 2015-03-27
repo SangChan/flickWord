@@ -17,10 +17,12 @@
 {
     [super viewDidLoad];
     // Configure the view.
+
     [self setTitle:[word word]];
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = NO;
     skView.showsNodeCount = NO;
+    
     
     // Create and configure the scene.
     MyScene * scene = [MyScene sceneWithSize:skView.bounds.size];
@@ -28,6 +30,7 @@
     [scene setWord:[word word] Description:[word word_description]];
     // Present the scene.
     [skView presentScene:scene];
+    
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(popThisView) name:@"popThisView" object:nil];
 }

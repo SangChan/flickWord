@@ -9,6 +9,11 @@
 #import "MyScene.h"
 #import "Bubble.h"
 #import "Magnet.h"
+#import "SKTexture+Gradient.h"
+
+#define HORIZONTAL_MARGIN 10
+#define VERTICAL_MARGIN 10
+
 
 @interface MyScene () {
     SKLabelNode *descLabel;
@@ -30,9 +35,16 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         self.name = @"MyScene";
-        borderRect = CGRectMake(self.frame.origin.x+5, self.frame.origin.y+5, size.width-5, size.height-5);
+        borderRect = CGRectMake(self.frame.origin.x+HORIZONTAL_MARGIN, self.frame.origin.y+VERTICAL_MARGIN, size.width-HORIZONTAL_MARGIN*2, size.height-VERTICAL_MARGIN*2);
         
-        self.backgroundColor = [SKColor grayColor];
+        //self.backgroundColor = [SKColor clearColor];
+        
+        CIColor *firstColor = [CIColor colorWithCGColor:[[SKColor blackColor]CGColor]];
+        CIColor *secondColor = [CIColor colorWithCGColor:[[SKColor lightGrayColor]CGColor]];
+        SKTexture *texture = [SKTexture textureWithVerticalGradientofSize:CGSizeMake(size.width*2, size.height*2) topColor:firstColor bottomColor:secondColor];
+        
+        SKSpriteNode *bgNode = [SKSpriteNode spriteNodeWithTexture:texture];
+        [self addChild:bgNode];
         
         SKPhysicsBody *borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:borderRect];
         self.physicsBody = borderBody;
@@ -76,8 +88,8 @@
         [self performSelector:@selector(setBubbleAndMagnet:) withObject:dicData afterDelay:0.25f*(i+1)];
     }
     
-    descLabel = [SKLabelNode labelNodeWithText:_wordDescription];
-    descLabel.fontName = @"Chalkduster";
+    descLabel = [[SKLabelNode alloc]initWithFontNamed:@"Chalkduster"];
+    descLabel.text = wordDescription;
     descLabel.fontSize = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 36 : 24;
     descLabel.fontColor = [UIColor whiteColor];
     descLabel.position = centerPos;

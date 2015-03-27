@@ -29,8 +29,8 @@
     
     _letter = letter;
     
-    SKLabelNode *letterLabel = [SKLabelNode labelNodeWithText:_letter];
-    letterLabel.fontName = @"Chalkduster";
+    SKLabelNode *letterLabel = [[SKLabelNode alloc]initWithFontNamed:@"Chalkduster"];
+    letterLabel.text = _letter;
     letterLabel.fontSize = 48;
     letterLabel.fontColor = [UIColor whiteColor];
     letterLabel.position = CGPointMake(self.position.x, self.position.y-15);

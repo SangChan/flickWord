@@ -31,6 +31,7 @@
 		637023E91A92FFBD00496A2A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637023E81A92FFBD00496A2A /* TableViewController.m */; };
 		637023EB1A93002900496A2A /* able.txt in Resources */ = {isa = PBXBuildFile; fileRef = 637023EA1A93002900496A2A /* able.txt */; };
 		637023EE1A9301E000496A2A /* WordDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 637023ED1A9301E000496A2A /* WordDictionary.m */; };
+		6373F07D1AC5130C00E2E7CE /* SKTexture+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */; };
 		6377E1321A846337007E3C4A /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E1311A846337007E3C4A /* Bubble.m */; };
 		63F26BC91ABA8B6400E9E865 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F26BC81ABA8B6400E9E865 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,8 @@
 		637023EA1A93002900496A2A /* able.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = able.txt; sourceTree = "<group>"; };
 		637023EC1A9301E000496A2A /* WordDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordDictionary.h; sourceTree = "<group>"; };
 		637023ED1A9301E000496A2A /* WordDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordDictionary.m; sourceTree = "<group>"; };
+		6373F07B1AC5130C00E2E7CE /* SKTexture+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKTexture+Gradient.h"; sourceTree = "<group>"; };
+		6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKTexture+Gradient.m"; sourceTree = "<group>"; };
 		6377E1301A846337007E3C4A /* Bubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bubble.h; sourceTree = "<group>"; };
 		6377E1311A846337007E3C4A /* Bubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bubble.m; sourceTree = "<group>"; };
 		63F26BC81ABA8B6400E9E865 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -167,6 +170,8 @@
 				637023E71A92FFBD00496A2A /* TableViewController.h */,
 				637023E81A92FFBD00496A2A /* TableViewController.m */,
 				636311FF19B036DD00E15DC3 /* Supporting Files */,
+				6373F07B1AC5130C00E2E7CE /* SKTexture+Gradient.h */,
+				6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */,
 			);
 			path = flickWord;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6363121219B036DD00E15DC3 /* MyScene.m in Sources */,
+				6373F07D1AC5130C00E2E7CE /* SKTexture+Gradient.m in Sources */,
 				637023EE1A9301E000496A2A /* WordDictionary.m in Sources */,
 				6363120F19B036DD00E15DC3 /* ViewController.m in Sources */,
 				6377E1321A846337007E3C4A /* Bubble.m in Sources */,
@@ -452,7 +458,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "flickWord/flickWord-Prefix.pch";
 				INFOPLIST_FILE = "flickWord/flickWord-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
@@ -471,7 +477,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "flickWord/flickWord-Prefix.pch";
 				INFOPLIST_FILE = "flickWord/flickWord-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;

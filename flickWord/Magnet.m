@@ -33,8 +33,8 @@
     _radius = raidus;
     _letter = letter;
     
-    SKLabelNode *addedLabel = [SKLabelNode labelNodeWithText:letter];
-    addedLabel.fontName = @"Chalkduster";
+    SKLabelNode *addedLabel = [[SKLabelNode alloc]initWithFontNamed:@"Chalkduster"];
+    addedLabel.text = letter;
     addedLabel.fontSize = 48;
     addedLabel.fontColor = [UIColor whiteColor];
     addedLabel.position = CGPointMake(self.position.x, self.position.y-15);
