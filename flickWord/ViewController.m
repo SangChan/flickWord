@@ -17,8 +17,12 @@
 {
     [super viewDidLoad];
     // Configure the view.
-
-    [self setTitle:[word word]];
+    
+    self.title = [word word];
+    
+    NSLog(@"status bar height = %f",[UIApplication sharedApplication].statusBarFrame.size.height);
+    NSLog(@"nav bar height = %f",self.navigationController.navigationBar.frame.size.height);
+    
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = NO;
     skView.showsNodeCount = NO;
@@ -28,12 +32,21 @@
     
     MyScene * scene = [MyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
+    [scene setPhysicsBorderWithOriginY:[UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.frame.size.height];
     [scene setWord:[word word] Description:[word word_description]];
     // Present the scene.
     [skView presentScene:scene];
     
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(popThisView) name:@"popThisView" object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+    [super viewWillAppear:animated];
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated

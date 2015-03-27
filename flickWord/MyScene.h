@@ -16,6 +16,7 @@
 
 @property (nonatomic, readonly) CGRect borderRect;
 
+-(void)setPhysicsBorderWithOriginY:(CGFloat)originY;
 -(void)setWord:(NSString *)word Description:(NSString *)wordDescription;
 
 

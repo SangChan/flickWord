@@ -40,23 +40,10 @@
         
         /* Setup your scene here */
         self.name = @"MyScene";
-        borderRect = CGRectMake(self.frame.origin.x+HORIZONTAL_MARGIN, self.frame.origin.y+VERTICAL_MARGIN, self.size.width-HORIZONTAL_MARGIN*2, self.size.height-VERTICAL_MARGIN*2);
         
-        //self.backgroundColor = [SKColor clearColor];
+        [self setBackGroundGradientColor];
         
-        CIColor *firstColor = [CIColor colorWithCGColor:[[SKColor blackColor]CGColor]];
-        CIColor *secondColor = [CIColor colorWithCGColor:[[SKColor lightGrayColor]CGColor]];
-        SKTexture *texture = [SKTexture textureWithVerticalGradientofSize:CGSizeMake(self.size.width*2, self.size.height*2) topColor:firstColor bottomColor:secondColor];
         
-        SKSpriteNode *bgNode = [SKSpriteNode spriteNodeWithTexture:texture];
-        [self addChild:bgNode];
-        
-        SKPhysicsBody *borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:borderRect];
-        self.physicsBody = borderBody;
-        self.physicsBody.friction = 1.0f;
-        
-        self.physicsWorld.contactDelegate = self;
-        self.physicsWorld.gravity = CGVectorMake(0.0, -4.9);
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(matchLetter) name:@"matchLetter" object:nil];
     }
     return self;
@@ -65,6 +52,34 @@
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self name:@"matchLetter" object:nil];
+}
+
+-(void)setBackGroundGradientColor
+{
+    CIColor *topColor = [CIColor colorWithRed:0.03 green:0.16 blue:0.31 alpha:1];
+    CIColor *middleColor = [CIColor colorWithRed:0.49 green:0.73 blue:0.74 alpha:1];
+    CIColor *bottomColor = [CIColor colorWithRed:0.93 green:0.51 blue:0.23 alpha:1];
+    
+    SKTexture *texture1 = [SKTexture textureWithVerticalGradientofSize:CGSizeMake(self.size.width*2, self.size.height) topColor:topColor bottomColor:middleColor];
+    SKSpriteNode *bgNode1 = [SKSpriteNode spriteNodeWithTexture:texture1];
+    [bgNode1 setPosition:CGPointMake(0, 0)];
+    [self addChild:bgNode1];
+    
+    SKTexture *texture2 = [SKTexture textureWithVerticalGradientofSize:CGSizeMake(self.size.width*2, self.size.height) topColor:middleColor bottomColor:bottomColor];
+    SKSpriteNode *bgNode2 = [SKSpriteNode spriteNodeWithTexture:texture2];
+    [bgNode2 setPosition:CGPointMake(0, self.size.height * 0.5)];
+    [self addChild:bgNode2];
+}
+
+-(void)setPhysicsBorderWithOriginY:(CGFloat)originY
+{
+    borderRect = CGRectMake(self.frame.origin.x+HORIZONTAL_MARGIN, self.frame.origin.y+VERTICAL_MARGIN, self.size.width-HORIZONTAL_MARGIN*2, self.size.height-originY-VERTICAL_MARGIN);
+    SKPhysicsBody *borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:borderRect];
+    self.physicsBody = borderBody;
+    self.physicsBody.friction = 1.0f;
+    
+    self.physicsWorld.contactDelegate = self;
+    self.physicsWorld.gravity = CGVectorMake(0.0, -4.9);
 }
 
 -(void)setWord:(NSString *)word Description:(NSString *)wordDescription
