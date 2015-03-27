@@ -25,6 +25,7 @@
     
     
     // Create and configure the scene.
+    
     MyScene * scene = [MyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     [scene setWord:[word word] Description:[word word_description]];

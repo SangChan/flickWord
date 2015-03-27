@@ -33,15 +33,20 @@
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
+        
+        if (self.size.width < self.size.height) {
+            self.size = CGSizeMake(self.size.height, self.size.width);
+        }
+        
         /* Setup your scene here */
         self.name = @"MyScene";
-        borderRect = CGRectMake(self.frame.origin.x+HORIZONTAL_MARGIN, self.frame.origin.y+VERTICAL_MARGIN, size.width-HORIZONTAL_MARGIN*2, size.height-VERTICAL_MARGIN*2);
+        borderRect = CGRectMake(self.frame.origin.x+HORIZONTAL_MARGIN, self.frame.origin.y+VERTICAL_MARGIN, self.size.width-HORIZONTAL_MARGIN*2, self.size.height-VERTICAL_MARGIN*2);
         
         //self.backgroundColor = [SKColor clearColor];
         
         CIColor *firstColor = [CIColor colorWithCGColor:[[SKColor blackColor]CGColor]];
         CIColor *secondColor = [CIColor colorWithCGColor:[[SKColor lightGrayColor]CGColor]];
-        SKTexture *texture = [SKTexture textureWithVerticalGradientofSize:CGSizeMake(size.width*2, size.height*2) topColor:firstColor bottomColor:secondColor];
+        SKTexture *texture = [SKTexture textureWithVerticalGradientofSize:CGSizeMake(self.size.width*2, self.size.height*2) topColor:firstColor bottomColor:secondColor];
         
         SKSpriteNode *bgNode = [SKSpriteNode spriteNodeWithTexture:texture];
         [self addChild:bgNode];
