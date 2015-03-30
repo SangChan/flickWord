@@ -69,7 +69,6 @@
 {
     UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.origin.x + 5, self.view.frame.origin.y + 5 , 50, 50)];
     [backButton setTitle:@"Back" forState:UIControlStateNormal];
-    //[button.titleLabel setTextColor:[UIColor blueColor]];
     [backButton addTarget:self action:@selector(popThisView) forControlEvents:UIControlEventTouchUpInside];
     [backButton setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3f]];
     [self.view addSubview:backButton];
@@ -77,7 +76,6 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
     UIButton *speakButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 65, self.view.frame.origin.y + 5 , 55, 50)];
     [speakButton setTitle:@"Speak" forState:UIControlStateNormal];
-    //[button.titleLabel setTextColor:[UIColor blueColor]];
     [speakButton addTarget:self action:@selector(speakWord) forControlEvents:UIControlEventTouchUpInside];
     [speakButton setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3f]];
     [self.view addSubview:speakButton];
@@ -89,6 +87,14 @@
 - (void)popThisView
 {
     [self.parentViewController.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)showWordDefinitionViewController
+{
+    UIReferenceLibraryViewController *referenceLibraryViewController = [[UIReferenceLibraryViewController alloc] initWithTerm:[word word]];
+    [self presentViewController:referenceLibraryViewController
+                                 animated:YES
+                               completion:nil];
 }
 
 -(void)speakWord
