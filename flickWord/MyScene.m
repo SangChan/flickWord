@@ -57,6 +57,13 @@ static const uint32_t bubble = 0x1 << 1;
     [[NSNotificationCenter defaultCenter]removeObserver:self name:@"matchLetter" object:nil];
 }
 
+-(void)didMoveToView:(SKView *)view
+{
+    [self showWordAndDescription];
+    self.motionManager = [[CMMotionManager alloc] init];
+    [self.motionManager startAccelerometerUpdates];
+}
+
 -(void)setBackGroundGradientColor
 {
     CIColor *topColor = [CIColor colorWithRed:0.03 green:0.16 blue:0.31 alpha:1];
@@ -74,10 +81,6 @@ static const uint32_t bubble = 0x1 << 1;
     [self addChild:bgNode2];
 }
 
--(void)setBackButton
-{
-    
-}
 
 -(void)setPhysicsBorderWithOriginY:(CGFloat)originY
 {
@@ -95,10 +98,13 @@ static const uint32_t bubble = 0x1 << 1;
 
 -(void)setWord:(NSString *)word Description:(NSString *)wordDescription
 {
-    CGPoint centerPos = CGPointMake(self.size.width * 0.5, self.size.height * 0.5 );
     _word = word;
     _wordDescription = wordDescription;
-    
+}
+
+-(void)showWordAndDescription
+{
+    CGPoint centerPos = CGPointMake(self.size.width * 0.5, self.size.height * 0.5 );
     matchLetterCount = 0;
     totalLetterCount = [_word length];
     int ballSize = [self getBallSize];
@@ -116,19 +122,20 @@ static const uint32_t bubble = 0x1 << 1;
                                  [NSNumber numberWithFloat:centerPos.x - (ballSize * (letter_limit/2)) + (ballSize *(i%letter_limit))],@"magnet_x",
                                  [NSNumber numberWithFloat:centerPos.y + (ballSize * (heightPerBall/3)) - (ballSize * (i/letter_limit))],@"magnet_y",
                                  nil];
-        [self performSelector:@selector(setBubbleAndMagnet:) withObject:dicData afterDelay:0.25f*(i+1)];
+        [self performSelector:@selector(showBubbleAndMagnet:) withObject:dicData afterDelay:0.25f*(i+1)];
     }
     
     descLabel = [[SKLabelNode alloc]initWithFontNamed:@"Chalkduster"];
-    descLabel.text = wordDescription;
+    descLabel.text = _wordDescription;
     descLabel.fontSize = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 36 : 24;
     descLabel.fontColor = [UIColor whiteColor];
     descLabel.position = centerPos;
     descLabel.alpha = 0.2f;
     [self addChild:descLabel];
+
 }
 
--(void)setBubbleAndMagnet:(NSDictionary *)data
+-(void)showBubbleAndMagnet:(NSDictionary *)data
 {
     NSString *character = [[data objectForKey:@"character"] uppercaseString];
     if ([character isEqualToString:@" "]) {
@@ -149,6 +156,9 @@ static const uint32_t bubble = 0x1 << 1;
 -(void)update:(CFTimeInterval)currentTime
 {
     /* Called before each frame is rendered */
+    //CMAccelerometerData* data = self.motionManager.accelerometerData;
+    //self.physicsWorld.gravity = CGVectorMake(data.acceleration.x, -4.9);
+    //NSLog(@"accel X : %f", data.acceleration.x);
     for (SKNode *childNode in [self children]) {
         if ([childNode respondsToSelector:@selector(update)]) {
             [childNode performSelector:@selector(update)];

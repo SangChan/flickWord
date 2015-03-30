@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <CoreMotion/CoreMotion.h>
 
 @interface MyScene : SKScene <SKPhysicsContactDelegate> {
     NSString * _word;
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic, readonly) CGRect borderRect;
+@property (strong) CMMotionManager* motionManager;
 
 -(void)setPhysicsBorderWithOriginY:(CGFloat)originY;
 -(void)setWord:(NSString *)word Description:(NSString *)wordDescription;
