@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		634E53F01A8AD80C00299CCC /* Magnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 634E53EF1A8AD80C00299CCC /* Magnet.m */; };
+		634F595B1AC931D800F49D07 /* ppyock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 634F59561AC931D800F49D07 /* ppyock.wav */; };
+		634F595C1AC931D800F49D07 /* ppiyong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 634F59571AC931D800F49D07 /* ppiyong.wav */; };
+		634F595D1AC931D800F49D07 /* match.wav in Resources */ = {isa = PBXBuildFile; fileRef = 634F59581AC931D800F49D07 /* match.wav */; };
+		634F595E1AC931D800F49D07 /* hwick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 634F59591AC931D800F49D07 /* hwick.wav */; };
+		634F595F1AC931D800F49D07 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 634F595A1AC931D800F49D07 /* click.wav */; };
 		636311F719B036DD00E15DC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311F619B036DD00E15DC3 /* Foundation.framework */; };
 		636311F919B036DD00E15DC3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311F819B036DD00E15DC3 /* CoreGraphics.framework */; };
 		636311FB19B036DD00E15DC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311FA19B036DD00E15DC3 /* UIKit.framework */; };
@@ -50,6 +55,11 @@
 		634E53EE1A8AD80C00299CCC /* Magnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magnet.h; sourceTree = "<group>"; };
 		634E53EF1A8AD80C00299CCC /* Magnet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Magnet.m; sourceTree = "<group>"; };
 		634E53F11A8ADC8100299CCC /* ConstFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstFunc.h; sourceTree = "<group>"; };
+		634F59561AC931D800F49D07 /* ppyock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ppyock.wav; path = flickWord/Resources/ppyock.wav; sourceTree = "<group>"; };
+		634F59571AC931D800F49D07 /* ppiyong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ppiyong.wav; path = flickWord/Resources/ppiyong.wav; sourceTree = "<group>"; };
+		634F59581AC931D800F49D07 /* match.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = match.wav; path = flickWord/Resources/match.wav; sourceTree = "<group>"; };
+		634F59591AC931D800F49D07 /* hwick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hwick.wav; path = flickWord/Resources/hwick.wav; sourceTree = "<group>"; };
+		634F595A1AC931D800F49D07 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = click.wav; path = flickWord/Resources/click.wav; sourceTree = "<group>"; };
 		636311F319B036DD00E15DC3 /* flickWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flickWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636311F619B036DD00E15DC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		636311F819B036DD00E15DC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -209,6 +219,11 @@
 		63EC061E19D00001002AEA05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				634F59561AC931D800F49D07 /* ppyock.wav */,
+				634F59571AC931D800F49D07 /* ppiyong.wav */,
+				634F59581AC931D800F49D07 /* match.wav */,
+				634F59591AC931D800F49D07 /* hwick.wav */,
+				634F595A1AC931D800F49D07 /* click.wav */,
 				637023E01A92FF0C00496A2A /* bubble.png */,
 				637023E11A92FF0C00496A2A /* bubble@2x.png */,
 			);
@@ -296,8 +311,13 @@
 			files = (
 				637023E31A92FF0C00496A2A /* bubble@2x.png in Resources */,
 				637023EB1A93002900496A2A /* able.txt in Resources */,
+				634F595D1AC931D800F49D07 /* match.wav in Resources */,
+				634F595F1AC931D800F49D07 /* click.wav in Resources */,
+				634F595E1AC931D800F49D07 /* hwick.wav in Resources */,
 				6363120319B036DD00E15DC3 /* InfoPlist.strings in Resources */,
 				6363121619B036DD00E15DC3 /* Images.xcassets in Resources */,
+				634F595C1AC931D800F49D07 /* ppiyong.wav in Resources */,
+				634F595B1AC931D800F49D07 /* ppyock.wav in Resources */,
 				637023E21A92FF0C00496A2A /* bubble.png in Resources */,
 				6363121419B036DD00E15DC3 /* Spaceship.png in Resources */,
 				6363120C19B036DD00E15DC3 /* Main.storyboard in Resources */,

@@ -62,6 +62,7 @@
                     CGPoint magneticForce = ccpMult(ccpNormalize(distance), _force/(r*r));
                     [bubbleBody.physicsBody applyForce:CGVectorMake(magneticForce.x, magneticForce.y)];
                     if (r < 20 && bubbleBody.physicsBody.dynamic) {
+                        [self runAction:[SKAction playSoundFileNamed:@"click.wav" waitForCompletion:NO]];
                         bubbleBody.position = self.position;
                         bubbleBody.physicsBody.velocity = CGVectorMake(0.0, 0.0);
                         bubbleBody.physicsBody.angularVelocity = 0.0;
@@ -72,6 +73,7 @@
                         [bubbleBody runAction:rotateAction completion:^{
                             _active = NO;
                             [[NSNotificationCenter defaultCenter]postNotificationName:@"matchLetter" object:nil];
+                            [self runAction:[SKAction playSoundFileNamed:@"match.wav" waitForCompletion:NO]];
                         }];
                     }
                 }

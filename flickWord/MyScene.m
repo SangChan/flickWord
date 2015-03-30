@@ -14,6 +14,9 @@
 #define HORIZONTAL_MARGIN 10
 #define VERTICAL_MARGIN 10
 
+static const uint32_t wall = 0x1 << 0;
+static const uint32_t bubble = 0x1 << 1;
+
 
 @interface MyScene () {
     SKLabelNode *descLabel;
@@ -82,6 +85,9 @@
     SKPhysicsBody *borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:borderRect];
     self.physicsBody = borderBody;
     self.physicsBody.friction = 1.0f;
+    self.physicsBody.dynamic = NO;
+    self.physicsBody.usesPreciseCollisionDetection = YES;
+    self.physicsBody.categoryBitMask = wall;
     
     self.physicsWorld.contactDelegate = self;
     self.physicsWorld.gravity = CGVectorMake(0.0, -4.9);
@@ -156,6 +162,17 @@
     descLabel.alpha = 0.2f+(matchLetterCount/totalLetterCount)*0.8f;
     if (matchLetterCount == (int)totalLetterCount) {
         //[self speakWord:_word];
+    }
+}
+
+-(void)didBeginContact:(SKPhysicsContact *)contact
+{
+    SKNode *nodeA = contact.bodyA.node;
+    if (contact.bodyA.categoryBitMask == wall && contact.bodyB.categoryBitMask == bubble) {
+        [nodeA runAction:[SKAction playSoundFileNamed:@"ppiyong.wav" waitForCompletion:NO]];
+    }
+    else if (contact.bodyA.categoryBitMask == bubble && contact.bodyA.categoryBitMask == contact.bodyB.categoryBitMask) {
+        [nodeA runAction:[SKAction playSoundFileNamed:@"ppyock.wav" waitForCompletion:NO]];
     }
 }
 

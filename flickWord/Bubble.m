@@ -14,6 +14,9 @@
 @synthesize grabbed = _grabbed;
 @synthesize letter = _letter;
 
+static const uint32_t wall = 0x1 << 0;
+static const uint32_t bubble = 0x1 << 1;
+
 + (instancetype)bubbleWithLetter:(NSString *)letter
 {
     return [[Bubble alloc]initWithLetter:letter];
@@ -41,6 +44,10 @@
     body.dynamic = YES;
     body.density = 2;
     body.restitution = 0.3f;
+    body.usesPreciseCollisionDetection = YES;
+    body.categoryBitMask = bubble;
+    body.collisionBitMask = wall | bubble;
+    body.contactTestBitMask = wall | bubble;
     self.physicsBody = body;
     self.userInteractionEnabled = YES;
     _grabbed=NO;
@@ -80,8 +87,12 @@
     if (self.physicsBody.dynamic && _grabbed) {
         _grabbed=NO;
         [self.physicsBody setAffectedByGravity:YES];
+        if (ccpLength(_previousVelocity) > 50) {
+            [self runAction:[SKAction playSoundFileNamed:@"hwick.wav" waitForCompletion:NO]];
+        }
+        
         [self.physicsBody applyImpulse:CGVectorMake(_previousVelocity.x, _previousVelocity.y)];
-        NSLog(@"%@ touchEnded pos",self.name);
+        NSLog(@"%@ touchEnded pos : vector_length = %f",self.name,ccpLength(_previousVelocity));
     }
 }
 
@@ -99,5 +110,6 @@
     CGRect borderRect = [(MyScene *)self.parent borderRect];
     return (newPoint.x > borderRect.origin.x && newPoint.x < borderRect.size.width && newPoint.y > borderRect.origin.y && newPoint.y < borderRect.size.height);
 }
+
 
 @end
