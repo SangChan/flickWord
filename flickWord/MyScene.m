@@ -71,9 +71,14 @@
     [self addChild:bgNode2];
 }
 
+-(void)setBackButton
+{
+    
+}
+
 -(void)setPhysicsBorderWithOriginY:(CGFloat)originY
 {
-    borderRect = CGRectMake(self.frame.origin.x+HORIZONTAL_MARGIN, self.frame.origin.y+VERTICAL_MARGIN, self.size.width-HORIZONTAL_MARGIN*2, self.size.height-originY-VERTICAL_MARGIN);
+    borderRect = CGRectMake(self.frame.origin.x+HORIZONTAL_MARGIN, self.frame.origin.y+VERTICAL_MARGIN, self.size.width-HORIZONTAL_MARGIN*2, self.size.height-VERTICAL_MARGIN);
     SKPhysicsBody *borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:borderRect];
     self.physicsBody = borderBody;
     self.physicsBody.friction = 1.0f;
@@ -150,32 +155,8 @@
     matchLetterCount++;
     descLabel.alpha = 0.2f+(matchLetterCount/totalLetterCount)*0.8f;
     if (matchLetterCount == (int)totalLetterCount) {
-        [self speakWord:_word];
+        //[self speakWord:_word];
     }
-}
-
--(void)speakWord:(NSString *)thisWord
-{
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc]init];
-    [synthesizer setDelegate:self];
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:thisWord];
-    [utterance setVoice:[AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"]];
-    [utterance setRate:0.2f];
-    [synthesizer speakUtterance:utterance];
-#else
-    [self popThisView];
-#endif
-}
-
-- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance
-{
-    [self popThisView];
-}
-
-- (void)popThisView
-{
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"popThisView" object:nil];
 }
 
 @end

@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "WordDictionary.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <AVSpeechSynthesizerDelegate>
 
 @property (nonatomic) WordDictionary *word;
 

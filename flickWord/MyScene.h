@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface MyScene : SKScene <SKPhysicsContactDelegate, AVSpeechSynthesizerDelegate> {
+@interface MyScene : SKScene <SKPhysicsContactDelegate> {
     NSString * _word;
     NSString * _wordDescription;
 }
