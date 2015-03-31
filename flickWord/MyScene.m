@@ -22,6 +22,8 @@ static const uint32_t bubble = 0x1 << 1;
     SKLabelNode *descLabel;
     int matchLetterCount;
     float totalLetterCount;
+    SKAction *ppiyongSoundAction;
+    SKAction *ppyockSoundAction;
 }
 
 @end
@@ -43,7 +45,8 @@ static const uint32_t bubble = 0x1 << 1;
         
         /* Setup your scene here */
         self.name = @"MyScene";
-        
+        ppiyongSoundAction = [SKAction playSoundFileNamed:@"ppiyong.wav" waitForCompletion:NO];
+        ppyockSoundAction = [SKAction playSoundFileNamed:@"ppyock.wav" waitForCompletion:NO];
         [self setBackGroundGradientColor];
         
         
@@ -60,8 +63,6 @@ static const uint32_t bubble = 0x1 << 1;
 -(void)didMoveToView:(SKView *)view
 {
     [self showWordAndDescription];
-    self.motionManager = [[CMMotionManager alloc] init];
-    [self.motionManager startAccelerometerUpdates];
 }
 
 -(void)setBackGroundGradientColor
@@ -156,9 +157,6 @@ static const uint32_t bubble = 0x1 << 1;
 -(void)update:(CFTimeInterval)currentTime
 {
     /* Called before each frame is rendered */
-    //CMAccelerometerData* data = self.motionManager.accelerometerData;
-    //self.physicsWorld.gravity = CGVectorMake(data.acceleration.x, -4.9);
-    //NSLog(@"accel X : %f", data.acceleration.x);
     for (SKNode *childNode in [self children]) {
         if ([childNode respondsToSelector:@selector(update)]) {
             [childNode performSelector:@selector(update)];
@@ -179,13 +177,13 @@ static const uint32_t bubble = 0x1 << 1;
 {
     //NSLog(@"collison impulse : %f, contact normal vector.dx : %f , dy : %f",contact.collisionImpulse, contact.contactNormal.dx, contact.contactNormal.dy);
     if (contact.bodyA.categoryBitMask == wall && contact.bodyB.categoryBitMask == bubble) {
-        if (contact.collisionImpulse > 25.0) {
-            [contact.bodyA.node runAction:[SKAction playSoundFileNamed:@"ppiyong.wav" waitForCompletion:NO]];
+        if (contact.collisionImpulse > 90.0) {
+            [contact.bodyA.node runAction:ppiyongSoundAction];
         }
     }
     else if (contact.bodyA.categoryBitMask == bubble && contact.bodyA.categoryBitMask == contact.bodyB.categoryBitMask) {
-        if (contact.collisionImpulse > 10.0) {
-            [contact.bodyA.node runAction:[SKAction playSoundFileNamed:@"ppyock.wav" waitForCompletion:NO]];
+        if (contact.collisionImpulse > 30.0) {
+            [contact.bodyA.node runAction:ppyockSoundAction];
         }
     }
 }

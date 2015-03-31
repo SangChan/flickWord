@@ -87,7 +87,7 @@ static const uint32_t bubble = 0x1 << 1;
     if (self.physicsBody.dynamic && _grabbed) {
         _grabbed=NO;
         [self.physicsBody setAffectedByGravity:YES];
-        if (ccpLength(_previousVelocity) > 50) {
+        if (ccpLength(_previousVelocity) > 90) {
             [self runAction:[SKAction playSoundFileNamed:@"hwick.wav" waitForCompletion:NO]];
         }
         
