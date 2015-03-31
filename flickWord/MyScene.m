@@ -177,12 +177,16 @@ static const uint32_t bubble = 0x1 << 1;
 
 -(void)didBeginContact:(SKPhysicsContact *)contact
 {
-    SKNode *nodeA = contact.bodyA.node;
+    //NSLog(@"collison impulse : %f, contact normal vector.dx : %f , dy : %f",contact.collisionImpulse, contact.contactNormal.dx, contact.contactNormal.dy);
     if (contact.bodyA.categoryBitMask == wall && contact.bodyB.categoryBitMask == bubble) {
-        [nodeA runAction:[SKAction playSoundFileNamed:@"ppiyong.wav" waitForCompletion:NO]];
+        if (contact.collisionImpulse > 25.0) {
+            [contact.bodyA.node runAction:[SKAction playSoundFileNamed:@"ppiyong.wav" waitForCompletion:NO]];
+        }
     }
     else if (contact.bodyA.categoryBitMask == bubble && contact.bodyA.categoryBitMask == contact.bodyB.categoryBitMask) {
-        [nodeA runAction:[SKAction playSoundFileNamed:@"ppyock.wav" waitForCompletion:NO]];
+        if (contact.collisionImpulse > 10.0) {
+            [contact.bodyA.node runAction:[SKAction playSoundFileNamed:@"ppyock.wav" waitForCompletion:NO]];
+        }
     }
 }
 
