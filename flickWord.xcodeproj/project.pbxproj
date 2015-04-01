@@ -13,6 +13,9 @@
 		634F595D1AC931D800F49D07 /* match.wav in Resources */ = {isa = PBXBuildFile; fileRef = 634F59581AC931D800F49D07 /* match.wav */; };
 		634F595E1AC931D800F49D07 /* hwick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 634F59591AC931D800F49D07 /* hwick.wav */; };
 		634F595F1AC931D800F49D07 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 634F595A1AC931D800F49D07 /* click.wav */; };
+		634F596B1ACBB50E00F49D07 /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F596A1ACBB50E00F49D07 /* UIButton+Custom.m */; };
+		634F596E1ACBB59800F49D07 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F596D1ACBB59800F49D07 /* NSString+FontAwesome.m */; };
+		634F59721ACBBF7E00F49D07 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 634F596F1ACBB5C300F49D07 /* FontAwesome.ttf */; };
 		636311F719B036DD00E15DC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311F619B036DD00E15DC3 /* Foundation.framework */; };
 		636311F919B036DD00E15DC3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311F819B036DD00E15DC3 /* CoreGraphics.framework */; };
 		636311FB19B036DD00E15DC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311FA19B036DD00E15DC3 /* UIKit.framework */; };
@@ -21,7 +24,7 @@
 		6363120519B036DD00E15DC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363120419B036DD00E15DC3 /* main.m */; };
 		6363120919B036DD00E15DC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363120819B036DD00E15DC3 /* AppDelegate.m */; };
 		6363120C19B036DD00E15DC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6363120A19B036DD00E15DC3 /* Main.storyboard */; };
-		6363120F19B036DD00E15DC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363120E19B036DD00E15DC3 /* ViewController.m */; };
+		6363120F19B036DD00E15DC3 /* SKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363120E19B036DD00E15DC3 /* SKViewController.m */; };
 		6363121219B036DD00E15DC3 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363121119B036DD00E15DC3 /* MyScene.m */; };
 		6363121419B036DD00E15DC3 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 6363121319B036DD00E15DC3 /* Spaceship.png */; };
 		6363121619B036DD00E15DC3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6363121519B036DD00E15DC3 /* Images.xcassets */; };
@@ -61,6 +64,11 @@
 		634F59591AC931D800F49D07 /* hwick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hwick.wav; path = flickWord/Resources/hwick.wav; sourceTree = "<group>"; };
 		634F595A1AC931D800F49D07 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = click.wav; path = flickWord/Resources/click.wav; sourceTree = "<group>"; };
 		634F59601AC94ACD00F49D07 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		634F59691ACBB50E00F49D07 /* UIButton+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Custom.h"; sourceTree = "<group>"; };
+		634F596A1ACBB50E00F49D07 /* UIButton+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Custom.m"; sourceTree = "<group>"; };
+		634F596C1ACBB59800F49D07 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		634F596D1ACBB59800F49D07 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		634F596F1ACBB5C300F49D07 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = flickWord/Resources/FontAwesome.ttf; sourceTree = "<group>"; };
 		636311F319B036DD00E15DC3 /* flickWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flickWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636311F619B036DD00E15DC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		636311F819B036DD00E15DC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,8 +81,8 @@
 		6363120719B036DD00E15DC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6363120819B036DD00E15DC3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6363120B19B036DD00E15DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6363120D19B036DD00E15DC3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6363120E19B036DD00E15DC3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6363120D19B036DD00E15DC3 /* SKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKViewController.h; sourceTree = "<group>"; };
+		6363120E19B036DD00E15DC3 /* SKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKViewController.m; sourceTree = "<group>"; };
 		6363121019B036DD00E15DC3 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		6363121119B036DD00E15DC3 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
 		6363121319B036DD00E15DC3 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
@@ -125,6 +133,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		634F59711ACBB5D500F49D07 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6373F07B1AC5130C00E2E7CE /* SKTexture+Gradient.h */,
+				6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */,
+				634F59691ACBB50E00F49D07 /* UIButton+Custom.h */,
+				634F596A1ACBB50E00F49D07 /* UIButton+Custom.m */,
+				634F596C1ACBB59800F49D07 /* NSString+FontAwesome.h */,
+				634F596D1ACBB59800F49D07 /* NSString+FontAwesome.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		636311EA19B036DD00E15DC3 = {
 			isa = PBXGroup;
 			children = (
@@ -162,11 +183,12 @@
 		636311FE19B036DD00E15DC3 /* flickWord */ = {
 			isa = PBXGroup;
 			children = (
+				634F59711ACBB5D500F49D07 /* Category */,
 				6363120719B036DD00E15DC3 /* AppDelegate.h */,
 				6363120819B036DD00E15DC3 /* AppDelegate.m */,
 				6363120A19B036DD00E15DC3 /* Main.storyboard */,
-				6363120D19B036DD00E15DC3 /* ViewController.h */,
-				6363120E19B036DD00E15DC3 /* ViewController.m */,
+				6363120D19B036DD00E15DC3 /* SKViewController.h */,
+				6363120E19B036DD00E15DC3 /* SKViewController.m */,
 				6363121019B036DD00E15DC3 /* MyScene.h */,
 				6363121119B036DD00E15DC3 /* MyScene.m */,
 				6363121319B036DD00E15DC3 /* Spaceship.png */,
@@ -182,8 +204,6 @@
 				637023E71A92FFBD00496A2A /* TableViewController.h */,
 				637023E81A92FFBD00496A2A /* TableViewController.m */,
 				636311FF19B036DD00E15DC3 /* Supporting Files */,
-				6373F07B1AC5130C00E2E7CE /* SKTexture+Gradient.h */,
-				6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */,
 			);
 			path = flickWord;
 			sourceTree = "<group>";
@@ -221,6 +241,7 @@
 		63EC061E19D00001002AEA05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				634F596F1ACBB5C300F49D07 /* FontAwesome.ttf */,
 				634F59561AC931D800F49D07 /* ppyock.wav */,
 				634F59571AC931D800F49D07 /* ppiyong.wav */,
 				634F59581AC931D800F49D07 /* match.wav */,
@@ -311,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634F59721ACBBF7E00F49D07 /* FontAwesome.ttf in Resources */,
 				637023E31A92FF0C00496A2A /* bubble@2x.png in Resources */,
 				637023EB1A93002900496A2A /* able.txt in Resources */,
 				634F595D1AC931D800F49D07 /* match.wav in Resources */,
@@ -344,10 +366,12 @@
 				6363121219B036DD00E15DC3 /* MyScene.m in Sources */,
 				6373F07D1AC5130C00E2E7CE /* SKTexture+Gradient.m in Sources */,
 				637023EE1A9301E000496A2A /* WordDictionary.m in Sources */,
-				6363120F19B036DD00E15DC3 /* ViewController.m in Sources */,
+				6363120F19B036DD00E15DC3 /* SKViewController.m in Sources */,
 				6377E1321A846337007E3C4A /* Bubble.m in Sources */,
 				6363120919B036DD00E15DC3 /* AppDelegate.m in Sources */,
 				6363120519B036DD00E15DC3 /* main.m in Sources */,
+				634F596B1ACBB50E00F49D07 /* UIButton+Custom.m in Sources */,
+				634F596E1ACBB59800F49D07 /* NSString+FontAwesome.m in Sources */,
 				637023E61A92FF4900496A2A /* WordDictionary.xcdatamodeld in Sources */,
 				634E53F01A8AD80C00299CCC /* Magnet.m in Sources */,
 				637023E91A92FFBD00496A2A /* TableViewController.m in Sources */,

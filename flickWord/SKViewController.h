@@ -11,7 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "WordDictionary.h"
 
-@interface ViewController : UIViewController <AVSpeechSynthesizerDelegate>
+@interface SKViewController : UIViewController <AVSpeechSynthesizerDelegate>
 
 @property (nonatomic) WordDictionary *word;
 

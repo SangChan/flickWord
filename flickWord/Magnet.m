@@ -33,7 +33,7 @@
     _radius = raidus;
     _letter = letter;
     
-    CGRect circle = CGRectMake(self.frame.origin.x-30.0, self.frame.origin.y-30.0, 60.0, 60.0);
+    CGRect circle = CGRectMake(self.frame.origin.x-22.5, self.frame.origin.y-22.5, 45.0, 45.0);
     _shapeNode = [[SKShapeNode alloc] init];
     _shapeNode.path = [UIBezierPath bezierPathWithOvalInRect:circle].CGPath;
     _shapeNode.fillColor = [SKColor clearColor];
@@ -41,8 +41,8 @@
     _shapeNode.lineWidth = 0.5;
     _shapeNode.antialiased = YES;
     [self addChild:_shapeNode];
-    SKAction *scaleAction = [SKAction sequence:[NSArray arrayWithObjects:[SKAction scaleBy:1.3 duration:3.0], [SKAction scaleTo:1.0 duration:5.0],nil]];
-    SKAction *fadeAction = [SKAction sequence:[NSArray arrayWithObjects:[SKAction fadeOutWithDuration:7.0],[SKAction fadeInWithDuration:11.0],nil]];
+    SKAction *scaleAction = [SKAction sequence:[NSArray arrayWithObjects:[SKAction scaleBy:1.5 duration:2.0],[SKAction scaleTo:1.0 duration:2.0],nil]];
+    SKAction *fadeAction = [SKAction sequence:[NSArray arrayWithObjects:[SKAction fadeOutWithDuration:2.0],[SKAction fadeInWithDuration:2.0],nil]];
     [_shapeNode runAction:[SKAction repeatActionForever:scaleAction] withKey:@"scale"];
     [_shapeNode runAction:[SKAction repeatActionForever:fadeAction] withKey:@"fade"];
     

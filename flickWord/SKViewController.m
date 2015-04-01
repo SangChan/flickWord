@@ -6,11 +6,13 @@
 //  Copyright (c) 2014년 sangchan. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SKViewController.h"
 #import "MyScene.h"
+#import "UIButton+Custom.h"
+
 @import WebKit;
 
-@implementation ViewController
+@implementation SKViewController
 @synthesize word;
 
 - (void)viewDidLoad
@@ -67,17 +69,17 @@
 
 - (void)setButtons
 {
-    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.origin.x + 5, self.view.frame.origin.y + 5 , 50, 50)];
-    [backButton setTitle:@"Back" forState:UIControlStateNormal];
+    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.origin.x + 5, self.view.frame.origin.y + 5 , 35, 35)];
+    [backButton darkCircleStyle];
+    [backButton addAwesomeIcon:@"fa-chevron-left"];
     [backButton addTarget:self action:@selector(popThisView) forControlEvents:UIControlEventTouchUpInside];
-    [backButton setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3f]];
     [self.view addSubview:backButton];
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-    UIButton *speakButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 65, self.view.frame.origin.y + 5 , 55, 50)];
-    [speakButton setTitle:@"Speak" forState:UIControlStateNormal];
+    UIButton *speakButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 40, self.view.frame.origin.y + 5 , 35, 35)];
+    [speakButton darkCircleStyle];
+    [speakButton addAwesomeIcon:@"fa-play"];
     [speakButton addTarget:self action:@selector(speakWord) forControlEvents:UIControlEventTouchUpInside];
-    [speakButton setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3f]];
     [self.view addSubview:speakButton];
 #endif
     

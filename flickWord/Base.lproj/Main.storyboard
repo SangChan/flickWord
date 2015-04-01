@@ -52,7 +52,7 @@
         <!--Game-->
         <scene sceneID="44T-aQ-8Zt">
             <objects>
-                <viewController title="Game" id="80Z-JR-abB" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Game" id="80Z-JR-abB" customClass="SKViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="upw-QL-vqx"/>
                         <viewControllerLayoutGuide type="bottom" id="bE3-Lh-bq8"/>

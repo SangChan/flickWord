@@ -7,7 +7,7 @@
 //
 
 #import "TableViewController.h"
-#import "ViewController.h"
+#import "SKViewController.h"
 #import "WordDictionary.h"
 
 @interface TableViewController ()
@@ -121,15 +121,15 @@
         NSArray *sectionArray = [wordsWithSection objectForKey:[sectionKeywords objectAtIndex:indexPath.section]];
         WordDictionary *word = [sectionArray objectAtIndex:indexPath.row];
         
-        if ([[segue destinationViewController] isKindOfClass:[ViewController class]]) {
-            ViewController *vc = (ViewController *)[segue destinationViewController];
+        if ([[segue destinationViewController] isKindOfClass:[SKViewController class]]) {
+            SKViewController *vc = (SKViewController *)[segue destinationViewController];
             [vc setWord:word];
         }
         else {
             NSArray *childArray = [[segue destinationViewController] childViewControllers];
             for (id vc in childArray) {
-                if ([vc isKindOfClass:[ViewController class]]) {
-                    [(ViewController *)vc setWord:word];
+                if ([vc isKindOfClass:[SKViewController class]]) {
+                    [(SKViewController *)vc setWord:word];
                     break;
                 }
             }
