@@ -31,7 +31,7 @@
 {
     [self defaultStyle];
     self.layer.cornerRadius = self.frame.size.width / 2;
-    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self setTitleColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.8] forState:UIControlStateNormal];
     self.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.6];
     self.layer.borderColor = [[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.8]CGColor];
 }
