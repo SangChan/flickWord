@@ -33,6 +33,20 @@
     _radius = raidus;
     _letter = letter;
     
+    CGRect circle = CGRectMake(self.frame.origin.x-30.0, self.frame.origin.y-30.0, 60.0, 60.0);
+    _shapeNode = [[SKShapeNode alloc] init];
+    _shapeNode.path = [UIBezierPath bezierPathWithOvalInRect:circle].CGPath;
+    _shapeNode.fillColor = [SKColor clearColor];
+    _shapeNode.strokeColor = [SKColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:0.4];
+    _shapeNode.lineWidth = 0.5;
+    _shapeNode.antialiased = YES;
+    [self addChild:_shapeNode];
+    SKAction *scaleAction = [SKAction sequence:[NSArray arrayWithObjects:[SKAction scaleBy:1.3 duration:3.0], [SKAction scaleTo:1.0 duration:5.0],nil]];
+    SKAction *fadeAction = [SKAction sequence:[NSArray arrayWithObjects:[SKAction fadeOutWithDuration:7.0],[SKAction fadeInWithDuration:11.0],nil]];
+    [_shapeNode runAction:[SKAction repeatActionForever:scaleAction] withKey:@"scale"];
+    [_shapeNode runAction:[SKAction repeatActionForever:fadeAction] withKey:@"fade"];
+    
+    
     SKLabelNode *addedLabel = [[SKLabelNode alloc]initWithFontNamed:@"Chalkduster"];
     addedLabel.text = letter;
     addedLabel.fontSize = 48;
@@ -72,6 +86,8 @@
                         SKAction *rotateAction = [SKAction rotateToAngle:0.0 duration:0.7f];
                         [bubbleBody runAction:rotateAction completion:^{
                             _active = NO;
+                            [_shapeNode setHidden:YES];
+                            [_shapeNode removeAllActions];
                             [[NSNotificationCenter defaultCenter]postNotificationName:@"matchLetter" object:nil];
                             [self runAction:[SKAction playSoundFileNamed:@"match.wav" waitForCompletion:NO]];
                         }];

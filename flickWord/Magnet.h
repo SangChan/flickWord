@@ -13,6 +13,7 @@
     float _force;
     float _radius;
     NSString *_letter;
+    SKShapeNode *_shapeNode;
 }
 
 @property (nonatomic) NSString* letter;
