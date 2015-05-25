@@ -41,6 +41,13 @@
 		637023EE1A9301E000496A2A /* WordDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 637023ED1A9301E000496A2A /* WordDictionary.m */; };
 		6373F07D1AC5130C00E2E7CE /* SKTexture+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */; };
 		6377E1321A846337007E3C4A /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E1311A846337007E3C4A /* Bubble.m */; };
+		63A4E0021B13184400188120 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A4E0011B13184400188120 /* InterfaceController.m */; };
+		63A4E0051B13184400188120 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A4E0041B13184400188120 /* GlanceController.m */; };
+		63A4E0071B13184400188120 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63A4E0061B13184400188120 /* Images.xcassets */; };
+		63A4E00B1B13184400188120 /* flickWord WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 63A4E00A1B13184400188120 /* flickWord WatchKit App.app */; };
+		63A4E0131B13184400188120 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A4E0111B13184400188120 /* Interface.storyboard */; };
+		63A4E0151B13184400188120 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63A4E0141B13184400188120 /* Images.xcassets */; };
+		63A4E0181B13184400188120 /* flickWord WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63A4DFFC1B13184400188120 /* flickWord WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		63F26BC91ABA8B6400E9E865 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F26BC81ABA8B6400E9E865 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +59,35 @@
 			remoteGlobalIDString = 636311F219B036DD00E15DC3;
 			remoteInfo = flickWord;
 		};
+		63A4E00C1B13184400188120 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 636311EB19B036DD00E15DC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63A4E0091B13184400188120;
+			remoteInfo = "flickWord WatchKit App";
+		};
+		63A4E0161B13184400188120 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 636311EB19B036DD00E15DC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63A4DFFB1B13184400188120;
+			remoteInfo = "flickWord WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		63A4E01F1B13184400188120 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				63A4E0181B13184400188120 /* flickWord WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		634E53EE1A8AD80C00299CCC /* Magnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magnet.h; sourceTree = "<group>"; };
@@ -104,6 +139,17 @@
 		6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKTexture+Gradient.m"; sourceTree = "<group>"; };
 		6377E1301A846337007E3C4A /* Bubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bubble.h; sourceTree = "<group>"; };
 		6377E1311A846337007E3C4A /* Bubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bubble.m; sourceTree = "<group>"; };
+		63A4DFFC1B13184400188120 /* flickWord WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "flickWord WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63A4DFFF1B13184400188120 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63A4E0001B13184400188120 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		63A4E0011B13184400188120 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		63A4E0031B13184400188120 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		63A4E0041B13184400188120 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		63A4E0061B13184400188120 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		63A4E00A1B13184400188120 /* flickWord WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flickWord WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63A4E0101B13184400188120 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63A4E0121B13184400188120 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		63A4E0141B13184400188120 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		63F26BC81ABA8B6400E9E865 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -130,6 +176,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63A4DFF91B13184400188120 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -152,6 +205,8 @@
 				63EC061E19D00001002AEA05 /* Resources */,
 				636311FE19B036DD00E15DC3 /* flickWord */,
 				6363122219B036DD00E15DC3 /* flickWordTests */,
+				63A4DFFD1B13184400188120 /* flickWord WatchKit Extension */,
+				63A4E00E1B13184400188120 /* flickWord WatchKit App */,
 				636311F519B036DD00E15DC3 /* Frameworks */,
 				636311F419B036DD00E15DC3 /* Products */,
 			);
@@ -162,6 +217,8 @@
 			children = (
 				636311F319B036DD00E15DC3 /* flickWord.app */,
 				6363121B19B036DD00E15DC3 /* flickWordTests.xctest */,
+				63A4DFFC1B13184400188120 /* flickWord WatchKit Extension.appex */,
+				63A4E00A1B13184400188120 /* flickWord WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +295,45 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		63A4DFFD1B13184400188120 /* flickWord WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63A4E0001B13184400188120 /* InterfaceController.h */,
+				63A4E0011B13184400188120 /* InterfaceController.m */,
+				63A4E0031B13184400188120 /* GlanceController.h */,
+				63A4E0041B13184400188120 /* GlanceController.m */,
+				63A4E0061B13184400188120 /* Images.xcassets */,
+				63A4DFFE1B13184400188120 /* Supporting Files */,
+			);
+			path = "flickWord WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		63A4DFFE1B13184400188120 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63A4DFFF1B13184400188120 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63A4E00E1B13184400188120 /* flickWord WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				63A4E0111B13184400188120 /* Interface.storyboard */,
+				63A4E0141B13184400188120 /* Images.xcassets */,
+				63A4E00F1B13184400188120 /* Supporting Files */,
+			);
+			path = "flickWord WatchKit App";
+			sourceTree = "<group>";
+		};
+		63A4E00F1B13184400188120 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63A4E0101B13184400188120 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		63EC061E19D00001002AEA05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,10 +359,12 @@
 				636311EF19B036DD00E15DC3 /* Sources */,
 				636311F019B036DD00E15DC3 /* Frameworks */,
 				636311F119B036DD00E15DC3 /* Resources */,
+				63A4E01F1B13184400188120 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				63A4E0171B13184400188120 /* PBXTargetDependency */,
 			);
 			name = flickWord;
 			productName = flickWord;
@@ -291,6 +389,39 @@
 			productReference = 6363121B19B036DD00E15DC3 /* flickWordTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		63A4DFFB1B13184400188120 /* flickWord WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63A4E01E1B13184400188120 /* Build configuration list for PBXNativeTarget "flickWord WatchKit Extension" */;
+			buildPhases = (
+				63A4DFF81B13184400188120 /* Sources */,
+				63A4DFF91B13184400188120 /* Frameworks */,
+				63A4DFFA1B13184400188120 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63A4E00D1B13184400188120 /* PBXTargetDependency */,
+			);
+			name = "flickWord WatchKit Extension";
+			productName = "flickWord WatchKit Extension";
+			productReference = 63A4DFFC1B13184400188120 /* flickWord WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		63A4E0091B13184400188120 /* flickWord WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63A4E01D1B13184400188120 /* Build configuration list for PBXNativeTarget "flickWord WatchKit App" */;
+			buildPhases = (
+				63A4E0081B13184400188120 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "flickWord WatchKit App";
+			productName = "flickWord WatchKit App";
+			productReference = 63A4E00A1B13184400188120 /* flickWord WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -305,6 +436,13 @@
 					};
 					6363121A19B036DD00E15DC3 = {
 						TestTargetID = 636311F219B036DD00E15DC3;
+					};
+					63A4DFFB1B13184400188120 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = CBUJK8CFZ3;
+					};
+					63A4E0091B13184400188120 = {
+						CreatedOnToolsVersion = 6.3.2;
 					};
 				};
 			};
@@ -323,6 +461,8 @@
 			targets = (
 				636311F219B036DD00E15DC3 /* flickWord */,
 				6363121A19B036DD00E15DC3 /* flickWordTests */,
+				63A4DFFB1B13184400188120 /* flickWord WatchKit Extension */,
+				63A4E0091B13184400188120 /* flickWord WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -356,6 +496,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63A4DFFA1B13184400188120 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63A4E00B1B13184400188120 /* flickWord WatchKit App.app in Resources */,
+				63A4E0071B13184400188120 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63A4E0081B13184400188120 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63A4E0131B13184400188120 /* Interface.storyboard in Resources */,
+				63A4E0151B13184400188120 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -386,6 +544,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63A4DFF81B13184400188120 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63A4E0021B13184400188120 /* InterfaceController.m in Sources */,
+				63A4E0051B13184400188120 /* GlanceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -393,6 +560,16 @@
 			isa = PBXTargetDependency;
 			target = 636311F219B036DD00E15DC3 /* flickWord */;
 			targetProxy = 6363122019B036DD00E15DC3 /* PBXContainerItemProxy */;
+		};
+		63A4E00D1B13184400188120 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63A4E0091B13184400188120 /* flickWord WatchKit App */;
+			targetProxy = 63A4E00C1B13184400188120 /* PBXContainerItemProxy */;
+		};
+		63A4E0171B13184400188120 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63A4DFFB1B13184400188120 /* flickWord WatchKit Extension */;
+			targetProxy = 63A4E0161B13184400188120 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -419,6 +596,14 @@
 				6363122619B036DD00E15DC3 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		63A4E0111B13184400188120 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63A4E0121B13184400188120 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -572,6 +757,90 @@
 			};
 			name = Release;
 		};
+		63A4E0191B13184400188120 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: SangChan Lee (585ZYQPML2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "flickWord WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		63A4E01A1B13184400188120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: SangChan Lee (585ZYQPML2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "flickWord WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		63A4E01B1B13184400188120 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = flickWord_WatchKit_Extension;
+				INFOPLIST_FILE = "flickWord WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		63A4E01C1B13184400188120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = flickWord_WatchKit_Extension;
+				INFOPLIST_FILE = "flickWord WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -601,6 +870,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		63A4E01D1B13184400188120 /* Build configuration list for PBXNativeTarget "flickWord WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63A4E01B1B13184400188120 /* Debug */,
+				63A4E01C1B13184400188120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		63A4E01E1B13184400188120 /* Build configuration list for PBXNativeTarget "flickWord WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63A4E0191B13184400188120 /* Debug */,
+				63A4E01A1B13184400188120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
