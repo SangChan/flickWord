@@ -27,7 +27,6 @@
 		6363120F19B036DD00E15DC3 /* SKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363120E19B036DD00E15DC3 /* SKViewController.m */; };
 		6363121219B036DD00E15DC3 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363121119B036DD00E15DC3 /* MyScene.m */; };
 		6363121419B036DD00E15DC3 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 6363121319B036DD00E15DC3 /* Spaceship.png */; };
-		6363121619B036DD00E15DC3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6363121519B036DD00E15DC3 /* Images.xcassets */; };
 		6363121D19B036DD00E15DC3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6363121C19B036DD00E15DC3 /* XCTest.framework */; };
 		6363121E19B036DD00E15DC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311F619B036DD00E15DC3 /* Foundation.framework */; };
 		6363121F19B036DD00E15DC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311FA19B036DD00E15DC3 /* UIKit.framework */; };
@@ -41,6 +40,9 @@
 		637023EE1A9301E000496A2A /* WordDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 637023ED1A9301E000496A2A /* WordDictionary.m */; };
 		6373F07D1AC5130C00E2E7CE /* SKTexture+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */; };
 		6377E1321A846337007E3C4A /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E1311A846337007E3C4A /* Bubble.m */; };
+		63D1A6691B37F28C0062073B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D1A6681B37F28C0062073B /* Images.xcassets */; };
+		63D1A66B1B37F4050062073B /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D1A66A1B37F4050062073B /* Launch Screen.xib */; };
+		63D1A66D1B37FAEF0062073B /* veranda_ci.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D1A66C1B37FAEF0062073B /* veranda_ci.png */; };
 		63F26BC91ABA8B6400E9E865 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F26BC81ABA8B6400E9E865 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,7 +101,6 @@
 		6363121019B036DD00E15DC3 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		6363121119B036DD00E15DC3 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
 		6363121319B036DD00E15DC3 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
-		6363121519B036DD00E15DC3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6363121B19B036DD00E15DC3 /* flickWordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flickWordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6363121C19B036DD00E15DC3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6363122419B036DD00E15DC3 /* flickWordTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "flickWordTests-Info.plist"; sourceTree = "<group>"; };
@@ -117,6 +118,9 @@
 		6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKTexture+Gradient.m"; sourceTree = "<group>"; };
 		6377E1301A846337007E3C4A /* Bubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bubble.h; sourceTree = "<group>"; };
 		6377E1311A846337007E3C4A /* Bubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bubble.m; sourceTree = "<group>"; };
+		63D1A6681B37F28C0062073B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		63D1A66A1B37F4050062073B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		63D1A66C1B37FAEF0062073B /* veranda_ci.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veranda_ci.png; sourceTree = "<group>"; };
 		63F26BC81ABA8B6400E9E865 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -205,7 +209,6 @@
 				6363121019B036DD00E15DC3 /* MyScene.h */,
 				6363121119B036DD00E15DC3 /* MyScene.m */,
 				6363121319B036DD00E15DC3 /* Spaceship.png */,
-				6363121519B036DD00E15DC3 /* Images.xcassets */,
 				6377E1301A846337007E3C4A /* Bubble.h */,
 				6377E1311A846337007E3C4A /* Bubble.m */,
 				634E53EE1A8AD80C00299CCC /* Magnet.h */,
@@ -216,7 +219,9 @@
 				637023ED1A9301E000496A2A /* WordDictionary.m */,
 				637023E71A92FFBD00496A2A /* TableViewController.h */,
 				637023E81A92FFBD00496A2A /* TableViewController.m */,
+				63D1A6681B37F28C0062073B /* Images.xcassets */,
 				636311FF19B036DD00E15DC3 /* Supporting Files */,
+				63D1A66A1B37F4050062073B /* Launch Screen.xib */,
 			);
 			path = flickWord;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				634F595A1AC931D800F49D07 /* click.wav */,
 				637023E01A92FF0C00496A2A /* bubble.png */,
 				637023E11A92FF0C00496A2A /* bubble@2x.png */,
+				63D1A66C1B37FAEF0062073B /* veranda_ci.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -349,11 +355,13 @@
 				634F59721ACBBF7E00F49D07 /* FontAwesome.ttf in Resources */,
 				637023E31A92FF0C00496A2A /* bubble@2x.png in Resources */,
 				637023EB1A93002900496A2A /* able.txt in Resources */,
+				63D1A6691B37F28C0062073B /* Images.xcassets in Resources */,
 				634F595D1AC931D800F49D07 /* match.wav in Resources */,
+				63D1A66B1B37F4050062073B /* Launch Screen.xib in Resources */,
 				634F595F1AC931D800F49D07 /* click.wav in Resources */,
 				634F595E1AC931D800F49D07 /* hwick.wav in Resources */,
 				6363120319B036DD00E15DC3 /* InfoPlist.strings in Resources */,
-				6363121619B036DD00E15DC3 /* Images.xcassets in Resources */,
+				63D1A66D1B37FAEF0062073B /* veranda_ci.png in Resources */,
 				634F595C1AC931D800F49D07 /* ppiyong.wav in Resources */,
 				634F595B1AC931D800F49D07 /* ppyock.wav in Resources */,
 				637023E21A92FF0C00496A2A /* bubble.png in Resources */,
@@ -512,7 +520,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: SangChan Lee (585ZYQPML2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -531,7 +538,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: SangChan Lee (585ZYQPML2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

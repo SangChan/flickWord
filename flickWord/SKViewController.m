@@ -47,7 +47,7 @@
     [super viewWillDisappear:animated];
 }
 
-- (BOOL)shouldAutorotate
+/*- (BOOL)shouldAutorotate
 {
     return YES;
 }
@@ -59,7 +59,7 @@
     } else {
         return UIInterfaceOrientationMaskAll;
     }
-}
+}*/
 
 - (void)didReceiveMemoryWarning
 {
