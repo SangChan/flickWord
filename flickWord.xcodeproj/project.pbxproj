@@ -120,7 +120,7 @@
 		6377E1311A846337007E3C4A /* Bubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bubble.m; sourceTree = "<group>"; };
 		63D1A6681B37F28C0062073B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		63D1A66A1B37F4050062073B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
-		63D1A66C1B37FAEF0062073B /* veranda_ci.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veranda_ci.png; sourceTree = "<group>"; };
+		63D1A66C1B37FAEF0062073B /* veranda_ci.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = veranda_ci.png; path = flickWord/Resources/veranda_ci.png; sourceTree = "<group>"; };
 		63F26BC81ABA8B6400E9E865 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
