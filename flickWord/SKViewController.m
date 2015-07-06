@@ -12,8 +12,30 @@
 
 @import WebKit;
 
+@interface SKViewController () {
+    AVSpeechSynthesizer *_synthesizer;
+    AVSpeechUtterance *_utterance;
+}
+
+@end
+
 @implementation SKViewController
 @synthesize word;
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    dispatch_async(queue, ^{
+        _synthesizer = [[AVSpeechSynthesizer alloc]init];
+        [_synthesizer setDelegate:self];
+        _utterance = [AVSpeechUtterance speechUtteranceWithString:[word word]];
+        [_utterance setVoice:[AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"]];
+        [_utterance setRate:0.1f];
+        [_utterance setPreUtteranceDelay:0.0];
+    });
+
+}
 
 - (void)viewDidLoad
 {
@@ -39,7 +61,6 @@
     [self setButtons];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(popThisView) name:@"popThisView" object:nil];
 }
-
 
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -101,12 +122,7 @@
 
 -(void)speakWord
 {
-    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc]init];
-    [synthesizer setDelegate:self];
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:[word word]];
-    [utterance setVoice:[AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"]];
-    [utterance setRate:0.2f];
-    [synthesizer speakUtterance:utterance];
+    [_synthesizer speakUtterance:_utterance];
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance

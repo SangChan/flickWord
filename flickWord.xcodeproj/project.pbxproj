@@ -204,6 +204,7 @@
 				6363120719B036DD00E15DC3 /* AppDelegate.h */,
 				6363120819B036DD00E15DC3 /* AppDelegate.m */,
 				6363120A19B036DD00E15DC3 /* Main.storyboard */,
+				63D1A66A1B37F4050062073B /* Launch Screen.xib */,
 				6363120D19B036DD00E15DC3 /* SKViewController.h */,
 				6363120E19B036DD00E15DC3 /* SKViewController.m */,
 				6363121019B036DD00E15DC3 /* MyScene.h */,
@@ -221,7 +222,6 @@
 				637023E81A92FFBD00496A2A /* TableViewController.m */,
 				63D1A6681B37F28C0062073B /* Images.xcassets */,
 				636311FF19B036DD00E15DC3 /* Supporting Files */,
-				63D1A66A1B37F4050062073B /* Launch Screen.xib */,
 			);
 			path = flickWord;
 			sourceTree = "<group>";
