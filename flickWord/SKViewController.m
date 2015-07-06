@@ -15,6 +15,7 @@
 @interface SKViewController () {
     AVSpeechSynthesizer *_synthesizer;
     AVSpeechUtterance *_utterance;
+    UIButton *_speakButton;
 }
 
 @end
@@ -97,11 +98,11 @@
     [self.view addSubview:backButton];
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-    UIButton *speakButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 40, self.view.frame.origin.y + 5 , 35, 35)];
-    [speakButton darkCircleStyle];
-    [speakButton addAwesomeIcon:@"fa-play"];
-    [speakButton addTarget:self action:@selector(speakWord) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:speakButton];
+    _speakButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 40, self.view.frame.origin.y + 5 , 35, 35)];
+    [_speakButton darkCircleStyle];
+    [_speakButton addAwesomeIcon:@"fa-play"];
+    [_speakButton addTarget:self action:@selector(speakWord) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_speakButton];
 #endif
     
 }
@@ -122,11 +123,19 @@
 
 -(void)speakWord
 {
-    [_synthesizer speakUtterance:_utterance];
+    if (![_synthesizer isSpeaking]) {
+        [_synthesizer speakUtterance:_utterance];
+    }
+}
+
+- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didStartSpeechUtterance:(AVSpeechUtterance *)utterance
+{
+    _speakButton.enabled = NO;
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance
 {
+    _speakButton.enabled = YES;
 }
 
 @end
