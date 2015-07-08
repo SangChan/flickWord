@@ -24,6 +24,7 @@ static const uint32_t bubble = 0x1 << 1;
     float totalLetterCount;
     SKAction *ppiyongSoundAction;
     SKAction *ppyockSoundAction;
+    int timer;
 }
 
 @end
@@ -44,6 +45,7 @@ static const uint32_t bubble = 0x1 << 1;
         }
         
         /* Setup your scene here */
+        timer = 0;
         self.name = @"MyScene";
         ppiyongSoundAction = [SKAction playSoundFileNamed:@"ppiyong.wav" waitForCompletion:NO];
         ppyockSoundAction = [SKAction playSoundFileNamed:@"ppyock.wav" waitForCompletion:NO];
@@ -162,6 +164,9 @@ static const uint32_t bubble = 0x1 << 1;
             [childNode performSelector:@selector(update)];
         }
     }
+    
+    //Maybe 1 second per 30 count.
+    timer++;
 }
 
 -(void)matchLetter
