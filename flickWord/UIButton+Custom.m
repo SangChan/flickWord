@@ -47,11 +47,11 @@
     return img;
 }
 
--(void)addAwesomeIcon:(NSString *)iconID
+-(void)setAwesomeIcon:(FAIcon)iconID
 {
     self.titleLabel.font = [UIFont fontWithName:kFontAwesomeFamilyName size:self.titleLabel.font.pointSize];
     self.titleLabel.shadowOffset = CGSizeMake(0, -1);
-    [self setTitle:[NSString fontAwesomeIconStringForIconIdentifier:iconID] forState:UIControlStateNormal];
+    [self setTitle:[NSString fontAwesomeIconStringForEnum:iconID] forState:UIControlStateNormal];
 }
 
 @end

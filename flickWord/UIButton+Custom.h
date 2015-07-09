@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSString+FontAwesome.h"
 @interface UIButton (Custom)
 
 -(void)defaultStyle;
 -(void)circleStyle;
 -(void)darkCircleStyle;
--(void)addAwesomeIcon:(NSString *)iconID;
+-(void)setAwesomeIcon:(FAIcon)iconID;
 
 @end
