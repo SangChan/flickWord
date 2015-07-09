@@ -9,10 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface MyScene : SKScene <SKPhysicsContactDelegate> {
-    NSString * _word;
-    NSString * _wordDescription;
-}
+@interface MyScene : SKScene <SKPhysicsContactDelegate>
 
 @property (nonatomic, readonly) CGRect borderRect;
 

@@ -19,6 +19,8 @@ static const uint32_t bubble = 0x1 << 1;
 
 
 @interface MyScene () {
+    NSString * _word;
+    NSString * _wordDescription;
     SKLabelNode *descLabel;
     int matchLetterCount;
     float totalLetterCount;
