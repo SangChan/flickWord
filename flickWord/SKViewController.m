@@ -10,12 +10,11 @@
 #import "MyScene.h"
 #import "NSString+FontAwesome.h"
 #import "UIButton+Custom.h"
+#import "MySpeachObject.h"
 
 @import WebKit;
 
 @interface SKViewController () {
-    AVSpeechSynthesizer *_synthesizer;
-    AVSpeechUtterance *_utterance;
     UIButton *_speakButton;
     UIButton *_pauseButton;
 }
@@ -28,16 +27,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
-    dispatch_async(queue, ^{
-        _synthesizer = [[AVSpeechSynthesizer alloc]init];
-        [_synthesizer setDelegate:self];
-        _utterance = [AVSpeechUtterance speechUtteranceWithString:[word word]];
-        [_utterance setVoice:[AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"]];
-        [_utterance setRate:0.1f];
-        [_utterance setPreUtteranceDelay:0.0];
-    });
-
 }
 
 - (void)viewDidLoad
@@ -130,20 +119,20 @@
                                completion:nil];
 }
 
--(void)speakWord
-{
-    if (![_synthesizer isSpeaking]) {
-        [_synthesizer speakUtterance:_utterance];
-    }
-}
 
 -(void)pauseView
 {
     SKView *skView = (SKView *)self.view;
     skView.paused = !skView.paused;
     [_pauseButton setAwesomeIcon:(skView.paused)?FAPlay:FAPause];
+    
+    MySpeachObject *speachObject = [MySpeachObject sharedInstance];
+    [speachObject initSynthesizerWithWord:[word word]];
+    [speachObject play];
+
 }
 
+/*
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didStartSpeechUtterance:(AVSpeechUtterance *)utterance
 {
     _speakButton.enabled = NO;
@@ -153,5 +142,5 @@
 {
     _speakButton.enabled = YES;
 }
-
+*/
 @end
