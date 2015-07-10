@@ -10,7 +10,7 @@
 #import "TableViewController.h"
 #import "WordDictionary.h"
 #import "SKViewController.h"
-#import "MySpeachObject.h"
+#import "MySpeechObject.h"
 
 @implementation AppDelegate
 
@@ -19,8 +19,8 @@
     // Override point for customization after application launch.
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     
-    MySpeachObject *speachObject = [MySpeachObject sharedInstance];
-    [speachObject initSynthesizerWithWord:@"flick word"];
+    MySpeechObject *speechObject = [MySpeechObject sharedInstance];
+    [speechObject initSynthesizerWithWord:@"flick word"];
     
     NSArray *words = [self getWords];
     if ([words count] == 0) {

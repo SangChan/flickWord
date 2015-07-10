@@ -10,7 +10,7 @@
 #import "MyScene.h"
 #import "NSString+FontAwesome.h"
 #import "UIButton+Custom.h"
-#import "MySpeachObject.h"
+#import "MySpeechObject.h"
 
 @import WebKit;
 
@@ -126,9 +126,9 @@
     skView.paused = !skView.paused;
     [_pauseButton setAwesomeIcon:(skView.paused)?FAPlay:FAPause];
     
-    MySpeachObject *speachObject = [MySpeachObject sharedInstance];
-    [speachObject initSynthesizerWithWord:[word word]];
-    [speachObject play];
+    MySpeechObject *speechObject = [MySpeechObject sharedInstance];
+    [speechObject initSynthesizerWithWord:[word word]];
+    [speechObject play];
 
 }
 

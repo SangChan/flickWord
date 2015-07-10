@@ -16,7 +16,7 @@
 		634F596B1ACBB50E00F49D07 /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F596A1ACBB50E00F49D07 /* UIButton+Custom.m */; };
 		634F596E1ACBB59800F49D07 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F596D1ACBB59800F49D07 /* NSString+FontAwesome.m */; };
 		634F59721ACBBF7E00F49D07 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 634F596F1ACBB5C300F49D07 /* FontAwesome.ttf */; };
-		6352B4F81B4F864100235549 /* MySpeachObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6352B4F71B4F864100235549 /* MySpeachObject.m */; };
+		6352B4F81B4F864100235549 /* MySpeechObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6352B4F71B4F864100235549 /* MySpeechObject.m */; };
 		636311F719B036DD00E15DC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311F619B036DD00E15DC3 /* Foundation.framework */; };
 		636311F919B036DD00E15DC3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311F819B036DD00E15DC3 /* CoreGraphics.framework */; };
 		636311FB19B036DD00E15DC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311FA19B036DD00E15DC3 /* UIKit.framework */; };
@@ -85,8 +85,8 @@
 		634F596C1ACBB59800F49D07 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		634F596D1ACBB59800F49D07 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
 		634F596F1ACBB5C300F49D07 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = flickWord/Resources/FontAwesome.ttf; sourceTree = "<group>"; };
-		6352B4F61B4F864100235549 /* MySpeachObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySpeachObject.h; sourceTree = "<group>"; };
-		6352B4F71B4F864100235549 /* MySpeachObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySpeachObject.m; sourceTree = "<group>"; };
+		6352B4F61B4F864100235549 /* MySpeechObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySpeechObject.h; sourceTree = "<group>"; };
+		6352B4F71B4F864100235549 /* MySpeechObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySpeechObject.m; sourceTree = "<group>"; };
 		636311F319B036DD00E15DC3 /* flickWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flickWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636311F619B036DD00E15DC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		636311F819B036DD00E15DC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -208,8 +208,8 @@
 				6363120819B036DD00E15DC3 /* AppDelegate.m */,
 				6363120A19B036DD00E15DC3 /* Main.storyboard */,
 				63D1A66A1B37F4050062073B /* Launch Screen.xib */,
-				6352B4F61B4F864100235549 /* MySpeachObject.h */,
-				6352B4F71B4F864100235549 /* MySpeachObject.m */,
+				6352B4F61B4F864100235549 /* MySpeechObject.h */,
+				6352B4F71B4F864100235549 /* MySpeechObject.m */,
 				6363120D19B036DD00E15DC3 /* SKViewController.h */,
 				6363120E19B036DD00E15DC3 /* SKViewController.m */,
 				6363121019B036DD00E15DC3 /* MyScene.h */,
@@ -392,7 +392,7 @@
 			files = (
 				6363121219B036DD00E15DC3 /* MyScene.m in Sources */,
 				6373F07D1AC5130C00E2E7CE /* SKTexture+Gradient.m in Sources */,
-				6352B4F81B4F864100235549 /* MySpeachObject.m in Sources */,
+				6352B4F81B4F864100235549 /* MySpeechObject.m in Sources */,
 				637023EE1A9301E000496A2A /* WordDictionary.m in Sources */,
 				6363120F19B036DD00E15DC3 /* SKViewController.m in Sources */,
 				6377E1321A846337007E3C4A /* Bubble.m in Sources */,

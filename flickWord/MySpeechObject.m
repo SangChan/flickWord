@@ -6,11 +6,11 @@
 //  Copyright (c) 2015년 sangchan. All rights reserved.
 //
 
-#import "MySpeachObject.h"
+#import "MySpeechObject.h"
 
-@implementation MySpeachObject
+@implementation MySpeechObject
 
-static MySpeachObject *sharedMyObject = nil;
+static MySpeechObject *sharedMyObject = nil;
 + (instancetype)sharedInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

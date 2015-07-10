@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface MySpeachObject : NSObject <AVSpeechSynthesizerDelegate>{
+@interface MySpeechObject : NSObject <AVSpeechSynthesizerDelegate>{
     AVSpeechSynthesizer *_synthesizer;
     AVSpeechUtterance *_utterance;
 }
