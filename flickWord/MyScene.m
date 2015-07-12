@@ -176,7 +176,7 @@ static const uint32_t bubble = 0x1 << 1;
     matchLetterCount++;
     descLabel.alpha = 0.2f+(matchLetterCount/totalLetterCount)*0.8f;
     if (matchLetterCount == (int)totalLetterCount) {
-        //[self speakWord:_word];
+        //TODO : Matching word is over!
     }
 }
 
