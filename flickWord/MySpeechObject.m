@@ -19,7 +19,7 @@ static MySpeechObject *sharedMyObject = nil;
     return sharedMyObject;
 }
 
-- (void)initSynthesizerWithWord:(NSString *)word {
+- (void)prepareSynthesizerWithWord:(NSString *)word {
     _synthesizer = [[AVSpeechSynthesizer alloc]init];
     [_synthesizer setDelegate:self];
     _utterance = [AVSpeechUtterance speechUtteranceWithString:word];

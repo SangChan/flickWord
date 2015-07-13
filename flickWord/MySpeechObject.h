@@ -15,7 +15,7 @@
 }
 
 +(instancetype)sharedInstance;
--(void)initSynthesizerWithWord:(NSString *)word;
+-(void)prepareSynthesizerWithWord:(NSString *)word;
 -(void)play;
 
 @end

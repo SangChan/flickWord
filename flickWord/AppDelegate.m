@@ -20,7 +20,7 @@
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     
     MySpeechObject *speechObject = [MySpeechObject sharedInstance];
-    [speechObject initSynthesizerWithWord:@"flick word"];
+    [speechObject prepareSynthesizerWithWord:@"flick word"];
     
     NSArray *words = [self getWords];
     if ([words count] == 0) {

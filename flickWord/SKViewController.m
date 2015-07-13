@@ -126,9 +126,9 @@
     skView.paused = !skView.paused;
     [_pauseButton setAwesomeIcon:(skView.paused)?FAPlay:FAPause];
     
-    MySpeechObject *speechObject = [MySpeechObject sharedInstance];
-    [speechObject initSynthesizerWithWord:[word word]];
-    [speechObject play];
+//    MySpeechObject *speechObject = [MySpeechObject sharedInstance];
+//    [speechObject initSynthesizerWithWord:[word word]];
+//    [speechObject play];
 
 }
 
