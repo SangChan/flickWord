@@ -132,6 +132,63 @@
 
 }
 
+- (UIView *)applyBlurToView:(UIView *)view withEffectStyle:(UIBlurEffectStyle)style andConstraints:(BOOL)addConstraints
+{
+    //only apply the blur if the user hasn't disabled transparency effects
+    if(!UIAccessibilityIsReduceTransparencyEnabled())
+    {
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:style];
+        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        blurEffectView.frame = view.bounds;
+        
+        [view addSubview:blurEffectView];
+        
+        if(addConstraints)
+        {
+            //add auto layout constraints so that the blur fills the screen upon rotating device
+            [blurEffectView setTranslatesAutoresizingMaskIntoConstraints:NO];
+            
+            [view addConstraint:[NSLayoutConstraint constraintWithItem:blurEffectView
+                                                             attribute:NSLayoutAttributeTop
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:view
+                                                             attribute:NSLayoutAttributeTop
+                                                            multiplier:1
+                                                              constant:0]];
+            
+            [view addConstraint:[NSLayoutConstraint constraintWithItem:blurEffectView
+                                                             attribute:NSLayoutAttributeBottom
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:view
+                                                             attribute:NSLayoutAttributeBottom
+                                                            multiplier:1
+                                                              constant:0]];
+            
+            [view addConstraint:[NSLayoutConstraint constraintWithItem:blurEffectView
+                                                             attribute:NSLayoutAttributeLeading
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:view
+                                                             attribute:NSLayoutAttributeLeading
+                                                            multiplier:1
+                                                              constant:0]];
+            
+            [view addConstraint:[NSLayoutConstraint constraintWithItem:blurEffectView
+                                                             attribute:NSLayoutAttributeTrailing
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:view
+                                                             attribute:NSLayoutAttributeTrailing
+                                                            multiplier:1
+                                                              constant:0]];
+        }
+    }
+    else
+    {
+        view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+    }
+    
+    return view;
+}
+
 /*
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didStartSpeechUtterance:(AVSpeechUtterance *)utterance
 {
