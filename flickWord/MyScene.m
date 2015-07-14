@@ -177,7 +177,8 @@ static const uint32_t bubble = 0x1 << 1;
     descLabel.alpha = 0.2f+(matchLetterCount/totalLetterCount)*0.8f;
     if (matchLetterCount == (int)totalLetterCount) {
         //TODO : Matching word is over!
-        [self applyBlurToView:self.view withEffectStyle:UIBlurEffectStyleDark andConstraints:YES];
+        //[self applyBlurToView:self.view withEffectStyle:UIBlurEffectStyleDark andConstraints:YES];
+        [self loadBlur];
     }
 }
 
@@ -252,6 +253,35 @@ static const uint32_t bubble = 0x1 << 1;
             [contact.bodyA.node runAction:ppyockSoundAction];
         }
     }
+}
+
+-(void)loadBlur {
+    SKSpriteNode *pauseBG = [SKSpriteNode spriteNodeWithTexture:[SKTexture textureWithImage:[self getBluredScreenshot]]];
+    pauseBG.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+    pauseBG.alpha = 0;
+    pauseBG.zPosition = 2;
+    [pauseBG runAction:[SKAction fadeAlphaTo:1 duration:0.5]];
+    [self addChild:pauseBG];
+}
+
+- (UIImage *)getBluredScreenshot {
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 1);
+    [self.view drawViewHierarchyInRect:self.view.frame afterScreenUpdates:YES];
+    UIImage *ss = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    CIFilter *gaussianBlurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
+    [gaussianBlurFilter setDefaults];
+    [gaussianBlurFilter setValue:[CIImage imageWithCGImage:[ss CGImage]] forKey:kCIInputImageKey];
+    [gaussianBlurFilter setValue:@10 forKey:kCIInputRadiusKey];
+    CIImage *outputImage = [gaussianBlurFilter outputImage];
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGRect rect = [outputImage extent];
+    rect.origin.x += (rect.size.width - ss.size.width ) / 2;
+    rect.origin.y += (rect.size.height - ss.size.height) / 2;
+    rect.size = ss.size;
+    CGImageRef cgimg = [context createCGImage:outputImage fromRect:rect];
+    UIImage *image = [UIImage imageWithCGImage:cgimg];
+    CGImageRelease(cgimg); return image;
 }
 
 @end
