@@ -231,7 +231,8 @@ static const uint32_t bubble = 0x1 << 1;
     rect.size = ss.size;
     CGImageRef cgimg = [context createCGImage:outputImage fromRect:rect];
     UIImage *image = [UIImage imageWithCGImage:cgimg];
-    CGImageRelease(cgimg); return image;
+    CGImageRelease(cgimg);
+    return image;
 }
 
 @end
