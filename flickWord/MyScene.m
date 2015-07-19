@@ -48,16 +48,23 @@ static const uint32_t bubble = 0x1 << 1;
         }
         
         /* Setup your scene here */
-        timer = 0;
-        self.name = @"MyScene";
-        ppiyongSoundAction = [SKAction playSoundFileNamed:@"ppiyong.wav" waitForCompletion:NO];
-        ppyockSoundAction = [SKAction playSoundFileNamed:@"ppyock.wav" waitForCompletion:NO];
-        [self setBackGroundGradientColor];
-        
-        
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(matchLetter) name:@"matchLetter" object:nil];
+        [self gameStart];
     }
     return self;
+}
+
+-(void)gameStart
+{
+    timer = 0;
+    self.name = @"MyScene";
+    ppiyongSoundAction = [SKAction playSoundFileNamed:@"ppiyong.wav" waitForCompletion:NO];
+    ppyockSoundAction = [SKAction playSoundFileNamed:@"ppyock.wav" waitForCompletion:NO];
+    [self setBackGroundGradientColor];
+    
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(matchLetter) name:@"matchLetter" object:nil];
+    [self showWordAndDescription];
+
 }
 
 -(void)dealloc
@@ -67,7 +74,7 @@ static const uint32_t bubble = 0x1 << 1;
 
 -(void)didMoveToView:(SKView *)view
 {
-    [self showWordAndDescription];
+    //[self showWordAndDescription];
 }
 
 -(void)setBackGroundGradientColor
