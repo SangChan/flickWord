@@ -48,7 +48,6 @@ static const uint32_t bubble = 0x1 << 1;
         }
         
         /* Setup your scene here */
-        [self gameStart];
     }
     return self;
 }
@@ -61,10 +60,8 @@ static const uint32_t bubble = 0x1 << 1;
     ppyockSoundAction = [SKAction playSoundFileNamed:@"ppyock.wav" waitForCompletion:NO];
     [self setBackGroundGradientColor];
     
-    
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(matchLetter) name:@"matchLetter" object:nil];
     [self showWordAndDescription];
-
 }
 
 -(void)dealloc
@@ -113,6 +110,7 @@ static const uint32_t bubble = 0x1 << 1;
 {
     _word = word;
     _wordDescription = wordDescription;
+    [self gameStart];
 }
 
 -(void)showWordAndDescription
@@ -219,6 +217,14 @@ static const uint32_t bubble = 0x1 << 1;
     pauseBG.zPosition = 2;
     [pauseBG runAction:[SKAction fadeAlphaTo:1 duration:0.5]];
     [self addChild:pauseBG];
+    
+    SKLabelNode *wordLabel = [[SKLabelNode alloc]initWithFontNamed:@"Chalkduster"];
+    wordLabel.text = [NSString stringWithFormat:@"%@\n%@",_word,_wordDescription];
+    wordLabel.fontSize = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 36 : 24;
+    wordLabel.fontColor = [UIColor whiteColor];
+    wordLabel.position = CGPointZero;
+    [pauseBG addChild:wordLabel];
+    
 }
 
 - (UIImage *)getBluredScreenshot {
