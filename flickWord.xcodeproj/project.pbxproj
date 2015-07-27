@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63480FD81B65FEC900B87776 /* AGSpriteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63480FD71B65FEC900B87776 /* AGSpriteButton.m */; };
 		634E53F01A8AD80C00299CCC /* Magnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 634E53EF1A8AD80C00299CCC /* Magnet.m */; };
 		634F595B1AC931D800F49D07 /* ppyock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 634F59561AC931D800F49D07 /* ppyock.wav */; };
 		634F595C1AC931D800F49D07 /* ppiyong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 634F59571AC931D800F49D07 /* ppiyong.wav */; };
@@ -27,7 +28,6 @@
 		6363120C19B036DD00E15DC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6363120A19B036DD00E15DC3 /* Main.storyboard */; };
 		6363120F19B036DD00E15DC3 /* SKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363120E19B036DD00E15DC3 /* SKViewController.m */; };
 		6363121219B036DD00E15DC3 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363121119B036DD00E15DC3 /* MyScene.m */; };
-		6363121419B036DD00E15DC3 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 6363121319B036DD00E15DC3 /* Spaceship.png */; };
 		6363121D19B036DD00E15DC3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6363121C19B036DD00E15DC3 /* XCTest.framework */; };
 		6363121E19B036DD00E15DC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311F619B036DD00E15DC3 /* Foundation.framework */; };
 		6363121F19B036DD00E15DC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311FA19B036DD00E15DC3 /* UIKit.framework */; };
@@ -71,6 +71,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		63480FD61B65FEC900B87776 /* AGSpriteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSpriteButton.h; sourceTree = "<group>"; };
+		63480FD71B65FEC900B87776 /* AGSpriteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSpriteButton.m; sourceTree = "<group>"; };
 		634E53EE1A8AD80C00299CCC /* Magnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magnet.h; sourceTree = "<group>"; };
 		634E53EF1A8AD80C00299CCC /* Magnet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Magnet.m; sourceTree = "<group>"; };
 		634E53F11A8ADC8100299CCC /* ConstFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstFunc.h; sourceTree = "<group>"; };
@@ -103,7 +105,6 @@
 		6363120E19B036DD00E15DC3 /* SKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKViewController.m; sourceTree = "<group>"; };
 		6363121019B036DD00E15DC3 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		6363121119B036DD00E15DC3 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		6363121319B036DD00E15DC3 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		6363121B19B036DD00E15DC3 /* flickWordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flickWordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6363121C19B036DD00E15DC3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6363122419B036DD00E15DC3 /* flickWordTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "flickWordTests-Info.plist"; sourceTree = "<group>"; };
@@ -153,6 +154,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63480FD91B65FEED00B87776 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6352B4F61B4F864100235549 /* MySpeechObject.h */,
+				6352B4F71B4F864100235549 /* MySpeechObject.m */,
+				6377E1301A846337007E3C4A /* Bubble.h */,
+				6377E1311A846337007E3C4A /* Bubble.m */,
+				634E53EE1A8AD80C00299CCC /* Magnet.h */,
+				634E53EF1A8AD80C00299CCC /* Magnet.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		634F59711ACBB5D500F49D07 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,22 +217,18 @@
 		636311FE19B036DD00E15DC3 /* flickWord */ = {
 			isa = PBXGroup;
 			children = (
+				63480FD91B65FEED00B87776 /* Model */,
 				634F59711ACBB5D500F49D07 /* Category */,
 				6363120719B036DD00E15DC3 /* AppDelegate.h */,
 				6363120819B036DD00E15DC3 /* AppDelegate.m */,
+				63480FD61B65FEC900B87776 /* AGSpriteButton.h */,
+				63480FD71B65FEC900B87776 /* AGSpriteButton.m */,
 				6363120A19B036DD00E15DC3 /* Main.storyboard */,
 				63D1A66A1B37F4050062073B /* Launch Screen.xib */,
-				6352B4F61B4F864100235549 /* MySpeechObject.h */,
-				6352B4F71B4F864100235549 /* MySpeechObject.m */,
 				6363120D19B036DD00E15DC3 /* SKViewController.h */,
 				6363120E19B036DD00E15DC3 /* SKViewController.m */,
 				6363121019B036DD00E15DC3 /* MyScene.h */,
 				6363121119B036DD00E15DC3 /* MyScene.m */,
-				6363121319B036DD00E15DC3 /* Spaceship.png */,
-				6377E1301A846337007E3C4A /* Bubble.h */,
-				6377E1311A846337007E3C4A /* Bubble.m */,
-				634E53EE1A8AD80C00299CCC /* Magnet.h */,
-				634E53EF1A8AD80C00299CCC /* Magnet.m */,
 				634E53F11A8ADC8100299CCC /* ConstFunc.h */,
 				637023E41A92FF4900496A2A /* WordDictionary.xcdatamodeld */,
 				637023EC1A9301E000496A2A /* WordDictionary.h */,
@@ -370,7 +380,6 @@
 				634F595C1AC931D800F49D07 /* ppiyong.wav in Resources */,
 				634F595B1AC931D800F49D07 /* ppyock.wav in Resources */,
 				637023E21A92FF0C00496A2A /* bubble.png in Resources */,
-				6363121419B036DD00E15DC3 /* Spaceship.png in Resources */,
 				6363120C19B036DD00E15DC3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +403,7 @@
 				6373F07D1AC5130C00E2E7CE /* SKTexture+Gradient.m in Sources */,
 				6352B4F81B4F864100235549 /* MySpeechObject.m in Sources */,
 				637023EE1A9301E000496A2A /* WordDictionary.m in Sources */,
+				63480FD81B65FEC900B87776 /* AGSpriteButton.m in Sources */,
 				6363120F19B036DD00E15DC3 /* SKViewController.m in Sources */,
 				6377E1321A846337007E3C4A /* Bubble.m in Sources */,
 				6363120919B036DD00E15DC3 /* AppDelegate.m in Sources */,

@@ -11,6 +11,7 @@
 #import "Magnet.h"
 #import "SKTexture+Gradient.h"
 #import "MySpeechObject.h"
+#import "AGSpriteButton.h"
 
 #define HORIZONTAL_MARGIN 10
 #define VERTICAL_MARGIN 10
@@ -212,19 +213,49 @@ static const uint32_t bubble = 0x1 << 1;
 
 -(void)loadBlur {
     SKSpriteNode *pauseBG = [SKSpriteNode spriteNodeWithTexture:[SKTexture textureWithImage:[self getBluredScreenshot]]];
+    pauseBG.name = @"pauseBG";
     pauseBG.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
     pauseBG.alpha = 0;
     pauseBG.zPosition = 2;
     [pauseBG runAction:[SKAction fadeAlphaTo:1 duration:0.5]];
     [self addChild:pauseBG];
     
+    AGSpriteButton *retryButton = [AGSpriteButton buttonWithColor:[UIColor darkGrayColor] andSize:CGSizeMake(50, 50)];
+    retryButton.name = @"retryButton";
+    [retryButton setLabelWithText:@"Retry!" andFont:nil withColor:[UIColor whiteColor]];
+    retryButton.label.fontSize = 15.0;
+    retryButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+    retryButton.alpha = 0;
+    retryButton.zPosition = 3;
+    [retryButton runAction:[SKAction fadeAlphaTo:1 duration:1.0]];
+    [self addChild:retryButton];
+    [retryButton addTarget:self selector:@selector(gameRestart) withObject:nil forControlEvent:AGButtonControlEventTouchUpInside];
+    
     SKLabelNode *wordLabel = [[SKLabelNode alloc]initWithFontNamed:@"Chalkduster"];
-    wordLabel.text = [NSString stringWithFormat:@"%@\n%@",_word,_wordDescription];
+    wordLabel.text = [NSString stringWithFormat:@"%@ : %@",_word,_wordDescription];
     wordLabel.fontSize = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 36 : 24;
     wordLabel.fontColor = [UIColor whiteColor];
-    wordLabel.position = CGPointZero;
+    wordLabel.position = CGPointMake(0.0, 100.0);
     [pauseBG addChild:wordLabel];
     
+    SKLabelNode *timeLabel = [[SKLabelNode alloc]initWithFontNamed:@"Chalkduster"];
+    timeLabel.text = [NSString stringWithFormat:@"It takes %d seconds!",timer/30];
+    timeLabel.fontSize = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 36 : 24;
+    timeLabel.fontColor = [UIColor whiteColor];
+    timeLabel.position = CGPointMake(0.0, -100.0);
+    [pauseBG addChild:timeLabel];
+    
+    
+    
+}
+
+- (void)gameRestart {
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"matchLetter" object:nil];
+    [[self childNodeWithName:@"pauseBG"] removeFromParent];
+    [[self childNodeWithName:@"retryButton"] removeFromParent];
+    [self removeAllActions];
+    [self removeAllChildren];
+    [self gameStart];
 }
 
 - (UIImage *)getBluredScreenshot {
