@@ -16,7 +16,6 @@
 
 @interface SKViewController () {
     UIButton *_speakButton;
-    UIButton *_pauseButton;
 }
 
 @end
@@ -83,25 +82,10 @@
 - (void)setButtons
 {
     UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.origin.x + 5, self.view.frame.origin.y + 5 , 35, 35)];
-    [backButton darkCircleStyle];
+    [backButton grayCircleStyle];
     [backButton setAwesomeIcon:FAChevronLeft];
     [backButton addTarget:self action:@selector(popThisView) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];
-
-/*
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-    _speakButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 40, self.view.frame.origin.y + 5 , 35, 35)];
-    [_speakButton darkCircleStyle];
-    [_speakButton setAwesomeIcon:@"fa-play"];
-    [_speakButton addTarget:self action:@selector(speakWord) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_speakButton];
-#endif
-*/
-    _pauseButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 40, self.view.frame.origin.y + 5 , 35, 35)];
-    [_pauseButton darkCircleStyle];
-    [_pauseButton setAwesomeIcon:FAPause];
-    [_pauseButton addTarget:self action:@selector(pauseView) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_pauseButton];
     
 }
 
@@ -119,28 +103,4 @@
                                completion:nil];
 }
 
-
--(void)pauseView
-{
-    SKView *skView = (SKView *)self.view;
-    skView.paused = !skView.paused;
-    [_pauseButton setAwesomeIcon:(skView.paused)?FAPlay:FAPause];
-    
-//    MySpeechObject *speechObject = [MySpeechObject sharedInstance];
-//    [speechObject initSynthesizerWithWord:[word word]];
-//    [speechObject play];
-
-}
-
-/*
-- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didStartSpeechUtterance:(AVSpeechUtterance *)utterance
-{
-    _speakButton.enabled = NO;
-}
-
-- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance
-{
-    _speakButton.enabled = YES;
-}
-*/
 @end

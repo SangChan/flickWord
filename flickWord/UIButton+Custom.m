@@ -27,6 +27,15 @@
     self.layer.cornerRadius = self.frame.size.width / 2;
 }
 
+-(void)grayCircleStyle
+{
+    [self defaultStyle];
+    self.layer.cornerRadius = self.frame.size.width / 2;
+    [self setTitleColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.8] forState:UIControlStateNormal];
+    self.backgroundColor = [UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:0.6];
+    self.layer.borderColor = [[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.8]CGColor];
+}
+
 -(void)darkCircleStyle
 {
     [self defaultStyle];

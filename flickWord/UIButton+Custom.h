@@ -12,6 +12,7 @@
 
 -(void)defaultStyle;
 -(void)circleStyle;
+-(void)grayCircleStyle;
 -(void)darkCircleStyle;
 -(void)setAwesomeIcon:(FAIcon)iconID;
 
