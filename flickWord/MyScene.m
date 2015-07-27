@@ -10,6 +10,7 @@
 #import "Bubble.h"
 #import "Magnet.h"
 #import "SKTexture+Gradient.h"
+#import "NSString+FontAwesome.h"
 #import "MySpeechObject.h"
 #import "AGSpriteButton.h"
 
@@ -220,10 +221,9 @@ static const uint32_t bubble = 0x1 << 1;
     [pauseBG runAction:[SKAction fadeAlphaTo:1 duration:0.5]];
     [self addChild:pauseBG];
     
-    AGSpriteButton *retryButton = [AGSpriteButton buttonWithColor:[UIColor darkGrayColor] andSize:CGSizeMake(50, 50)];
+    AGSpriteButton *retryButton = [AGSpriteButton buttonWithColor:[UIColor clearColor] andSize:CGSizeMake(50, 50)];
     retryButton.name = @"retryButton";
-    [retryButton setLabelWithText:@"Retry!" andFont:nil withColor:[UIColor whiteColor]];
-    retryButton.label.fontSize = 15.0;
+    [retryButton setLabelWithText:[NSString fontAwesomeIconStringForEnum:FARepeat] andFont:[UIFont fontWithName:kFontAwesomeFamilyName size:50.0] withColor:[UIColor whiteColor]];
     retryButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
     retryButton.alpha = 0;
     retryButton.zPosition = 3;
