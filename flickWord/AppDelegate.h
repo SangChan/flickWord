@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <Google/Analytics.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
