@@ -67,10 +67,6 @@ static const uint32_t bubble = 0x1 << 1;
         _grabbed = YES;
         _previousPos =([self isOKToMove:location])? location : _previousPos;
         [self.physicsBody setAffectedByGravity:NO];
-        NSLog(@"%@ touchBegan YES: %@ , pos : %@",self.name, touchNode, NSStringFromCGPoint(location));
-    }
-    else {
-        NSLog(@"%@ touchBegan NO : %@ , pos : %@",self.name, touchNode, NSStringFromCGPoint(location));
     }
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -80,7 +76,6 @@ static const uint32_t bubble = 0x1 << 1;
     
         _previousVelocity = ccpMult(ccpSub(location, _previousPos),5);
         _previousPos =([self isOKToMove:location])? location : _previousPos;
-        NSLog(@"%@ touchMoved pos : %@",self.name, NSStringFromCGPoint(location));
     }
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -92,7 +87,6 @@ static const uint32_t bubble = 0x1 << 1;
         }
         
         [self.physicsBody applyImpulse:CGVectorMake(_previousVelocity.x, _previousVelocity.y)];
-        NSLog(@"%@ touchEnded pos : vector_length = %f",self.name,ccpLength(_previousVelocity));
     }
 }
 
