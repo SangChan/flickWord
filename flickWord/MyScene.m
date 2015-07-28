@@ -14,8 +14,8 @@
 #import "MySpeechObject.h"
 #import "AGSpriteButton.h"
 
-#define HORIZONTAL_MARGIN 10
-#define VERTICAL_MARGIN 10
+#define HORIZONTAL_MARGIN 5
+#define VERTICAL_MARGIN 5
 
 static const uint32_t wall = 0x1 << 0;
 static const uint32_t bubble = 0x1 << 1;
