@@ -239,7 +239,7 @@ static const uint32_t bubble = 0x1 << 1;
     [pauseBG addChild:wordLabel];
     
     SKLabelNode *timeLabel = [[SKLabelNode alloc]initWithFontNamed:@"Chalkduster"];
-    timeLabel.text = [NSString stringWithFormat:@"It takes %d seconds!",timer/30];
+    timeLabel.text = [NSString stringWithFormat:@"It takes %d seconds!",timer/60];
     timeLabel.fontSize = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 36 : 24;
     timeLabel.fontColor = [UIColor whiteColor];
     timeLabel.position = CGPointMake(0.0, -100.0);
