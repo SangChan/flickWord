@@ -26,6 +26,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"SKViewController"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
@@ -95,7 +96,10 @@
 
 - (void)popThisView
 {
-    [self.parentViewController.navigationController popViewControllerAnimated:YES];
+    //[self.parentViewController.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 -(void)showWordDefinitionViewController
