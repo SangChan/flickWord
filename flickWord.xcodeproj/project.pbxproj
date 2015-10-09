@@ -595,6 +595,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: SangChan Lee (585ZYQPML2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SangChan Lee (585ZYQPML2)";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "flickWord/flickWord-Prefix.pch";
 				INFOPLIST_FILE = "flickWord/flickWord-Info.plist";
@@ -615,6 +616,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: SangChan Lee (585ZYQPML2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SangChan Lee (585ZYQPML2)";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "flickWord/flickWord-Prefix.pch";
 				INFOPLIST_FILE = "flickWord/flickWord-Info.plist";
