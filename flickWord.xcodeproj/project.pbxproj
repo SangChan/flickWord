@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E22415DFA82FC63A2400E40 /* libPods-flickWord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB7BC3BEA8A5D99F2881346 /* libPods-flickWord.a */; };
+		632F70591BFB23E9009E2D26 /* flickWordUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F70581BFB23E9009E2D26 /* flickWordUITests.m */; };
 		63480FD81B65FEC900B87776 /* AGSpriteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63480FD71B65FEC900B87776 /* AGSpriteButton.m */; };
 		63480FDB1B671CCB00B87776 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63480FDA1B671CCB00B87776 /* GoogleService-Info.plist */; };
 		634E53F01A8AD80C00299CCC /* Magnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 634E53EF1A8AD80C00299CCC /* Magnet.m */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		2AB7BC3BEA8A5D99F2881346 /* libPods-flickWord.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flickWord.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		632F70581BFB23E9009E2D26 /* flickWordUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = flickWordUITests.m; sourceTree = "<group>"; };
 		63480FD61B65FEC900B87776 /* AGSpriteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSpriteButton.h; sourceTree = "<group>"; };
 		63480FD71B65FEC900B87776 /* AGSpriteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSpriteButton.m; sourceTree = "<group>"; };
 		63480FDA1B671CCB00B87776 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		6363122219B036DD00E15DC3 /* flickWordTests */ = {
 			isa = PBXGroup;
 			children = (
+				632F70581BFB23E9009E2D26 /* flickWordUITests.m */,
 				6363122819B036DD00E15DC3 /* flickWordTests.m */,
 				6363122319B036DD00E15DC3 /* Supporting Files */,
 			);
@@ -476,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6363122919B036DD00E15DC3 /* flickWordTests.m in Sources */,
+				632F70591BFB23E9009E2D26 /* flickWordUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
