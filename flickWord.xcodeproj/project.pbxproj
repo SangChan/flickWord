@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E22415DFA82FC63A2400E40 /* libPods-flickWord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB7BC3BEA8A5D99F2881346 /* libPods-flickWord.a */; };
 		632F70591BFB23E9009E2D26 /* flickWordUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F70581BFB23E9009E2D26 /* flickWordUITests.m */; };
+		632F705B1BFC8257009E2D26 /* libPods-flickWord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 632F705A1BFC8257009E2D26 /* libPods-flickWord.a */; };
 		63480FD81B65FEC900B87776 /* AGSpriteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63480FD71B65FEC900B87776 /* AGSpriteButton.m */; };
 		63480FDB1B671CCB00B87776 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63480FDA1B671CCB00B87776 /* GoogleService-Info.plist */; };
 		634E53F01A8AD80C00299CCC /* Magnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 634E53EF1A8AD80C00299CCC /* Magnet.m */; };
@@ -76,6 +77,7 @@
 /* Begin PBXFileReference section */
 		2AB7BC3BEA8A5D99F2881346 /* libPods-flickWord.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flickWord.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		632F70581BFB23E9009E2D26 /* flickWordUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = flickWordUITests.m; sourceTree = "<group>"; };
+		632F705A1BFC8257009E2D26 /* libPods-flickWord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-flickWord.a"; path = "Pods/../build/Debug-iphoneos/libPods-flickWord.a"; sourceTree = "<group>"; };
 		63480FD61B65FEC900B87776 /* AGSpriteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSpriteButton.h; sourceTree = "<group>"; };
 		63480FD71B65FEC900B87776 /* AGSpriteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSpriteButton.m; sourceTree = "<group>"; };
 		63480FDA1B671CCB00B87776 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632F705B1BFC8257009E2D26 /* libPods-flickWord.a in Frameworks */,
 				6363121D19B036DD00E15DC3 /* XCTest.framework in Frameworks */,
 				6363121F19B036DD00E15DC3 /* UIKit.framework in Frameworks */,
 				6363121E19B036DD00E15DC3 /* Foundation.framework in Frameworks */,
@@ -213,6 +216,7 @@
 		636311F519B036DD00E15DC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				632F705A1BFC8257009E2D26 /* libPods-flickWord.a */,
 				634F59601AC94ACD00F49D07 /* CoreMotion.framework */,
 				63F26BC81ABA8B6400E9E865 /* AVFoundation.framework */,
 				636311F619B036DD00E15DC3 /* Foundation.framework */,
@@ -649,7 +653,21 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/Google/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleNetworkingUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
+				);
 				INFOPLIST_FILE = "flickWordTests/flickWordTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dlues.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -668,7 +686,21 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "flickWord/flickWord-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/Google/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleNetworkingUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
+				);
 				INFOPLIST_FILE = "flickWordTests/flickWordTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dlues.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
