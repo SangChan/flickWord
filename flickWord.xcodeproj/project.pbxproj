@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E22415DFA82FC63A2400E40 /* libPods-flickWord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB7BC3BEA8A5D99F2881346 /* libPods-flickWord.a */; };
-		632F70591BFB23E9009E2D26 /* flickWordUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F70581BFB23E9009E2D26 /* flickWordUITests.m */; };
 		632F705B1BFC8257009E2D26 /* libPods-flickWord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 632F705A1BFC8257009E2D26 /* libPods-flickWord.a */; };
+		632F70631BFDBEE6009E2D26 /* flickWordUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F70621BFDBEE6009E2D26 /* flickWordUITests.m */; };
 		63480FD81B65FEC900B87776 /* AGSpriteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63480FD71B65FEC900B87776 /* AGSpriteButton.m */; };
 		63480FDB1B671CCB00B87776 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63480FDA1B671CCB00B87776 /* GoogleService-Info.plist */; };
 		634E53F01A8AD80C00299CCC /* Magnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 634E53EF1A8AD80C00299CCC /* Magnet.m */; };
@@ -52,6 +52,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		632F70651BFDBEE6009E2D26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 636311EB19B036DD00E15DC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 636311F219B036DD00E15DC3;
+			remoteInfo = flickWord;
+		};
 		6363122019B036DD00E15DC3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 636311EB19B036DD00E15DC3 /* Project object */;
@@ -76,8 +83,10 @@
 
 /* Begin PBXFileReference section */
 		2AB7BC3BEA8A5D99F2881346 /* libPods-flickWord.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flickWord.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		632F70581BFB23E9009E2D26 /* flickWordUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = flickWordUITests.m; sourceTree = "<group>"; };
 		632F705A1BFC8257009E2D26 /* libPods-flickWord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-flickWord.a"; path = "Pods/../build/Debug-iphoneos/libPods-flickWord.a"; sourceTree = "<group>"; };
+		632F70601BFDBEE6009E2D26 /* flickWordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flickWordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		632F70621BFDBEE6009E2D26 /* flickWordUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = flickWordUITests.m; sourceTree = "<group>"; };
+		632F70641BFDBEE6009E2D26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63480FD61B65FEC900B87776 /* AGSpriteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSpriteButton.h; sourceTree = "<group>"; };
 		63480FD71B65FEC900B87776 /* AGSpriteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSpriteButton.m; sourceTree = "<group>"; };
 		63480FDA1B671CCB00B87776 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -139,6 +148,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		632F705D1BFDBEE6009E2D26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		636311F019B036DD00E15DC3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,6 +182,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		632F70611BFDBEE6009E2D26 /* flickWordUITests */ = {
+			isa = PBXGroup;
+			children = (
+				632F70621BFDBEE6009E2D26 /* flickWordUITests.m */,
+				632F70641BFDBEE6009E2D26 /* Info.plist */,
+			);
+			path = flickWordUITests;
+			sourceTree = "<group>";
+		};
 		63480FD91B65FEED00B87776 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +223,7 @@
 				63EC061E19D00001002AEA05 /* Resources */,
 				636311FE19B036DD00E15DC3 /* flickWord */,
 				6363122219B036DD00E15DC3 /* flickWordTests */,
+				632F70611BFDBEE6009E2D26 /* flickWordUITests */,
 				636311F519B036DD00E15DC3 /* Frameworks */,
 				636311F419B036DD00E15DC3 /* Products */,
 				8C9DFF7577F8AEC24DC5F44F /* Pods */,
@@ -209,6 +235,7 @@
 			children = (
 				636311F319B036DD00E15DC3 /* flickWord.app */,
 				6363121B19B036DD00E15DC3 /* flickWordTests.xctest */,
+				632F70601BFDBEE6009E2D26 /* flickWordUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,7 +299,6 @@
 		6363122219B036DD00E15DC3 /* flickWordTests */ = {
 			isa = PBXGroup;
 			children = (
-				632F70581BFB23E9009E2D26 /* flickWordUITests.m */,
 				6363122819B036DD00E15DC3 /* flickWordTests.m */,
 				6363122319B036DD00E15DC3 /* Supporting Files */,
 			);
@@ -316,6 +342,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		632F705F1BFDBEE6009E2D26 /* flickWordUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 632F70691BFDBEE6009E2D26 /* Build configuration list for PBXNativeTarget "flickWordUITests" */;
+			buildPhases = (
+				632F705C1BFDBEE6009E2D26 /* Sources */,
+				632F705D1BFDBEE6009E2D26 /* Frameworks */,
+				632F705E1BFDBEE6009E2D26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				632F70661BFDBEE6009E2D26 /* PBXTargetDependency */,
+			);
+			name = flickWordUITests;
+			productName = flickWordUITests;
+			productReference = 632F70601BFDBEE6009E2D26 /* flickWordUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		636311F219B036DD00E15DC3 /* flickWord */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6363122C19B036DD00E15DC3 /* Build configuration list for PBXNativeTarget "flickWord" */;
@@ -363,6 +407,10 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = sangchan;
 				TargetAttributes = {
+					632F705F1BFDBEE6009E2D26 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 636311F219B036DD00E15DC3;
+					};
 					636311F219B036DD00E15DC3 = {
 						DevelopmentTeam = CBUJK8CFZ3;
 					};
@@ -386,11 +434,19 @@
 			targets = (
 				636311F219B036DD00E15DC3 /* flickWord */,
 				6363121A19B036DD00E15DC3 /* flickWordTests */,
+				632F705F1BFDBEE6009E2D26 /* flickWordUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		632F705E1BFDBEE6009E2D26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		636311F119B036DD00E15DC3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -457,6 +513,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		632F705C1BFDBEE6009E2D26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				632F70631BFDBEE6009E2D26 /* flickWordUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		636311EF19B036DD00E15DC3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -483,13 +547,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6363122919B036DD00E15DC3 /* flickWordTests.m in Sources */,
-				632F70591BFB23E9009E2D26 /* flickWordUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		632F70661BFDBEE6009E2D26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 636311F219B036DD00E15DC3 /* flickWord */;
+			targetProxy = 632F70651BFDBEE6009E2D26 /* PBXContainerItemProxy */;
+		};
 		6363122119B036DD00E15DC3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 636311F219B036DD00E15DC3 /* flickWord */;
@@ -525,6 +593,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		632F70671BFDBEE6009E2D26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = flickWordUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.verandastudio.flickWordUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = flickWord;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		632F70681BFDBEE6009E2D26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = flickWordUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.verandastudio.flickWordUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = flickWord;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 		6363122A19B036DD00E15DC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -711,6 +816,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		632F70691BFDBEE6009E2D26 /* Build configuration list for PBXNativeTarget "flickWordUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				632F70671BFDBEE6009E2D26 /* Debug */,
+				632F70681BFDBEE6009E2D26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		636311EE19B036DD00E15DC3 /* Build configuration list for PBXProject "flickWord" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
