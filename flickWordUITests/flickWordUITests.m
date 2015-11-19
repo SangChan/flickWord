@@ -46,7 +46,6 @@
     [element tap];
     [element tap];
     [app.buttons[@"\Uf053"] tap];
-
 }
 
 @end
