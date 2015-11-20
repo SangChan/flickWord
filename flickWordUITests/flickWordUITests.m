@@ -37,6 +37,10 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     // Failed to find matching element please file bug (bugreport.apple.com) and provide output from Console.app
     // Failed to find matching element please file bug (bugreport.apple.com) and provide output from Console.app
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.tables.staticTexts[@"absent"] tap];
+    
 }
 
 @end
