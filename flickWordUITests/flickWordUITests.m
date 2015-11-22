@@ -43,4 +43,12 @@
     
 }
 
+- (void)testSwipe {
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+}
+
+- (void)testDragToObject {
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+}
+
 @end
