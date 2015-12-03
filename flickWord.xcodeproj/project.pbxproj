@@ -370,6 +370,7 @@
 				636311F119B036DD00E15DC3 /* Resources */,
 				63A4E01F1B13184400188120 /* Embed App Extensions */,
 				FD0466EC6244A46916458DB3 /* Copy Pods Resources */,
+				88843BD80211A5027B1FF275 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -493,6 +494,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		88843BD80211A5027B1FF275 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flickWord/Pods-flickWord-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD0466EC6244A46916458DB3 /* Copy Pods Resources */ = {
@@ -823,6 +839,7 @@
 				632F70681BFDBEE6009E2D26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		636311EE19B036DD00E15DC3 /* Build configuration list for PBXProject "flickWord" */ = {
 			isa = XCConfigurationList;
