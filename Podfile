@@ -3,6 +3,7 @@
 
 target 'flickWord' do
 
+pod 'Realm', '~> 0.97.0'
 pod 'Google/Analytics', '~> 1.0.0'
 
 end
