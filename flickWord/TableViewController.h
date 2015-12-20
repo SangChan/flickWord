@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Realm/Realm.h>
 
 @interface TableViewController : UITableViewController <UIGestureRecognizerDelegate>
 
-@property (nonatomic,strong) NSArray *words;
+@property (nonatomic,strong) RLMResults *words;
 @property (nonatomic,strong) NSArray *sectionKeywords;
 @property (nonatomic,strong) NSDictionary *wordsWithSection;
 @end

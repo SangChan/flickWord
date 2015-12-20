@@ -10,10 +10,10 @@
 #import <SpriteKit/SpriteKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <Google/Analytics.h>
-#import "WordDictionary.h"
+#import "EnglishWord.h"
 
 @interface SKViewController : UIViewController <AVSpeechSynthesizerDelegate>
 
-@property (nonatomic) WordDictionary *word;
+@property (nonatomic) EnglishWord *word;
 
 @end
