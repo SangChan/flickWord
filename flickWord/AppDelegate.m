@@ -79,12 +79,6 @@
 
 - (RLMResults *)getWords
 {
-//    NSManagedObjectContext *context = [self managedObjectContext];
-//    NSError *error;
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
-//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Dictionary" inManagedObjectContext:context];
-//    [fetchRequest setEntity:entity];
-//    NSArray *words = [context executeFetchRequest:fetchRequest error:&error];
     RLMResults<EnglishWord *> *realmWords = [EnglishWord allObjects];
     return realmWords;
 }
@@ -111,12 +105,6 @@
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-//    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-//    if ([navigationController.visibleViewController isKindOfClass:[SKViewController class]]) {
-//        SKViewController *skVC = (SKViewController *)navigationController.visibleViewController;
-//        SKView *skView = (SKView *)skVC.view;
-//        skView.paused = YES;
-//    }
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
