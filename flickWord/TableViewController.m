@@ -8,7 +8,7 @@
 
 #import "TableViewController.h"
 #import "SKViewController.h"
-#import "WordDictionary.h"
+#import "EnglishWord.h"
 
 @interface TableViewController ()
 
@@ -100,9 +100,9 @@
     
     //WordDictionary *word = [words objectAtIndex:indexPath.row];
     NSArray *sectionArray = [wordsWithSection objectForKey:[sectionKeywords objectAtIndex:indexPath.section]];
-    WordDictionary *word = [sectionArray objectAtIndex:indexPath.row];
+    EnglishWord *word = [sectionArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [word word];
-    cell.detailTextLabel.text = [word word_description];
+    cell.detailTextLabel.text = [word wordDescription];
     return cell;
 
 }
@@ -123,7 +123,7 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSArray *sectionArray = [wordsWithSection objectForKey:[sectionKeywords objectAtIndex:indexPath.section]];
-        WordDictionary *word = [sectionArray objectAtIndex:indexPath.row];
+        EnglishWord *word = [sectionArray objectAtIndex:indexPath.row];
         
         if ([[segue destinationViewController] isKindOfClass:[SKViewController class]]) {
             SKViewController *vc = (SKViewController *)[segue destinationViewController];

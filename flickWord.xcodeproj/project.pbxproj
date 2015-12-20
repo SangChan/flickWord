@@ -21,6 +21,7 @@
 		634F596B1ACBB50E00F49D07 /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F596A1ACBB50E00F49D07 /* UIButton+Custom.m */; };
 		634F596E1ACBB59800F49D07 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F596D1ACBB59800F49D07 /* NSString+FontAwesome.m */; };
 		634F59721ACBBF7E00F49D07 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 634F596F1ACBB5C300F49D07 /* FontAwesome.ttf */; };
+		634FECE31C2680890025DC0B /* EnglishWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 634FECE21C2680890025DC0B /* EnglishWord.m */; };
 		6352B4F81B4F864100235549 /* MySpeechObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6352B4F71B4F864100235549 /* MySpeechObject.m */; };
 		636311F719B036DD00E15DC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311F619B036DD00E15DC3 /* Foundation.framework */; };
 		636311F919B036DD00E15DC3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636311F819B036DD00E15DC3 /* CoreGraphics.framework */; };
@@ -39,10 +40,8 @@
 		6363122919B036DD00E15DC3 /* flickWordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363122819B036DD00E15DC3 /* flickWordTests.m */; };
 		637023E21A92FF0C00496A2A /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 637023E01A92FF0C00496A2A /* bubble.png */; };
 		637023E31A92FF0C00496A2A /* bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 637023E11A92FF0C00496A2A /* bubble@2x.png */; };
-		637023E61A92FF4900496A2A /* WordDictionary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 637023E41A92FF4900496A2A /* WordDictionary.xcdatamodeld */; };
 		637023E91A92FFBD00496A2A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637023E81A92FFBD00496A2A /* TableViewController.m */; };
 		637023EB1A93002900496A2A /* able.txt in Resources */ = {isa = PBXBuildFile; fileRef = 637023EA1A93002900496A2A /* able.txt */; };
-		637023EE1A9301E000496A2A /* WordDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 637023ED1A9301E000496A2A /* WordDictionary.m */; };
 		6373F07D1AC5130C00E2E7CE /* SKTexture+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */; };
 		6377E1321A846337007E3C4A /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E1311A846337007E3C4A /* Bubble.m */; };
 		63D1A6691B37F28C0062073B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D1A6681B37F28C0062073B /* Images.xcassets */; };
@@ -104,6 +103,8 @@
 		634F596C1ACBB59800F49D07 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		634F596D1ACBB59800F49D07 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
 		634F596F1ACBB5C300F49D07 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = flickWord/Resources/FontAwesome.ttf; sourceTree = "<group>"; };
+		634FECE11C2680890025DC0B /* EnglishWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnglishWord.h; sourceTree = "<group>"; };
+		634FECE21C2680890025DC0B /* EnglishWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnglishWord.m; sourceTree = "<group>"; };
 		6352B4F61B4F864100235549 /* MySpeechObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySpeechObject.h; sourceTree = "<group>"; };
 		6352B4F71B4F864100235549 /* MySpeechObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySpeechObject.m; sourceTree = "<group>"; };
 		636311F319B036DD00E15DC3 /* flickWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flickWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,12 +130,9 @@
 		6363122819B036DD00E15DC3 /* flickWordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = flickWordTests.m; sourceTree = "<group>"; };
 		637023E01A92FF0C00496A2A /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubble.png; path = flickWord/Resources/bubble.png; sourceTree = "<group>"; };
 		637023E11A92FF0C00496A2A /* bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bubble@2x.png"; path = "flickWord/Resources/bubble@2x.png"; sourceTree = "<group>"; };
-		637023E51A92FF4900496A2A /* WordDictionary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordDictionary.xcdatamodel; sourceTree = "<group>"; };
 		637023E71A92FFBD00496A2A /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		637023E81A92FFBD00496A2A /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		637023EA1A93002900496A2A /* able.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = able.txt; sourceTree = "<group>"; };
-		637023EC1A9301E000496A2A /* WordDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordDictionary.h; sourceTree = "<group>"; };
-		637023ED1A9301E000496A2A /* WordDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordDictionary.m; sourceTree = "<group>"; };
 		6373F07B1AC5130C00E2E7CE /* SKTexture+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKTexture+Gradient.h"; sourceTree = "<group>"; };
 		6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKTexture+Gradient.m"; sourceTree = "<group>"; };
 		6377E1301A846337007E3C4A /* Bubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bubble.h; sourceTree = "<group>"; };
@@ -200,6 +198,8 @@
 				6377E1311A846337007E3C4A /* Bubble.m */,
 				634E53EE1A8AD80C00299CCC /* Magnet.h */,
 				634E53EF1A8AD80C00299CCC /* Magnet.m */,
+				634FECE11C2680890025DC0B /* EnglishWord.h */,
+				634FECE21C2680890025DC0B /* EnglishWord.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -272,9 +272,6 @@
 				6363121019B036DD00E15DC3 /* MyScene.h */,
 				6363121119B036DD00E15DC3 /* MyScene.m */,
 				634E53F11A8ADC8100299CCC /* ConstFunc.h */,
-				637023E41A92FF4900496A2A /* WordDictionary.xcdatamodeld */,
-				637023EC1A9301E000496A2A /* WordDictionary.h */,
-				637023ED1A9301E000496A2A /* WordDictionary.m */,
 				637023E71A92FFBD00496A2A /* TableViewController.h */,
 				637023E81A92FFBD00496A2A /* TableViewController.m */,
 				63D1A6681B37F28C0062073B /* Images.xcassets */,
@@ -544,7 +541,6 @@
 				6363121219B036DD00E15DC3 /* MyScene.m in Sources */,
 				6373F07D1AC5130C00E2E7CE /* SKTexture+Gradient.m in Sources */,
 				6352B4F81B4F864100235549 /* MySpeechObject.m in Sources */,
-				637023EE1A9301E000496A2A /* WordDictionary.m in Sources */,
 				63480FD81B65FEC900B87776 /* AGSpriteButton.m in Sources */,
 				6363120F19B036DD00E15DC3 /* SKViewController.m in Sources */,
 				6377E1321A846337007E3C4A /* Bubble.m in Sources */,
@@ -552,8 +548,8 @@
 				6363120519B036DD00E15DC3 /* main.m in Sources */,
 				634F596B1ACBB50E00F49D07 /* UIButton+Custom.m in Sources */,
 				634F596E1ACBB59800F49D07 /* NSString+FontAwesome.m in Sources */,
-				637023E61A92FF4900496A2A /* WordDictionary.xcdatamodeld in Sources */,
 				634E53F01A8AD80C00299CCC /* Magnet.m in Sources */,
+				634FECE31C2680890025DC0B /* EnglishWord.m in Sources */,
 				637023E91A92FFBD00496A2A /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -869,19 +865,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		637023E41A92FF4900496A2A /* WordDictionary.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				637023E51A92FF4900496A2A /* WordDictionary.xcdatamodel */,
-			);
-			currentVersion = 637023E51A92FF4900496A2A /* WordDictionary.xcdatamodel */;
-			path = WordDictionary.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 636311EB19B036DD00E15DC3 /* Project object */;
 }

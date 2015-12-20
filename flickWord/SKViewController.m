@@ -49,7 +49,7 @@
     MyScene * scene = [MyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     [scene setPhysicsBorderWithOriginY:originY];
-    [scene setWord:[word word] Description:[word word_description]];
+    [scene setWord:[word word] Description:[word wordDescription]];
     // Present the scene.
     [skView presentScene:scene];
     
