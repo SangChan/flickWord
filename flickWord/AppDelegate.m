@@ -42,7 +42,6 @@
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     TableViewController *mainVC = (TableViewController *)navigationController.topViewController;
-    //[mainVC setManagedObjectContext:self.managedObjectContext];
     [mainVC setWords:words];
     [mainVC setSectionKeywords:[[wordsWithSection allKeys]sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
     [mainVC setWordsWithSection:wordsWithSection];
@@ -68,8 +67,7 @@
         for (NSString *word in words) {
             NSLog(@"%@",word);
         }
-        
-        EnglishWord *word = [[EnglishWord alloc]initWithValue:@{@"word" : [words objectAtIndex:0], @"wordDescription" : [words objectAtIndex:1]}];
+        EnglishWord *word = [[EnglishWord alloc]initWithValue:@{@"wordID": [NSNumber numberWithInt:i], @"word" : [words objectAtIndex:0], @"wordDescription" : [words objectAtIndex:1]}];
         [realm addObject:word];
         i++;
     }
