@@ -10,7 +10,7 @@
 
 @interface EnglishWord : RLMObject
 
-@property NSNumber *wordID;
+@property NSNumber<RLMInt> *wordID;
 @property NSString *word;
 @property NSString *wordDescription;
 
