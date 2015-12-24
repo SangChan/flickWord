@@ -67,9 +67,11 @@
         for (NSString *word in words) {
             NSLog(@"%@",word);
         }
-        EnglishWord *word = [[EnglishWord alloc]initWithValue:@{@"wordID": [NSNumber numberWithInt:i], @"word" : [words objectAtIndex:0], @"wordDescription" : [words objectAtIndex:1]}];
-        [realm addObject:word];
-        i++;
+        if(![EnglishWord objectsWhere:@"word == %@",[words objectAtIndex:0]]) {
+            EnglishWord *word = [[EnglishWord alloc]initWithValue:@{@"wordID": [NSNumber numberWithInt:i], @"word" : [words objectAtIndex:0], @"wordDescription" : [words objectAtIndex:1]}];
+            [realm addObject:word];
+            i++;
+        }
     }
     [realm commitWriteTransaction];
 }
