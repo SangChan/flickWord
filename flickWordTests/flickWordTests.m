@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "VSLogger.h"
 
 @interface flickWordTests : XCTestCase
 
