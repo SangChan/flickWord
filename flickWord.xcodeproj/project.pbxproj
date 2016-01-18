@@ -47,7 +47,6 @@
 		63D1A6691B37F28C0062073B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D1A6681B37F28C0062073B /* Images.xcassets */; };
 		63D1A66B1B37F4050062073B /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D1A66A1B37F4050062073B /* Launch Screen.xib */; };
 		63D1A66D1B37FAEF0062073B /* veranda_ci.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D1A66C1B37FAEF0062073B /* veranda_ci.png */; };
-		63DE20001C48FC40006B9CE2 /* VSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DE1FFF1C48FC40006B9CE2 /* VSLogger.m */; };
 		63F26BC91ABA8B6400E9E865 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F26BC81ABA8B6400E9E865 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,8 +140,6 @@
 		63D1A6681B37F28C0062073B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		63D1A66A1B37F4050062073B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		63D1A66C1B37FAEF0062073B /* veranda_ci.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = veranda_ci.png; path = flickWord/Resources/veranda_ci.png; sourceTree = "<group>"; };
-		63DE1FFE1C48FC40006B9CE2 /* VSLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSLogger.h; sourceTree = "<group>"; };
-		63DE1FFF1C48FC40006B9CE2 /* VSLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSLogger.m; sourceTree = "<group>"; };
 		63F26BC81ABA8B6400E9E865 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C38C17458D86AEB58BBF93CC /* Pods-flickWord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickWord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flickWord/Pods-flickWord.debug.xcconfig"; sourceTree = "<group>"; };
 		ED0F04D6BC95E861B0A55C8A /* Pods-flickWord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickWord.release.xcconfig"; path = "Pods/Target Support Files/Pods-flickWord/Pods-flickWord.release.xcconfig"; sourceTree = "<group>"; };
@@ -276,8 +273,6 @@
 				634E53F11A8ADC8100299CCC /* ConstFunc.h */,
 				637023E71A92FFBD00496A2A /* TableViewController.h */,
 				637023E81A92FFBD00496A2A /* TableViewController.m */,
-				63DE1FFE1C48FC40006B9CE2 /* VSLogger.h */,
-				63DE1FFF1C48FC40006B9CE2 /* VSLogger.m */,
 				6363122219B036DD00E15DC3 /* flickWordTests */,
 				63D1A6681B37F28C0062073B /* Images.xcassets */,
 				636311FF19B036DD00E15DC3 /* Supporting Files */,
@@ -555,7 +550,6 @@
 				634F596E1ACBB59800F49D07 /* NSString+FontAwesome.m in Sources */,
 				634E53F01A8AD80C00299CCC /* Magnet.m in Sources */,
 				634FECE31C2680890025DC0B /* EnglishWord.m in Sources */,
-				63DE20001C48FC40006B9CE2 /* VSLogger.m in Sources */,
 				637023E91A92FFBD00496A2A /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
