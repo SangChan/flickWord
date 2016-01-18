@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define VSLog( format, ... )				[VSLogger log:[NSString stringWithFormat:(f), ##__VA_ARGS__]]
+#define VSLog( format, ... )    [VSLogger log:[NSString stringWithFormat:(f), ##__VA_ARGS__]]
 
 #ifdef VSLOGGER_SWIZZLE_NSLOG
 #define NSLog( s, ... )		VSLog( s, ##__VA_ARGS__ )
@@ -16,6 +16,8 @@
 
 @interface VSLogger : NSObject
 
-+ (void)log:(NSString *)format, ...;
++ (void)log:(NSString *)format, ...; 
++ (void)getApplicationLog:(void (^)(NSArray *logs))onComplete;
++ (NSString *)applicationLog;
 
 @end

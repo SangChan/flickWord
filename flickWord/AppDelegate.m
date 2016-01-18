@@ -11,6 +11,7 @@
 #import "SKViewController.h"
 #import "MySpeechObject.h"
 #import "EnglishWord.h"
+#import "VSLogger.h"
 
 
 @implementation AppDelegate
@@ -67,11 +68,9 @@
         for (NSString *word in words) {
             NSLog(@"%@",word);
         }
-        if(![EnglishWord objectsWhere:@"word == %@",[words objectAtIndex:0]]) {
-            EnglishWord *word = [[EnglishWord alloc]initWithValue:@{@"wordID": [NSNumber numberWithInt:i], @"word" : [words objectAtIndex:0], @"wordDescription" : [words objectAtIndex:1]}];
-            [realm addObject:word];
-            i++;
-        }
+        EnglishWord *word = [[EnglishWord alloc]initWithValue:@{@"wordID": [NSNumber numberWithInt:i], @"word" : [words objectAtIndex:0], @"wordDescription" : [words objectAtIndex:1]}];
+        [realm addObject:word];
+        i++;
     }
     [realm commitWriteTransaction];
 }
@@ -111,6 +110,7 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    NSString *myLog = [VSLogger applicationLog];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -126,5 +126,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    NSString *myLog = [VSLogger applicationLog];
+    
 }
 @end
