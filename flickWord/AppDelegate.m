@@ -32,11 +32,9 @@
     MySpeechObject *speechObject = [MySpeechObject sharedInstance];
     [speechObject prepareSynthesizerWithWord:@"flick word"];
     
-    RLMResults *words = [self getWords];
-    if ([words count] == 0) {
-        [self makeDictionaryDB];
-        words = [self getWords];
-    }
+    [self makeDictionaryDB];
+    RLMResults *words = [self getAllWords];
+    
     NSDictionary *wordsWithSection = [self getWordsWithSection:words];
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
@@ -57,24 +55,27 @@
                                                        encoding:NSUTF8StringEncoding
                                                           error:nil];
     NSArray *lines = [fileContents componentsSeparatedByCharactersInSet:newlineCharSet];
+    RLMResults *words = [self getAllWords];
+    if (words.count == lines.count) {
+        return;
+    }
+    
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
     int i = 0;
     for (NSString *line in lines) {
-        NSLog(@"%d:%@",i,line);
         NSArray *words = [line componentsSeparatedByString:@"\t"];
-        for (NSString *word in words) {
-            NSLog(@"%@",word);
+        if([EnglishWord objectsInRealm:realm where:@"word = %@",[words objectAtIndex:0]].count == 0) {
+            EnglishWord *word = [[EnglishWord alloc]initWithValue:@{@"wordID": [NSNumber numberWithInt:i], @"word" : [words objectAtIndex:0], @"wordDescription" : [words objectAtIndex:1]}];
+            [realm addObject:word];
         }
-        EnglishWord *word = [[EnglishWord alloc]initWithValue:@{@"wordID": [NSNumber numberWithInt:i], @"word" : [words objectAtIndex:0], @"wordDescription" : [words objectAtIndex:1]}];
-        [realm addObject:word];
         i++;
     }
     [realm commitWriteTransaction];
 }
 
 
-- (RLMResults *)getWords
+- (RLMResults *)getAllWords
 {
     RLMResults<EnglishWord *> *realmWords = [EnglishWord allObjects];
     return realmWords;
