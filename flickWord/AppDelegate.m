@@ -55,8 +55,8 @@
                                                        encoding:NSUTF8StringEncoding
                                                           error:nil];
     NSArray *lines = [fileContents componentsSeparatedByCharactersInSet:newlineCharSet];
-    RLMResults *words = [self getAllWords];
-    if (words.count == lines.count) {
+    RLMResults *allWords = [self getAllWords];
+    if (allWords.count == lines.count) {
         return;
     }
     
