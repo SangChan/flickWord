@@ -44,6 +44,7 @@
 		637023EB1A93002900496A2A /* able.txt in Resources */ = {isa = PBXBuildFile; fileRef = 637023EA1A93002900496A2A /* able.txt */; };
 		6373F07D1AC5130C00E2E7CE /* SKTexture+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */; };
 		6377E1321A846337007E3C4A /* Bubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E1311A846337007E3C4A /* Bubble.m */; };
+		6396B4011CB21ADC00C70158 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6396B4001CB21ADC00C70158 /* TableViewController.swift */; };
 		63D1A6691B37F28C0062073B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D1A6681B37F28C0062073B /* Images.xcassets */; };
 		63D1A66B1B37F4050062073B /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D1A66A1B37F4050062073B /* Launch Screen.xib */; };
 		63D1A66D1B37FAEF0062073B /* veranda_ci.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D1A66C1B37FAEF0062073B /* veranda_ci.png */; };
@@ -137,6 +138,8 @@
 		6373F07C1AC5130C00E2E7CE /* SKTexture+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKTexture+Gradient.m"; sourceTree = "<group>"; };
 		6377E1301A846337007E3C4A /* Bubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bubble.h; sourceTree = "<group>"; };
 		6377E1311A846337007E3C4A /* Bubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bubble.m; sourceTree = "<group>"; };
+		6396B3FF1CB21ADC00C70158 /* flickWord-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flickWord-Bridging-Header.h"; sourceTree = "<group>"; };
+		6396B4001CB21ADC00C70158 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		63D1A6681B37F28C0062073B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		63D1A66A1B37F4050062073B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		63D1A66C1B37FAEF0062073B /* veranda_ci.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = veranda_ci.png; path = flickWord/Resources/veranda_ci.png; sourceTree = "<group>"; };
@@ -271,11 +274,13 @@
 				6363121019B036DD00E15DC3 /* MyScene.h */,
 				6363121119B036DD00E15DC3 /* MyScene.m */,
 				634E53F11A8ADC8100299CCC /* ConstFunc.h */,
+				6396B4001CB21ADC00C70158 /* TableViewController.swift */,
 				637023E71A92FFBD00496A2A /* TableViewController.h */,
 				637023E81A92FFBD00496A2A /* TableViewController.m */,
 				6363122219B036DD00E15DC3 /* flickWordTests */,
 				63D1A6681B37F28C0062073B /* Images.xcassets */,
 				636311FF19B036DD00E15DC3 /* Supporting Files */,
+				6396B3FF1CB21ADC00C70158 /* flickWord-Bridging-Header.h */,
 			);
 			path = flickWord;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 		636311EB19B036DD00E15DC3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = sangchan;
 				TargetAttributes = {
@@ -539,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6363121219B036DD00E15DC3 /* MyScene.m in Sources */,
+				6396B4011CB21ADC00C70158 /* TableViewController.swift in Sources */,
 				6373F07D1AC5130C00E2E7CE /* SKTexture+Gradient.m in Sources */,
 				6352B4F81B4F864100235549 /* MySpeechObject.m in Sources */,
 				63480FD81B65FEC900B87776 /* AGSpriteButton.m in Sources */,
@@ -718,6 +725,7 @@
 			baseConfigurationReference = C38C17458D86AEB58BBF93CC /* Pods-flickWord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: SangChan Lee (585ZYQPML2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SangChan Lee (585ZYQPML2)";
 				ENABLE_BITCODE = NO;
@@ -725,10 +733,13 @@
 				GCC_PREFIX_HEADER = "flickWord/flickWord-Prefix.pch";
 				INFOPLIST_FILE = "flickWord/flickWord-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.verandastudio.flickword;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "flickWord/flickWord-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -739,6 +750,7 @@
 			baseConfigurationReference = ED0F04D6BC95E861B0A55C8A /* Pods-flickWord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: SangChan Lee (585ZYQPML2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SangChan Lee (585ZYQPML2)";
 				ENABLE_BITCODE = NO;
@@ -746,10 +758,12 @@
 				GCC_PREFIX_HEADER = "flickWord/flickWord-Prefix.pch";
 				INFOPLIST_FILE = "flickWord/flickWord-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.verandastudio.flickword;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "flickWord/flickWord-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
