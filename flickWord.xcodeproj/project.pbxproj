@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E22415DFA82FC63A2400E40 /* libPods-flickWord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB7BC3BEA8A5D99F2881346 /* libPods-flickWord.a */; };
-		632F705B1BFC8257009E2D26 /* libPods-flickWord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 632F705A1BFC8257009E2D26 /* libPods-flickWord.a */; };
+		19F262587BE69B30E6002A58 /* libPods-flickWord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6713DBEBCA9C215EBF6D520 /* libPods-flickWord.a */; };
 		632F70631BFDBEE6009E2D26 /* flickWordUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F70621BFDBEE6009E2D26 /* flickWordUITests.m */; };
 		63480FD81B65FEC900B87776 /* AGSpriteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63480FD71B65FEC900B87776 /* AGSpriteButton.m */; };
 		63480FDB1B671CCB00B87776 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63480FDA1B671CCB00B87776 /* GoogleService-Info.plist */; };
@@ -48,6 +47,7 @@
 		63D1A66B1B37F4050062073B /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D1A66A1B37F4050062073B /* Launch Screen.xib */; };
 		63D1A66D1B37FAEF0062073B /* veranda_ci.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D1A66C1B37FAEF0062073B /* veranda_ci.png */; };
 		63F26BC91ABA8B6400E9E865 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F26BC81ABA8B6400E9E865 /* AVFoundation.framework */; };
+		6C66B35333EFC1FBFB2499E6 /* libPods-flickWordTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B784B392A67F19CEAA6465A /* libPods-flickWordTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +81,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2AB7BC3BEA8A5D99F2881346 /* libPods-flickWord.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flickWord.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		224A07FC10ED8ACB3740955A /* Pods-flickWord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickWord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flickWord/Pods-flickWord.debug.xcconfig"; sourceTree = "<group>"; };
+		45D2367FB9AE6BCCF1E1D4B9 /* Pods-flickWordTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickWordTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flickWordTests/Pods-flickWordTests.debug.xcconfig"; sourceTree = "<group>"; };
 		632F705A1BFC8257009E2D26 /* libPods-flickWord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-flickWord.a"; path = "Pods/../build/Debug-iphoneos/libPods-flickWord.a"; sourceTree = "<group>"; };
 		632F70601BFDBEE6009E2D26 /* flickWordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flickWordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		632F70621BFDBEE6009E2D26 /* flickWordUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = flickWordUITests.m; sourceTree = "<group>"; };
@@ -141,8 +142,10 @@
 		63D1A66A1B37F4050062073B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		63D1A66C1B37FAEF0062073B /* veranda_ci.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = veranda_ci.png; path = flickWord/Resources/veranda_ci.png; sourceTree = "<group>"; };
 		63F26BC81ABA8B6400E9E865 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		C38C17458D86AEB58BBF93CC /* Pods-flickWord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickWord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flickWord/Pods-flickWord.debug.xcconfig"; sourceTree = "<group>"; };
-		ED0F04D6BC95E861B0A55C8A /* Pods-flickWord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickWord.release.xcconfig"; path = "Pods/Target Support Files/Pods-flickWord/Pods-flickWord.release.xcconfig"; sourceTree = "<group>"; };
+		7B784B392A67F19CEAA6465A /* libPods-flickWordTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flickWordTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E06A519033D57352BEEDA9F /* Pods-flickWord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickWord.release.xcconfig"; path = "Pods/Target Support Files/Pods-flickWord/Pods-flickWord.release.xcconfig"; sourceTree = "<group>"; };
+		995E5484D629C4FE15A636CE /* Pods-flickWordTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickWordTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-flickWordTests/Pods-flickWordTests.release.xcconfig"; sourceTree = "<group>"; };
+		E6713DBEBCA9C215EBF6D520 /* libPods-flickWord.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flickWord.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +165,7 @@
 				636311FB19B036DD00E15DC3 /* UIKit.framework in Frameworks */,
 				636311FD19B036DD00E15DC3 /* SpriteKit.framework in Frameworks */,
 				636311F719B036DD00E15DC3 /* Foundation.framework in Frameworks */,
-				2E22415DFA82FC63A2400E40 /* libPods-flickWord.a in Frameworks */,
+				19F262587BE69B30E6002A58 /* libPods-flickWord.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,16 +173,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				632F705B1BFC8257009E2D26 /* libPods-flickWord.a in Frameworks */,
 				6363121D19B036DD00E15DC3 /* XCTest.framework in Frameworks */,
 				6363121F19B036DD00E15DC3 /* UIKit.framework in Frameworks */,
 				6363121E19B036DD00E15DC3 /* Foundation.framework in Frameworks */,
+				6C66B35333EFC1FBFB2499E6 /* libPods-flickWordTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3ABDF3CAC32F3E2482B67369 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				224A07FC10ED8ACB3740955A /* Pods-flickWord.debug.xcconfig */,
+				8E06A519033D57352BEEDA9F /* Pods-flickWord.release.xcconfig */,
+				45D2367FB9AE6BCCF1E1D4B9 /* Pods-flickWordTests.debug.xcconfig */,
+				995E5484D629C4FE15A636CE /* Pods-flickWordTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		632F70611BFDBEE6009E2D26 /* flickWordUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,7 +239,7 @@
 				632F70611BFDBEE6009E2D26 /* flickWordUITests */,
 				636311F519B036DD00E15DC3 /* Frameworks */,
 				636311F419B036DD00E15DC3 /* Products */,
-				8C9DFF7577F8AEC24DC5F44F /* Pods */,
+				3ABDF3CAC32F3E2482B67369 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,7 +264,8 @@
 				636311FA19B036DD00E15DC3 /* UIKit.framework */,
 				636311FC19B036DD00E15DC3 /* SpriteKit.framework */,
 				6363121C19B036DD00E15DC3 /* XCTest.framework */,
-				2AB7BC3BEA8A5D99F2881346 /* libPods-flickWord.a */,
+				E6713DBEBCA9C215EBF6D520 /* libPods-flickWord.a */,
+				7B784B392A67F19CEAA6465A /* libPods-flickWordTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -327,15 +342,6 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		8C9DFF7577F8AEC24DC5F44F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C38C17458D86AEB58BBF93CC /* Pods-flickWord.debug.xcconfig */,
-				ED0F04D6BC95E861B0A55C8A /* Pods-flickWord.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -361,13 +367,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6363122C19B036DD00E15DC3 /* Build configuration list for PBXNativeTarget "flickWord" */;
 			buildPhases = (
-				2B9396D9ABFF03D690914E67 /* Check Pods Manifest.lock */,
+				A7591BBDB9AE93707A156DD1 /* [CP] Check Pods Manifest.lock */,
 				636311EF19B036DD00E15DC3 /* Sources */,
 				636311F019B036DD00E15DC3 /* Frameworks */,
 				636311F119B036DD00E15DC3 /* Resources */,
 				63A4E01F1B13184400188120 /* Embed App Extensions */,
-				FD0466EC6244A46916458DB3 /* Copy Pods Resources */,
-				88843BD80211A5027B1FF275 /* Embed Pods Frameworks */,
+				FBCC156D51587E36F8B3E73C /* [CP] Embed Pods Frameworks */,
+				981DCA2A96212149A79A7E84 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -382,9 +388,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6363122F19B036DD00E15DC3 /* Build configuration list for PBXNativeTarget "flickWordTests" */;
 			buildPhases = (
+				E050B88F8766891C45F148DD /* [CP] Check Pods Manifest.lock */,
 				6363121719B036DD00E15DC3 /* Sources */,
 				6363121819B036DD00E15DC3 /* Frameworks */,
 				6363121919B036DD00E15DC3 /* Resources */,
+				4C15E7C6CE85C06B1ECDD8D2 /* [CP] Embed Pods Frameworks */,
+				A8842C4A61A48314BC8DDD35 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -408,9 +417,6 @@
 					632F705F1BFDBEE6009E2D26 = {
 						CreatedOnToolsVersion = 7.1;
 						TestTargetID = 636311F219B036DD00E15DC3;
-					};
-					636311F219B036DD00E15DC3 = {
-						DevelopmentTeam = CBUJK8CFZ3;
 					};
 					6363121A19B036DD00E15DC3 = {
 						TestTargetID = 636311F219B036DD00E15DC3;
@@ -478,14 +484,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2B9396D9ABFF03D690914E67 /* Check Pods Manifest.lock */ = {
+		4C15E7C6CE85C06B1ECDD8D2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flickWordTests/Pods-flickWordTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		981DCA2A96212149A79A7E84 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flickWord/Pods-flickWord-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7591BBDB9AE93707A156DD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,34 +529,49 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		88843BD80211A5027B1FF275 /* Embed Pods Frameworks */ = {
+		A8842C4A61A48314BC8DDD35 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flickWordTests/Pods-flickWordTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E050B88F8766891C45F148DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FBCC156D51587E36F8B3E73C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flickWord/Pods-flickWord-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FD0466EC6244A46916458DB3 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flickWord/Pods-flickWord-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -715,7 +766,7 @@
 		};
 		6363122D19B036DD00E15DC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C38C17458D86AEB58BBF93CC /* Pods-flickWord.debug.xcconfig */;
+			baseConfigurationReference = 224A07FC10ED8ACB3740955A /* Pods-flickWord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -736,7 +787,7 @@
 		};
 		6363122E19B036DD00E15DC3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED0F04D6BC95E861B0A55C8A /* Pods-flickWord.release.xcconfig */;
+			baseConfigurationReference = 8E06A519033D57352BEEDA9F /* Pods-flickWord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -757,6 +808,7 @@
 		};
 		6363123019B036DD00E15DC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D2367FB9AE6BCCF1E1D4B9 /* Pods-flickWordTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/flickWord.app/flickWord";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -794,6 +846,7 @@
 		};
 		6363123119B036DD00E15DC3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 995E5484D629C4FE15A636CE /* Pods-flickWordTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/flickWord.app/flickWord";
 				FRAMEWORK_SEARCH_PATHS = (
