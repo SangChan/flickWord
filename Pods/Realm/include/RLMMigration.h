@@ -25,11 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 @class RLMObject;
 
 /**
- A block type which provides both the old and new versions of an object in the Realm. Object 
+ A block type which provides both the old and new versions of an object in the Realm. Object
  properties can only be accessed using keyed subscripting.
- 
+
  @see `-[RLMMigration enumerateObjects:block:]`
- 
+
  @param oldObject The object from the original Realm (read-only).
  @param newObject The object from the migrated Realm (read-write).
 */
@@ -37,7 +37,7 @@ typedef void (^RLMObjectMigrationBlock)(RLMObject * __nullable oldObject, RLMObj
 
 /**
  `RLMMigration` instances encapsulate information intended to facilitate a schema migration.
- 
+
  A `RLMMigration` instance is passed into a user-defined `RLMMigrationBlock` block when updating
  the version of a Realm. This instance provides access to the old and new database schemas, the
  objects in the Realm, and provides functionality for modifying the Realm during the migration.
@@ -71,20 +71,21 @@ typedef void (^RLMObjectMigrationBlock)(RLMObject * __nullable oldObject, RLMObj
             to `className`. Instead, treat them as `RLMObject`s and use keyed subscripting to access
             properties.
  */
-- (void)enumerateObjects:(NSString *)className block:(RLMObjectMigrationBlock)block;
+- (void)enumerateObjects:(NSString *)className block:(__attribute__((noescape)) RLMObjectMigrationBlock)block;
 
 /**
  Creates and returns an `RLMObject` instance of type `className` in the Realm being migrated.
 
- @param className   The name of the `RLMObject` class to create.
- @param value       The value used to populate the object. This can be any key-value coding compliant
-                    object, or an array or dictionary returned from the methods in `NSJSONSerialization`, or
-                    an `NSArray` containing one element for each persisted property. An exception will be
-                    thrown if any required properties are not present and those properties were not defined with
-                    default values.
+ The `value` argument is used to populate the object. It can be a key-value coding compliant object, an array or
+ dictionary returned from the methods in `NSJSONSerialization`, or an array containing one element for each managed
+ property. An exception will be thrown if any required properties are not present and those properties were not defined
+ with default values.
 
-                    When passing in an `NSArray`, all properties must be present,
-                    valid and in the same order as the properties defined in the model.
+ When passing in an `NSArray` as the `value` argument, all properties must be present, valid and in the same order as
+ the properties defined in the model.
+
+ @param className   The name of the `RLMObject` class to create.
+ @param value       The value used to populate the object.
  */
 - (RLMObject *)createObject:(NSString *)className withValue:(id)value;
 

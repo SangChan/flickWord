@@ -2,8 +2,8 @@
 # platform :ios, '6.0'
 
 def default
-	pod 'Realm', '~> 1.0.0'
-	pod 'Google/Analytics', '~> 1.0.0'
+	pod 'Realm'
+	pod 'Google/Analytics'
 end
 
 target 'flickWord' do
