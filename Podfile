@@ -3,7 +3,6 @@
 
 def default
 	pod 'Realm'
-	pod 'Google/Analytics'
 end
 
 target 'flickWord' do
