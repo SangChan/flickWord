@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
-#import <Google/Analytics.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

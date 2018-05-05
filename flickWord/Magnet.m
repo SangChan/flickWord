@@ -85,9 +85,9 @@
                         [bubbleBody.physicsBody setAffectedByGravity:NO];
                         SKAction *rotateAction = [SKAction rotateToAngle:0.0 duration:0.7f];
                         [bubbleBody runAction:rotateAction completion:^{
-                            _active = NO;
-                            [_shapeNode setHidden:YES];
-                            [_shapeNode removeAllActions];
+                            self->_active = NO;
+                            [self->_shapeNode setHidden:YES];
+                            [self->_shapeNode removeAllActions];
                             [[NSNotificationCenter defaultCenter]postNotificationName:@"matchLetter" object:nil];
                             [self runAction:[SKAction playSoundFileNamed:@"match.wav" waitForCompletion:NO]];
                         }];
